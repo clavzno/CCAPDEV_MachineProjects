@@ -18,9 +18,46 @@
     flex-grow: 1;
 
     width: 20%;
-    background-color: aquamarine;
+    background-color: brown;
 }
 
 #profile {
-    
+    flex-grow: 1;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aquamarine;
+
+    overflow: auto; /* allow scrolling down */
+}
+
+#profile-top {
+    flex-grow: 1;
+    height: 100px;
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-pic {
+    flex: 1;
+
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position:absolute;
+    margin: 10px;
+    border: 1px solid var(--bordergrey);
+    overflow: hidden;
+}
+
+#profile-pic img {
+    width: 100%; /* image should fill the width of the div */
+    height: 100%; 
+    object-fit: cover;
 }
