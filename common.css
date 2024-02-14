@@ -1,0 +1,67 @@
+/* import this into every html file alongside the css for that page */
+@import url('https://fonts.googleapis.com/css2?family=Orienta&family=Ruda:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bookface-theme: #590d0d; /* main bookface color, for headers, logo*/
+    --bookface-white: #fefffe; /* for text color on bookface panel */
+    --bookface-bg: #d4dae0; /* for main background color */
+
+    --bordergrey: #d2d4d8; /* for thin borders on buttons or anything */
+    --button-hover: #8c1c13; /* for buttons on bookface panel when hover */
+ 
+    --searchbar-grey: #f0f2f5; 
+    --searchbar-text: #afb1b4;
+
+    /* --fbwhite: #dddfe2; */
+    --fbgreen: #42b72a; /* for buttons that stand out ex: create account */
+
+    --button-grey: #a5b3c1; /* unclicked */
+    --button-grey2: #6f8193; /* clicked */
+}
+
+/* Fonts */
+.orienta-regular {
+    font-family: "Orienta", sans-serif;
+    font-weight: 400px; /* normal */
+    font-style: normal;
+}
+
+.work-sans-lighter {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300px; /* lighter */ 
+    font-style: normal;
+}
+
+.ruda-bookface-bolder {
+    font-family: "Ruda", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700px; /* bolder */ 
+    font-style: normal;
+}
+/* End Fonts */
+
+/* for BookFace panel */
+.headerPanel { 
+    font-family: "Ruda", sans-serif;
+    color: var(--bookface-white);
+    font-size: 20px; /* was originally 200% but made smaller to make room for more content */
+
+    background-color: var(--bookface-theme);
+
+    padding: 16px;
+}
+
+.mainpanel_button {
+    border-radius: 20px;
+}
+
+.mainpanel_button::hover {
+    cursor: pointing;
+}
+/* end BookFace panel */
+
+/* for body because there's a default margin*/
+.no_margin { 
+    margin: 0;
+}
