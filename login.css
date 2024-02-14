@@ -1,0 +1,149 @@
+/* I will end myself right here and right now
+
+/* Centering the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bookface-bg);
+}
+
+/* Styling the login form */
+#loginForm {
+    background-color: var(--bookface-white); /* White background */
+    border: 2px solid var(--bordergrey); /* Greyish border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the form */
+    width: 300px; /* Width of the form */
+}
+
+/* Style for form groups (username and password) */
+.form-group {
+    margin-bottom: 15px; /* Spacing between form elements */
+}
+
+/* Adjusting margin for the "Remember me" label */
+.form-check-label {
+    margin-left: 5px; 
+}
+
+/* Styling for the "Forgot password?" link */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Styling for the "Log In" button */
+.mainpanel_button {
+    background-color: cyan;
+    width: 100%; /* This will make the button stretch to full width */
+    padding: 15px 0; /* This will make the button "fatter" */
+    transition: background-color 0.6s ease; /* this will make the color change smoothly */
+}
+.mainpanel_button:hover {
+    background-color: darkcyan; /* this will change the color when the user hovers over the button */
+}
+.mainpanel_button:focus {
+    outline: none; /* this will remove the default focus outline */
+    box-shadow: 0 0 0 3px rgba(0,255,255,0.5); /* this will add a custom focus ring */
+}
+
+/* Styling for the "Create new account" button */
+.create-account {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--fbgreen);
+    padding: 15px 0; /* This will make the button "fatter" AHAHHAHA */
+    transition: background-color 0.6s ease; /* this will make the color change smoothly */
+}
+.create-account:hover {
+    background-color: darkgreen; /* this will change the color when the user hovers over the button */
+}
+.create-account:focus {
+    outline: none; /* this will remove the default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.5); /* this will add a custom focus ring */
+}
+
+
+
+/* Custom styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: center; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #dfdfdf;
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Styling for the modal header */
+.modal-header {
+    border-bottom: none; /* Remove default border */
+    padding: 15px 30px; /* Increase padding */
+    background-color: #853232; /* Facebook blue background */
+    color: #ffffff; /* White color */
+}
+
+/* Styling for the modal title */
+.modal-title {
+    font-size: 2.25rem; /* Increase font size */
+}
+
+/* Styling for the modal body */
+.modal-body {
+    padding: 30px; /* Increase padding */
+}
+
+/* Styling for the form labels */
+.modal-body label {
+    font-size: 1.5rem; /* Increase font size */
+    color: #8d949e; /* Light grey color */
+}
+
+/* Styling for the form inputs */
+.modal-body input,
+.modal-body select {
+    height: 40px; /* Increase height */
+    margin-bottom: 15px; /* Add space between form elements */
+    border-radius: 3px; /* Slightly rounded corners */
+    border: 1px solid #ccd0d5; /* Light grey border */
+    font-size: 1rem; /* Increase font size */
+}
+
+
+/* Styling for the modal footer */
+.modal-footer {
+    border-top: none; /* Remove default border */
+    padding: 15px 30px; /* Increase padding */
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+/* Styling for the "Close" button */
+.modal-footer .btn-secondary {
+    background-color: #f5f6f7; /* Light grey background */
+    color: #4b4f56; /* Dark grey color */
+}
+
+/* Styling for the "Register" button */
+.modal-footer .btn-primary {
+    background-color: #42b72a; /* Facebook green background */
+    color: #ffffff; /* White color */
+}
