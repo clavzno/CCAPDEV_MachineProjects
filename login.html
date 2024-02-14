@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page shit</title>
+  <title>Login Page</title>
   <link href="common.css" rel="stylesheet">
-</head> 
-<body>
+  <link href="login.css" rel="stylesheet">
+</head>
+<body class="no_margin">
     <div class="login-container">
-        <div class="row-justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="headerPanel">BookFace Login</h2>
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="username">Username</label>
+                        <label for="username">Email or phone number</label>
                         <input type="text" class="form-control" id="username" required>
                     </div>
                     <div class="form-group">
@@ -24,10 +25,61 @@
                         <input type="checkbox" class="form-check-input" id="rememberMe">
                         <label class="form-check-label" for="rememberMe">Remember me</label>
                     </div>
-                    <button type="submit" class="btn btn-primary mainpanel_button">Login</button>
+                    <button type="submit" class="btn btn-primary mainpanel_button">Log In</button>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                    <button type="button" class="btn btn-success create-account" data-toggle="modal" data-target="#registerModal">Create new account</button>
                 </form>
             </div>
         </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Create new account</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+              </div>
+              <div class="form-group">
+                <label for="emailOrPhone">Mobile Number or Email</label>
+                <input type="email" class="form-control" id="emailOrPhone" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              </div>
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" class="form-control" id="newPassword" required>
+              </div>
+              <div class="form-group">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" class="form-control" id="birthdate" required>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender">
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Custom</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Register</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
