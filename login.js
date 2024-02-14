@@ -1,4 +1,4 @@
-// login functionality and shit i dont like js
+// login functionality basically
 
 document.getElementById('loginForm').addEventListener('submit', function(event)
 {
