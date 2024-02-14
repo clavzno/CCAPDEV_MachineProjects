@@ -6,10 +6,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event)
 
     var username = document.getElementById('username').value;
     var password  = document.getElementById('password').value;
-    var rememberMe  = document.getElementById('rememberMe').value;
+    var rememberMe  = document.getElementById('rememberMe').checked;
 
     // Check if user is registered
-    var registeredUser = localStorage.getItem('username');
+    var registeredUser = localStorage.getItem(username);
     if (registeredUser == null)
     {
         alert('User is not registered');
@@ -39,4 +39,26 @@ document.getElementById('loginForm').addEventListener('submit', function(event)
     {
         localStorage.removeItem('expiryDate');
     } alert('Login successful');
+});
+
+// Registration functionality
+document.getElementById('registerForm').addEventListener('submit', function(event)
+{
+    event.preventDefault();
+
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var emailOrPhone = document.getElementById('emailOrPhone').value;
+    var newPassword = document.getElementById('newPassword').value;
+    var birthdate = document.getElementById('birthdate').value;
+    var gender = document.getElementById('gender').value;
+
+    // Register the user
+    localStorage.setItem(emailOrPhone, emailOrPhone);
+    localStorage.setItem(emailOrPhone + '_password', newPassword);
+
+    alert('Registration successful');
+
+    // Close the modal
+    $('#registerModal').modal('hide');
 });
