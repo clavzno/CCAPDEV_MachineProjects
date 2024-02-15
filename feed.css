@@ -1,6 +1,7 @@
 .page{
     display: flex;
     flex-direction: column;
+    background-color: var(--bookface-bg);
 }
 
 .sort{
@@ -14,6 +15,9 @@
     background-color: var(--bookface-theme);
     width: 40%;
     align-self: center;
+    box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.5), -10px 0 15px -10px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid var(--bordergrey);
+    border-right: 1px solid var(--bordergrey);
 }
 
 .feed{
