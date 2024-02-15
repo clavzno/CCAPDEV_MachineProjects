@@ -46,9 +46,9 @@
     width: 100%;
 }
 
-.feed-footer{
-    display: flex;
-    justify-content: center;
+.feed-footer ul{
+    padding: 5px;
+    margin: 0px;
 }
 
 .feed-footer ul li{
@@ -57,7 +57,8 @@
 }
 
 .feed-footer ul li img{
-    width: 20px;
+    width: 25px;
+    margin: 0px 0px;
 }
 
 .feed-footer ul li img:hover{
