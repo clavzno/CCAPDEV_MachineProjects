@@ -8,8 +8,25 @@
     <link href="search.css" rel="stylesheet">
 </head>
     <body class = "no_margin">
-        <div>
-            <
+        <div class = "search-bar-container">
+            
+            <h2 class = "headerPanel">BookFace Search</h2>
+            <div>
+
+                <form action="search." method="get">
+                    <label for="search">Search by tag or community name:</label>
+                    <input type="text" id="search" name="search" required>
+        
+                    <label for="search_by">Search by:</label>
+                    <select id="search_by" name="search_by" required>
+                    <option value="tag">Tag</option>
+                    <option value="community">Community</option>
+                </select>
+                
+                <input type="submit" value="Search">
+            </form>
+            
+            </div>
         </div>
     </body>
 </html>
