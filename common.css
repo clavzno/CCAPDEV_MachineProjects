@@ -6,7 +6,7 @@
     --bookface-white: #fefffe; /* for text color on bookface panel */
     --bookface-bg: #d4dae0; /* for main background color */
 
-    --bordergrey: #d2d4d8; /* for thin borders on buttons or anything */
+    --bordergrey: #757679; /* for thin borders on buttons or anything */
     --button-hover: #8c1c13; /* for buttons on bookface panel when hover */
 
     --searchbar-grey: #f0f2f5; 
@@ -45,11 +45,19 @@
 .headerPanel { 
     font-family: "Ruda", sans-serif;
     color: var(--bookface-white);
-    font-size: 20px; /* was originally 200% but made smaller to make room for more content */
 
     background-color: var(--bookface-theme);
 
     padding: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.headerPanel h1 {
+    margin: 0px;
+    font-size: 20px; /* was originally 200% but made smaller to make room for more content */
+    display: inline-block; /* width adjusts to how much text there is, and it should only be BookFace */
+    margin-right: auto; /* moves the navigation table to the right */
 }
 
 .mainpanel_button {
