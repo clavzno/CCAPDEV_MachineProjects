@@ -6,6 +6,7 @@
     <title>Search Page</title>
     <link href="common.css" rel="stylesheet">
     <link href="search.css" rel="stylesheet">
+
 </head>
     <body class = "no_margin">
         <div class = "search-bar-container">
@@ -13,7 +14,7 @@
             <h2 class = "headerPanel">BookFace Search</h2>
             <div>
 
-                <form action="search." method="get">
+                <form id = "searchForm">
                     <label for="search">Search by tag or community name:</label>
                     <input type="text" id="search" name="search" required>
         
@@ -26,6 +27,32 @@
                 <input type="submit" value="Search">
             </form>
             
+            <script>
+                // Hardcoded database
+                var database = [
+                    { id: 1, tag: 'Science', community: 'Research' },
+                    { id: 2, tag: 'Technology', community: 'Tech Enthusiasts' },
+                    { id: 3, tag: 'Books', community: 'Book Lovers' },
+                    // Add more data as needed
+                ];
+        
+                // Handle form submission
+                document.getElementById('searchForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+        
+                    // Get search parameters
+                    var searchTerm = document.getElementById('search').value;
+                    var searchBy = document.getElementById('search_by').value;
+        
+                    // Filter data based on search parameters
+                    var results = database.filter(function (item) {
+                        return item[searchBy].toLowerCase().includes(searchTerm.toLowerCase());
+                    });
+        
+                    // Handle the results (you can update the UI as needed)
+                    console.log(results);
+                });
+            </script>
             </div>
         </div>
     </body>
