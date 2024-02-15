@@ -43,10 +43,12 @@
     width: 100%; /* This will make the button stretch to full width */
     padding: 15px 0; /* This will make the button "fatter" */
     font-size: 1rem;
+    border-radius: 20px;
     transition: background-color 0.6s ease; /* this will make the color change smoothly */
 }
 .mainpanel_button:hover {
     background-color: darkcyan; /* this will change the color when the user hovers over the button */
+    cursor: pointing;
 }
 .mainpanel_button:focus {
     outline: none; /* this will remove the default focus outline */
