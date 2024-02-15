@@ -9,13 +9,17 @@
     </head>
     <body class="page">
         <div class="headerPanel">
-            <h1>Bookface</h1>
-            <div class="headerPanel-searchBar"></div>
-            <table class="mainpanel_button">
+            <h1><a href="https://www.facebook.com">Bookface</a></h1>
+            <div class="headerPanel_searchBar">
+                <form action="/search" method="get">
+                    <input type="search" name="PUTNAMEHERE" placeholder="Search...">
+                </form>
+            </div>
+            <table>
                 <tr>
-                    <th><button>Home</button></th>
-                    <th><button>Profile</button></th>
-                    <th><button>Log Out</button></th>
+                    <th><button class="headerPanel_navigation" onclick="feed.html">Home</button></th>
+                    <th><button class="headerPanel_navigation" onclick="profile.html">Profile</button></th>
+                    <th><button class="headerPanel_navigation" onclick="">Log Out</button></th>
                 </tr>
             </table>
         </div>
@@ -45,6 +49,7 @@
                             <tr>
                                 <th>Posts</th>
                                 <th>Replies</th>
+                                <th>Likes</th>
                             </tr>
                         </table>
                     </div>
