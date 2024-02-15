@@ -1,0 +1,17 @@
+
+.search-bar-container {
+    display: block;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bookface-bg);
+}
+
+
+/*Styling the Search Bar*/
+#search-form {
+    background-color: var(--bookface-white);
+    border: 2px solid var(--bordergrey);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
