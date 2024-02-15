@@ -1,5 +1,4 @@
 // login functionality basically
-
 document.getElementById('loginForm').addEventListener('submit', function(event)
 {
     event.preventDefault();
@@ -8,8 +7,16 @@ document.getElementById('loginForm').addEventListener('submit', function(event)
     var password  = document.getElementById('password').value;
     var rememberMe  = document.getElementById('rememberMe').checked;
 
+    // Validate the username as an email address or phone number
+    var isEmail = username.includes('@') && username.includes('.com');
+    var isPhoneNumber = /^\d+$/.test(username); // <- checks if input is a number, js moment
+    if (!isEmail && !isPhoneNumber) {
+        alert('Please enter a valid email address or phone number');
+        return;
+    }
+
     // Check if user is registered
-    var registeredUser = localStorage.getItem(username);
+    var registeredUser = JSON.parse(localStorage.getItem(username));
     if (registeredUser == null)
     {
         alert('User is not registered');
@@ -17,8 +24,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event)
     }
 
     // Check if password is false
-    var registeredPassword = localStorage.getItem(username + '_password');
-    if(password !== registeredPassword)
+    if(password !== registeredUser.password)
     {
         alert('Incorrect Password');
         return;
@@ -26,7 +32,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event)
 
     // Log user in
     localStorage.setItem('loggedInUser', username);
-
 
     // "remember me" option
     if (rememberMe) 
@@ -54,11 +59,27 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     var gender = document.getElementById('gender').value;
 
     // Register the user
-    localStorage.setItem(emailOrPhone, emailOrPhone);
-    localStorage.setItem(emailOrPhone + '_password', newPassword);
+    var user = {
+        username: emailOrPhone,
+        password: newPassword,
+        firstName: firstName,
+        lastName: lastName,
+        birthdate: birthdate,
+        gender: gender
+    };
+    localStorage.setItem(emailOrPhone, JSON.stringify(user));
 
     alert('Registration successful');
 
     // Close the modal
     $('#registerModal').modal('hide');
 });
+
+function submitRegisterForm() {
+    var registerForm = document.getElementById('registerForm');
+    var event = new Event('submit', {
+        bubbles: true,
+        cancelable: true
+    });
+    registerForm.dispatchEvent(event);
+}
