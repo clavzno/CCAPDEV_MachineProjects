@@ -42,6 +42,10 @@
     margin-right: 10px;
 }
 
+.feed-header .tags{
+    margin-left: 10px;
+}
+
 .feed-content p{
     word-wrap: break-word;
 }
