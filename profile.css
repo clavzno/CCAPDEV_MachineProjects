@@ -18,46 +18,122 @@
     flex-grow: 1;
 
     width: 20%;
-    background-color: brown;
 }
 
 #profile {
     flex-grow: 1;
-    width: 100%;
+    width: 100%; /* of parent */
 
+    box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.5), -10px 0 15px -10px rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: aquamarine;
+    flex-direction: column;
+    justify-content: center; /* main axis is vertical */
+    background-color: var(--bookface-bg);
 
     overflow: auto; /* allow scrolling down */
+    border-left: 1px solid var(--bordergrey);
+    border-right: 1px solid var(--bordergrey);
 }
 
 #profile-top {
-    flex-grow: 1;
-    height: 100px;
-    background-color: aqua;
+    flex-grow: 0;
+    width: 100%;
+    height: 50%;
 
+    display: flex;
+    flex-direction: column; /* main axis is vertical */
+    justify-content: center;
+}
+
+#profile-header {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* overflow: hidden;  if img is used in html */
+
+    width: 100%;
+    height: 100%;
+    background-image: url(images/profile-picture2.jpg);
+    background-size: cover;
+    background-position: center center;
+    border-bottom: 3px solid var(--bookface-bg);
 }
 
-#profile-pic {
-    flex: 1;
+/* #profile-header img { 
+    object-fit: contain;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+} */
 
-    flex-shrink: 0;
+#profile-pic {
+    flex-grow: 0;
+
     width: 150px;
     height: 150px;
+
+    border: 3px solid var(--bookface-bg);
     border-radius: 100%;
-    position:absolute;
     margin: 10px;
-    border: 1px solid var(--bordergrey);
-    overflow: hidden;
+
+    overflow: hidden; /* makes elements inside like img adjust to div shape */
+
+    position: absolute;
+    top: 50%; /* Position at 50% from the top */
+    left: 50%; /* Position at 50% from the left */
+    transform: translate(-50%, -50%); /* shifts the #profile-pic back by half of its own width and height, effectively centering it */
 }
 
 #profile-pic img {
     width: 100%; /* image should fill the width of the div */
-    height: 100%; 
-    object-fit: cover;
+    height: 100%;
+}
+
+#profile-pic h1 {
+    font-family: "Orienta", sans-serif;
+}
+
+#profile-bottom {
+    flex: 1;
+    flex-grow: 1;
+    background-color: var(--bookface-bg);
+    margin-top: 55px; /* 150px/2px start right under the picture*/
+
+    font-family: "Work Sans", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-bottom h3 {
+    line-height: 0%;
+    margin-top: 2px;
+}
+
+#profile-desc {
+    width: 70%;
+    padding: 3px;
+}
+
+#profile-tabs {
+    display: flex;
+    justify-content: center;
+    background-color: var(--button-grey);
+}
+
+#profile-tabs table th {
+    color: var(--bookface-white);
+    font-family: "Orienta", sans-serif;
+/* border: 1px solid var(--bordergrey); */
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    background-color: var(--button-grey);
+}
+
+#profile-tabs table th:hover {
+    background-color: var(--button-grey2);
+    cursor: pointer;
 }

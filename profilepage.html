@@ -8,14 +8,48 @@
         <link href="profile.css" rel="stylesheet">
     </head>
     <body class="page">
-        <div class="headerPanel">BookFace</div>
+        <div class="headerPanel">
+            <h1>Bookface</h1>
+            <div class="headerPanel-searchBar"></div>
+            <table class="mainpanel_button">
+                <tr>
+                    <th><button>Home</button></th>
+                    <th><button>Profile</button></th>
+                    <th><button>Log Out</button></th>
+                </tr>
+            </table>
+        </div>
         <div id="content">
             <div class="sideBorder" id="left"></div>
             <div id="profile">
-                <div id="profile-top">
-                    <div id="profile-pic">
-                        <img src="images/shroo.png">
+                    <div id="profile-top">
+                        <div id="profile-header"></div>
                     </div>
+                    <div id="profile-pic">
+                        <img src="images/profile_picture.png" />
+                    </div>
+                    <div id="profile-bottom">
+                        <h1 id="name">My name's Lorem</h1>
+                        <h3 id="username">@theipsumguy</h3>
+                        <div id="profile-desc">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus soluta ipsam ab autem sint modi nulla aliquid tenetur iusto hic, repudiandae neque quis officiis laborum illo cum porro explicabo?</p>
+                        </div>
+                        <table>
+                            <tr>
+                                <th><button>Edit Profile</button></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="profile-tabs">
+                        <table>
+                            <tr>
+                                <th>Posts</th>
+                                <th>Replies</th>
+                            </tr>
+                        </table>
+                    </div>
+                <div id="posts">
+
                 </div>
             </div>
             <div class="sideBorder" id="right"></div>
