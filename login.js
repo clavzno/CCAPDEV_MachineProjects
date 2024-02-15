@@ -83,3 +83,7 @@ function submitRegisterForm() {
     });
     registerForm.dispatchEvent(event);
 }
+
+function redirectToForgotPassword() {
+    window.location.href = 'forgot_password.html';
+}
