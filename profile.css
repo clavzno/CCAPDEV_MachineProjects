@@ -9,9 +9,11 @@
 
 #content {
     flex-grow: 1;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .sideBorder {
@@ -68,8 +70,18 @@
     height: auto;
 } */
 
+#profile-pic-basis {
+    /* so that profile-pic can be positioned relative to it */
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 1; /* allowed to shrink and grow */
+    flex-grow: 1;
+}
+
 #profile-pic {
     flex-grow: 0;
+    flex-shrink: 1;
 
     width: 150px;
     height: 150px;
@@ -80,8 +92,8 @@
 
     overflow: hidden; /* makes elements inside like img adjust to div shape */
 
-    position: absolute;
-    top: 50%; /* Position at 50% from the top */
+    position: relative; /* is relative to profile-pic-basis */
+    /* top: 50%;  Position at 50% from the top */
     left: 50%; /* Position at 50% from the left */
     transform: translate(-50%, -50%); /* shifts the #profile-pic back by half of its own width and height, effectively centering it */
 }
@@ -99,7 +111,7 @@
     flex: 1;
     flex-grow: 1;
     background-color: var(--bookface-bg);
-    margin-top: 55px; /* 150px/2px start right under the picture*/
+    /* margin-top: 55px;  150px/2px start right under the picture*/
 
     font-family: "Work Sans", sans-serif;
 
@@ -136,6 +148,70 @@
 #profile-tabs table th:hover {
     background-color: var(--button-grey2);
     cursor: pointer;
+}
+
+.profile-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* divs starting with post_x */
+.profile-posts div[id^="post_"] {
+    padding: 10px;
+    flex-grow: 1;
+    border: 2px solid var(--bordergrey);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+.post_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.post_header_photo {
+    width: 90px;
+    height: 90px;
+
+    border: 3px solid var(--bookface-bg);
+    border-radius: 100%;
+    margin: 10px;
+
+    overflow: hidden; /* makes elements inside like img adjust to div shape */
+}
+
+.post_header_photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.post_header_user_desc {
+    line-height: 1.5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post_header_user_desc p {
+    margin: 3px;
+}
+
+.post_header_user_desc #displayname, #username, #post-date {
+    font-family: "Orienta", sans-serif;
+}
+
+.post_header_user_desc #displayname {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.post_description p {
+    font-family: "Work Sans", sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #end {
