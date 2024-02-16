@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="common.css" rel="stylesheet">
+        <link href="profile.css" rel="stylesheet">
+    </head>
+    <body class="page">
+        <div class="headerPanel">
+            <h1><a href="feed.html">Bookface</a></h1>
+            <div class="headerPanel_searchBar">
+                <form action="search.html" method="get">
+                    <input type="search" name="search" placeholder="Search..." />
+                </form>
+            </div>
+            <table>
+                <tr>
+                    <th><button class="headerPanel_navigation" onclick="window.location.href='feed.html'">Home</button></th>
+                    <th><button class="headerPanel_navigation" onclick="window.location.href='profilepage.html'"">Profile</button></th>
+                    <th><button class="headerPanel_navigation" onclick="window.location.href='login.html'"">Log Out</button></th>
+                </tr>
+            </table>
+        </div>
+        <div id="edit-content">
+            <h1> Edit Profile </h1>
+            <form onsubmit="event.preventDefault(); window.location.href='profilepage.html';">
+                <label for="displayname">
+                    Display Name:
+                    <input type="text" name="displayname" value="" maxlength="25"/>
+                </label>
+                <br>
+                <label for="username">
+                    User Name:
+                    <input type="text" name="username" value="" />
+                </label>
+                <br>
+                <label for="profile-desc">
+                    Profile Description:
+                    <input type="textarea" name="profile-desc" value="" />
+                </label>
+                <br>
+                <br>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>

@@ -3,13 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Single Feed</title>
+        <title>Post by booksarelyfe</title>
         <link rel="stylesheet" href="single_feed_template.css">
         <link rel="stylesheet" href="common.css">
     </head>
     <body class="no_margin">
         <div class="page">
-            <div class="headerPanel">BookFace Feed</div>
+            <div class="headerPanel">
+                <h1><a href="feed.html">Bookface</a></h1>
+                <div class="headerPanel_searchBar">
+                    <form action="/search" method="get">
+                        <input type="search" name="PUTNAMEHERE" placeholder="Search..." />
+                    </form>
+                </div>
+                <table>
+                    <tr>
+                        <th><button class="headerPanel_navigation" onclick="window.location.href='feed.html'">Home</button></th>
+                        <th><button class="headerPanel_navigation" onclick="window.location.href='profilepage.html'"">Profile</button></th>
+                        <th><button class="headerPanel_navigation" onclick="window.location.href='login.html'"">Log Out</button></th>
+                    </tr>
+                </table>
+            </div>
             <div class="feed-post">
                 <div class="container">
                     <div class="content">

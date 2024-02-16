@@ -1,19 +1,34 @@
 .page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     margin: 0;
 
     background-color: var(--bookface-bg);
+    overflow: auto;
 }
 
 #content {
-    flex-grow: 1;
     width: 100%;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+#edit-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+    font-family: "Work Sans", sans-serif;
+}
+
+#edit-content h1 {
+    font-family: "Ruda", sans-serif;
+    border-bottom: 1px solid var(--button-grey2);
 }
 
 .sideBorder {
@@ -23,7 +38,6 @@
 }
 
 #profile {
-    flex-grow: 1;
     width: 100%; /* of parent */
 
     box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.5), -10px 0 15px -10px rgba(0, 0, 0, 0.5);
@@ -32,13 +46,12 @@
     justify-content: center; /* main axis is vertical */
     background-color: var(--bookface-bg);
 
-    overflow: auto; /* allow scrolling down */
+    /* overflow: auto;  allow scrolling down */
     border-left: 1px solid var(--bordergrey);
     border-right: 1px solid var(--bordergrey);
 }
 
 #profile-top {
-    flex-grow: 0;
     width: 100%;
     height: 50%;
 
@@ -55,7 +68,7 @@
     /* overflow: hidden;  if img is used in html */
 
     width: 100%;
-    height: 100%;
+    height: 300px;
     background-image: url(images/profile-picture2.jpg);
     background-size: cover;
     background-position: center center;
@@ -75,14 +88,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    flex-shrink: 1; /* allowed to shrink and grow */
-    flex-grow: 1;
 }
 
 #profile-pic {
-    flex-grow: 0;
-    flex-shrink: 1;
-
     width: 150px;
     height: 150px;
 
@@ -109,7 +117,6 @@
 
 #profile-bottom {
     flex: 1;
-    flex-grow: 1;
     background-color: var(--bookface-bg);
     /* margin-top: 55px;  150px/2px start right under the picture*/
 
@@ -166,6 +173,17 @@
     box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.5);
 }
 
+.post_photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_photo img {
+    border-radius: 50px;
+    padding: 10px;
+}
+
 .post_header {
     display: flex;
     flex-direction: row;
@@ -213,6 +231,19 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.post_actions button {
+    padding: 2px;
+    background-color: var(--button-grey);
+    width: 30px;
+    height: 30px;
+}
+
+.post_actions button img {
+    width: 100%; /* image should fill the width of the div */
+    height: 100%;
+}
+
 
 #end {
     font-family: "Work Sans", sans-serif;

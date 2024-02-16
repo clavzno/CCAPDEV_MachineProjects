@@ -89,7 +89,7 @@
     border-radius: 20px;
 }
 
-.mainpanel_button:hover { /* funny double semi colon was found here, i want to be loved */
+.mainpanel_button:hover {
     cursor: pointing;
 }
 
