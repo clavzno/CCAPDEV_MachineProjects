@@ -46,6 +46,33 @@
 }
 
 .bottom-bar .feed-comments{
-    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
     flex: 4;
+}
+
+.bottom-bar .feed-comments .comment-section{
+    flex: 10;
+}
+
+.bottom-bar .feed-comments .comment{
+    border: 1px solid;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.bottom-bar .feed-comments .comment .comment-header{
+    display: flex;
+}
+
+.bottom-bar .feed-comments img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.bottom-bar .feed-comments .write-comment{
+    flex: 1;
 }
