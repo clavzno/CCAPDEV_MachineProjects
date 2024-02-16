@@ -137,3 +137,12 @@
     background-color: var(--button-grey2);
     cursor: pointer;
 }
+
+#end {
+    font-family: "Work Sans", sans-serif;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
