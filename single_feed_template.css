@@ -40,7 +40,7 @@
 
 .bottom-bar .picture img{
     display: flex;
-    width:70%;
+    width:90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -60,6 +60,7 @@
     border: 1px solid;
     border-radius: 25px;
     padding: 5px;
+    margin-left: 5px;
 }
 
 .bottom-bar .feed-comments .comment .comment-header{
@@ -75,4 +76,33 @@
 
 .bottom-bar .feed-comments .write-comment{
     flex: 1;
+}
+
+.bottom-bar .feed-comments .comment-actions{
+    flex: 1;
+}
+
+.bottom-bar .feed-comments .comment{
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+.reply{
+    margin-left: 10px;
+}
+
+.reply button {
+    padding: 2px;
+    background-color: var(--button-grey);
+    width: 30px;
+    height: 30px;
+}
+
+.reply button .reply-picture{
+    width: 100%; 
+    height: 100%;
+}
+
+.write-comment textarea{
+    width: 99%;
+    resize: none;
 }
