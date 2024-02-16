@@ -69,6 +69,15 @@
     margin-right: 10px;
 }
 
+.name, .username, .feed-date{
+    font-family: "Orienta", sans-serif;
+    font-size: 15px;
+}
+
+.username{
+    font-weight: 100;    
+}
+
 .feed-header .tags{
     margin-left: 10px;
 }
