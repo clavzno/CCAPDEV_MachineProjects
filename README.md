@@ -10,7 +10,7 @@ Started Feb 14, 2024
 - combine all sprites into one image using fontawesome (to save space)
 
 ## MEMBER DIVISIONS (GRP 12)
-login/logout - Yazan Homssi
-feed view - Gerome Ranigo
-search view - Fred Garcia
-profile view - Jack Clavano
+1. login/logout - Yazan Homssi
+2. feed view - Gerome Ranigo
+3. search view - Fred Garcia
+4. profile view - Jack Clavano
