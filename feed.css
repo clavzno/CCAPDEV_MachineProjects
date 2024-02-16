@@ -100,8 +100,14 @@
     font-weight: 100;    
 }
 
-.feed-header .tags{
+.feed-header .tags a{
     margin-left: 10px;
+    color: grey;
+    text-decoration: none;
+}
+
+.feed-header .tags:hover{
+    text-decoration: underline;
 }
 
 .feed-content p{
