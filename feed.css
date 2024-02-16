@@ -4,10 +4,23 @@
     background-color: var(--bookface-bg);
 }
 
-.sort{
+.sort {
     display: flex;
     justify-content: space-around;
-    margin: 10px 0px;
+    margin-bottom: 5px;
+}
+
+.sort table th {
+    color: var(--bookface-white);
+    font-family: "Orienta", sans-serif;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    background-color: var(--button-grey);
+}
+
+.sort table th:hover {
+    background-color: var(--button-grey2);
+    cursor: pointer;
 }
 
 .write-feed{
@@ -74,6 +87,15 @@
     font-size: 15px;
 }
 
+.name{
+    color: black;
+    text-decoration: none;
+}
+
+.name:hover{
+    text-decoration: underline;
+}
+
 .username{
     font-weight: 100;    
 }
@@ -95,14 +117,16 @@
     margin: 0px;
 }
 
-.feed-footer ul li{
-    list-style: none;
-    display: inline-block;
+.feed-footer button {
+    padding: 2px;
+    background-color: var(--button-grey);
+    width: 30px;
+    height: 30px;
 }
 
-.feed-footer ul li img{
-    width: 25px;
-    margin: 0px 0px;
+.feed-footer button img {
+    width: 100%; /* image should fill the width of the div */
+    height: 100%;
 }
 
 .feed-footer ul li img:hover{
