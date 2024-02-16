@@ -17,8 +17,24 @@
 }
 
 .write-feed .input textarea{
-    width: 100%;
+    width: 99%;
     resize: none;
+}
+
+.write-feed .actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.write-feed .actions span{
+    height: 33px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.write-feed .actions img{
+    width: 25px;
+    height: 25px;
 }
 
 .content{
