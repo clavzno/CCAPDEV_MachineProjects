@@ -10,6 +10,16 @@
     margin: 10px 0px;
 }
 
+.write-feed{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--bookface-bg);
+}
+
+.write-feed .input textarea{
+    width: 100%;
+    resize: none;
+}
 
 .content{
     background-color: var(--bookface-theme);
