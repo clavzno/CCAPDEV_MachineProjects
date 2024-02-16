@@ -21,6 +21,10 @@
     margin-bottom: 10px;
 }
 
+.post-info{
+    flex-grow: 1;
+}
+
 .content .profile-pic{
     height: 150px;
     margin-right: 20px;
@@ -46,7 +50,17 @@
     font-weight: 100;    
 }
 
-.post-actions{
+.header-info .tags a, .user-info .tags a{
+    margin-left: 10px;
+    color: grey;
+    text-decoration: none;
+}
+
+.header-info .tags:hover, .user-info .tags a:hover{
+    text-decoration: underline;
+}
+
+.content .post-info .post-actions{
     display: flex;
     justify-content: flex-end;
 }
