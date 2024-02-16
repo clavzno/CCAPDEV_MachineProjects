@@ -10,6 +10,32 @@
     margin: 10px 0px;
 }
 
+.write-feed{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--bookface-bg);
+}
+
+.write-feed .input textarea{
+    width: 99%;
+    resize: none;
+}
+
+.write-feed .actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.write-feed .actions span{
+    height: 33px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.write-feed .actions img{
+    width: 25px;
+    height: 25px;
+}
 
 .content{
     background-color: var(--bookface-theme);
