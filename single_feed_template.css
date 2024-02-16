@@ -1,0 +1,22 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bookface-bg);
+}
+
+.feed-post{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border
+}
+
+.content{
+    display: flex;
+    padding: 10px;
+}
+
+.content .profile-pic{
+    height: 150px;
+    margin-right: 20px;
+}
