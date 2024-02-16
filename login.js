@@ -44,6 +44,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event)
     {
         localStorage.removeItem('expiryDate');
     } alert('Login successful');
+    window.location.href = 'feed.html';
 });
 
 // Registration functionality
