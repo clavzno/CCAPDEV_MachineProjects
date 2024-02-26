@@ -1,0 +1,74 @@
+.bg-icons8_search_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -10px -10px;
+}
+
+.bg-icons8_clear_search_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -126px -10px;
+}
+
+.bg-icons8_filter_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -10px -126px;
+}
+
+.bg-icons8_search_more_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -126px -126px;
+}
+
+.bg-icons8_login_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -242px -10px;
+}
+
+.bg-icons8_login_rounded_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -242px -126px;
+}
+
+.bg-icons8_remove_user_group_man_man_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -10px -242px;
+}
+
+.bg-icons8_add_user_male_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -126px -242px;
+}
+
+.bg-icons8_post_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -242px -242px;
+}
+
+.bg-icons8_edit_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -358px -10px;
+}
+
+.bg-icons8_male_user_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -358px -126px;
+}
+
+.bg-icons8_share_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -358px -242px;
+}
+
+.bg-icons8_comments_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -10px -358px;
+}
+
+.bg-icons8_dislike_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -126px -358px;
+}
+
+.bg-icons8_like_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-darkmode.png') -242px -358px;
+}
