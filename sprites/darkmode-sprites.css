@@ -72,3 +72,9 @@
     width: 96px; height: 96px;
     background: url('css_sprites-darkmode.png') -242px -358px;
 }
+
+/* Forgot Home */
+.bg-icons8_home_96_darkmode {
+    width: 96px; height: 96px;
+    background: url('css_sprites-home.png') -10px -10px;
+}
