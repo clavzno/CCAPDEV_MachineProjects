@@ -1,0 +1,103 @@
+<!-- Login Page making me go nuts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookface Login</title>
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+</head>
+<body class="no_margin">
+    <div class="login-container">
+      <div class="intro">
+        <h2>Bookface</h2>
+        <p>Connect with the world and friends around you through Bookface.</p>
+      </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="headerPanel">Login to Bookface</h2>
+                <form id="loginForm">
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="username" placeholder="Email or phone number" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" id="password" placeholder="Password" required>
+                  </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mainpanel_button">Log In</button>
+                    <a href="#" onclick="redirectToForgotPassword()">Forgot password?</a>
+                    <button type="button" class="btn btn-success create-account" data-toggle="modal" data-target="#registerModal">Create new account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <p>
+          <a href="#">Jack Clavano</a> · 
+          <a href="#">Frederick Garcia</a> · 
+          <a href="#">Yazan Homssi</a> · 
+          <a href="#">Gerome Ranigo</a> · 
+      </p>
+      <p>
+          <a href="#">Privacy</a> · 
+          <a href="#">Terms</a> · 
+          <a href="#">Advertising</a> · 
+          <a href="#">Ad Choices</a> · 
+          <a href="#">Cookies</a> · 
+          More
+      </p>
+      <p>BookFace © 2024</p>
+  </footer>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Create new account</h5> 
+          </div>
+          <div class="modal-body">
+            <form id="registerForm" class="form-row">
+              <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+              </div>
+              <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+              </div>
+              <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="emailOrPhone" placeholder="Email or Phone Number" required>
+              </div>
+              <div class="form-group col-md-6">
+                  <input type="password" class="form-control" id="newPassword" placeholder="New Password" required>
+              </div>
+              <div class="form-group">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" class="form-control" id="birthdate" required>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender">
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Custom</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="submitRegisterForm()">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/common.css" rel="stylesheet">
+        <link href="css/profile.css" rel="stylesheet">
+    </head>
+    <body class="page">
+        <div class="headerPanel">
+            <h1><a href="feed.html">Bookface</a></h1>
+            <div class="headerPanel_searchBar">
+                <form action="search.html" method="get">
+                    <input type="search" name="search" placeholder="Search..." />
+                </form>
+            </div>
+            <table>
+                <tr>
+                    <th><button class="headerPanel_navigation" onclick="window.location.href='feed.html'">Home</button></th>
+                    <th><button class="headerPanel_navigation" onclick="window.location.href='profilepage.html'"">Profile</button></th>
+                    <th><button class="headerPanel_navigation" onclick="window.location.href='login.html'"">Log Out</button></th>
+                </tr>
+            </table>
+        </div>
+        <div id="content">
+            <div class="sideBorder" id="left"></div>
+            <div id="profile">
+                    <div id="profile-top">
+                        <div id="profile-header"></div>
+                    </div>
+                    <div id="profile-pic-basis">
+                        <div id="profile-pic">
+                            <img src="images/profile_picture.png" />
+                        </div>
+                    </div>
+                    <div id="profile-bottom">
+                        <h1 id="name">Woe Jack</h1>
+                        <h3 id="username">@theipsumguy</h3>
+                        <div id="profile-desc">
+                            <p>Expressing life's ups and downs through memes | Seeking meaning in a sea of chaos | Embracing the struggle with a touch of humor | #WojakWisdom | Memes are my language, emotions are my art </p>
+                        </div>
+                        <table>
+                            <tr>
+                                <th><button onclick="window.location.href='profilepage_edit.html'">Edit Profile</button></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="profile-tabs">
+                        <table>
+                            <tr>
+                                <th>Posts</th>
+                                <th>Replies</th>
+                                <th>Likes</th>
+                            </tr>
+                        </table>
+                    </div>
+                <div class="profile-posts">
+                    <div id="post_1">
+                        <div class="post_header">
+                            <div class="post_header_photo">
+                                <img src="images/profile_picture.png" />
+                            </div>
+                            <div class="post_header_user_desc">
+                                <p id="displayname">Woe Jack</p>
+                                <p id="username">@theipsumguy</p>
+                                <p id="post-date">January 1, 2024 at 1:34pm</p>
+                            </div>
+                        </div>
+                        <div class="post_description">
+                            <p>I don't think I want to post here anymore. You Have Bored Me. Goodbye. #Memes #SubliminalMessages</p>
+                        </div>
+                        <div class="post_photo"></div>
+                        <div class="post_actions">
+                            <button class="like"><img src="images/like.png" alt="like"/></button>
+                            <button class="comment"><img src="images/comment.png" alt="comment"/></button>
+                            <button class="share"><img src="images/share.png" alt="share"/></button>
+                        </div>
+                    </div>
+                    <div id="post_2">
+                        <div class="post_header">
+                            <div class="post_header_photo">
+                                <img src="images/profile_picture.png" />
+                            </div>
+                            <div class="post_header_user_desc">
+                                <p id="displayname">Woe Jack</p>
+                                <p id="username">@theipsumguy</p>
+                                <p id="post-date">December 4, 2023 at 12:10pm</p>
+                            </div>
+                        </div>
+                        <div class="post_description">
+                            <p>Feeling like a pixel in a digital landscape today 🎮 Sometimes life's glitches are the best moments to laugh at ourselves. Embrace the randomness! #WojakWisdom #LifeMemes</p>
+                        </div>
+                        <div class="post_photo"></div>
+                        <div class="post_actions">
+                            <button class="like"><img src="images/like.png" alt="like"/></button>
+                            <button class="comment"><img src="images/comment.png" alt="comment"/></button>
+                            <button class="share"><img src="images/share.png" alt="share"/></button>
+                        </div>
+                    </div>
+                    <div id="post_3">
+                        <div class="post_header">
+                            <div class="post_header_photo">
+                                <img src="images/profile_picture.png" />
+                            </div>
+                            <div class="post_header_user_desc">
+                                <p id="displayname">Woe Jack</p>
+                                <p id="username">@theipsumguy</p>
+                                <p id="post-date">November 27, 2023 at 1:16pm</p>
+                            </div>
+                        </div>
+                        <div class="post_description">
+                            <p>Image of Wojak with a coffee cup ☕ Fueling up for another day of navigating the chaos. Remember, every sip brings you closer to clarity... or at least caffeinated chaos! #CoffeeMemes #WojakLife</p>
+                        </div>
+                        <div class="post_photo"></div>
+                        <div class="post_actions">
+                            <button class="like"><img src="images/like.png" alt="like"/></button>
+                            <button class="comment"><img src="images/comment.png" alt="comment"/></button>
+                            <button class="share"><img src="images/share.png" alt="share"/></button>
+                        </div>
+                    </div>
+                    <div id="post_4">
+                        <div class="post_header">
+                            <div class="post_header_photo">
+                                <img src="images/profile_picture.png" />
+                            </div>
+                            <div class="post_header_user_desc">
+                                <p id="displayname">Woe Jack</p>
+                                <p id="username">@theipsumguy</p>
+                                <p id="post-date">November 6, 2023 at 8:00am</p>
+                            </div>
+                        </div>
+                        <div class="post_description">
+                            <p>You Will Give Us A 4.0 #RomblonTheGoat</p>
+                        </div>
+                        <div class="post_photo">
+                            <img src="https://cdn.discordapp.com/attachments/1174675681888714863/1208036072412553256/image0.jpg?ex=65e1d243&is=65cf5d43&hm=3af6cf93c55d318369901d5c99efe62de8ebb9f5cfc4233b8af046029231e621&" alt="please" />
+                        </div>
+                        <div class="post_actions">
+                            <button class="like"><img src="images/like.png" alt="like"/></button>
+                            <button class="comment"><img src="images/comment.png" alt="comment"/></button>
+                            <button class="share"><img src="images/share.png" alt="share"/></button>
+                        </div>
+                    </div>
+                    <div id="post_5">
+                        <div class="post_header">
+                            <div class="post_header_photo">
+                                <img src="images/profile_picture.png" />
+                            </div>
+                            <div class="post_header_user_desc">
+                                <p id="displayname">Woe Jack</p>
+                                <p id="username">@theipsumguy</p>
+                                <p id="post-date">November 5, 2023 at 4:27am</p>
+                            </div>
+                        </div>
+                        <div class="post_description">
+                            <p>They say laughter is the best medicine, but have you ever tried memes? 💊 Dive into the meme therapy session and discover the cure for existential dread, one chuckle at a time. #MemeTherapy #WojakHeals</p>
+                        </div>
+                        <div class="post_photo"></div>
+                        <div class="post_actions">
+                            <button class="like"><img src="images/like.png" alt="like"/></button>
+                            <button class="comment"><img src="images/comment.png" alt="comment"/></button>
+                            <button class="share"><img src="images/share.png" alt="share"/></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="end">
+                    <p>end of feed</p>
+                </div>
+            </div>
+            <div class="sideBorder" id="right"></div>
+        </div>
+    </body>
+</html> 

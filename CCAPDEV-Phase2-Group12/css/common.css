@@ -1,0 +1,99 @@
+/* import this into every html file alongside the css for that page */
+@import url('https://fonts.googleapis.com/css2?family=Orienta&family=Ruda:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bookface-theme: #590d0d; /* main bookface color, for headers, logo*/
+    --bookface-white: #fefffe; /* for text color on bookface panel */
+    --bookface-bg: #d4dae0; /* for main background color */
+
+    --bordergrey: #757679; /* for thin borders on buttons or anything */
+    --button-hover: #8c1c13; /* for buttons on bookface panel when hover */
+
+    --searchbar-grey: #f0f2f5; 
+    --searchbar-text: #646568;
+
+    /* --fbwhite: #dddfe2; */
+    --fbgreen: #42b72a; /* for buttons that stand out ex: create account */
+
+    --button-grey: #a5b3c1; /* unclicked */
+    --button-grey2: #6f8193; /* clicked */
+}
+
+/* Fonts */
+.orienta-regular { /* headers, buttons */
+    font-family: "Orienta", sans-serif;
+    font-weight: 400px; /* normal */
+    font-style: normal;
+}
+
+.work-sans-lighter { /* descriptions, post text */
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300px; /* lighter */ 
+    font-style: normal;
+}
+
+.ruda-bookface-bolder { /* bookface only */
+    font-family: "Ruda", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700px; /* bolder */ 
+    font-style: normal;
+}
+/* End Fonts */
+
+/* for BookFace panel */
+.headerPanel { 
+    font-family: "Ruda", sans-serif;
+    color: var(--bookface-white);
+
+    background-color: var(--bookface-theme);
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerPanel h1 {
+    margin: 0px;
+    font-size: 20px; /* was originally 200% but made smaller to make room for more content */
+    display: inline-block; /* width adjusts to how much text there is, and it should only be BookFace */
+}
+
+.headerPanel h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.headerPanel_searchBar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    /* everything above helps it be in the center in relation to the page not parent div */
+}
+
+.headerPanel_searchBar input[type="search"] {
+    width: 500px;
+    background-color: var(--searchbar-grey);
+    color: var(--searchbar-text);
+}
+
+.headerPanel_navigation {
+    font-family: "Work Sans", sans-serif; 
+    padding: 5px 15px 5px 15px;
+}
+
+/* end BookFace panel */
+
+.mainpanel_button {
+    border-radius: 20px;
+}
+
+.mainpanel_button:hover {
+    cursor: pointing;
+}
+
+/* for body because there's a default margin*/
+.no_margin { 
+    margin: 0;
+}
