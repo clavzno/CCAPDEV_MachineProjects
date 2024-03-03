@@ -5,6 +5,7 @@ https://www.toptal.com/developers/css/sprite-generator
 # Sprites
 Home: https://icons8.com/icon/83326/home
 Create New Post: https://icons8.com/icon/mjhvSYS9KNQQ/post
+Add Image to Post: https://icons8.com/icon/JJUXc94eDUQO/add-image
 
 Like: https://icons8.com/icon/85608/thumbs-up
 Dislike: https://icons8.com/icon/87695/thumbs-down
