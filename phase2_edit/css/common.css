@@ -249,7 +249,13 @@ body {
     margin: 0px;
 }
 
-.featuredUser img {
+.featuredUser_profile {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.featuredUser_profile img {
     height: 60px;
     width: 60px;
     object-fit: cover;
