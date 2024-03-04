@@ -93,5 +93,5 @@ body {
 }
 
 .form-wrapper button[class="createAccount-button-class"]:hover {
-    background-color: rgb(34, 179, 34);
+    background-color: #22b322;
 }

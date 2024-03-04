@@ -8,6 +8,8 @@
     --background-panel-hover: #4B4B4B;
     --important-buttons: #663AF3;
     --important-buttons-hover: #7F59FB;
+    --create-account-button: #22b322;
+    --create-account-button-hover: #2bd62b;
 
     --searchbar-background: #353637;
     --searchbar-border: #77787A;
@@ -303,3 +305,22 @@ body {
     padding: 10px 15px 10px 15px;
     width: fit-content;
 }
+
+.importantButton:hover {
+    background-color: var(--important-buttons-hover);
+}
+
+/* TODO: move these onto the login files */
+.createAccountButton {
+    font-size: 20px;
+    color: white;
+    background-color: var(--create-account-button);
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    width: fit-content;
+}
+
+.createAccountButton:hover {
+    background-color: var(--create-account-button-hover);
+}
+/* UP TO HERE ONLY */
