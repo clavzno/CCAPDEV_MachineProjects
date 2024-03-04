@@ -161,6 +161,10 @@ body {
     display: flex;
 }
 
+.universal_boxshadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
 .sideBar, .mainContent {
     border-radius: 25px;
     margin: 15px;
@@ -281,4 +285,12 @@ body {
     height: 30px;
     width: 30px;
     padding: 3px;
+}
+
+/****************************/
+
+/* for posts */
+
+.post {
+    background-color: var(--background-panel);
 }
