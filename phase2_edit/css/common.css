@@ -11,8 +11,8 @@
     --create-account-button: #22b322;
     --create-account-button-hover: #2bd62b;
 
-    --searchbar-background: #353637;
-    --searchbar-border: #77787A;
+    --textInput-background: #353637;
+    --textInput-border: #77787A;
 
     --navigation-selected: #663AF3;
     --navigation-selected-border: #5B4B8E;
@@ -131,13 +131,8 @@ body {
 }
 
 .searchBar {
-    /* make sure class is ruda-regular-lighter too */
-    color: white; /* make sure premade text is opacity: 50%; */
-    background-color: var(--searchbar-background);
-    border: 3px solid var(--searchbar-border);
     width: 40%;
     height: 40px;
-    border-radius: 20px;
 
     display: flex;
     margin-right: 110px; /* brute forced this TODO: later */
@@ -297,6 +292,10 @@ body {
     background-color: var(--background-panel);
 }
 
+/****************************/
+
+/* FORMS AND INPUTS */
+
 .importantButton {
     font-size: 20px;
     color: white;
@@ -324,3 +323,11 @@ body {
     background-color: var(--create-account-button-hover);
 }
 /* UP TO HERE ONLY */
+
+.textInput {
+    /* make sure class is ruda-regular-lighter too */
+    color: white; /* make sure premade text is opacity: 50%; */
+    background-color: var(--textInput-background);
+    border: 3px solid var(--textInput-border);
+    border-radius: 20px;
+}
