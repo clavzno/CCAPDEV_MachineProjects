@@ -1,0 +1,97 @@
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: #f2f2f2;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+  }
+  
+  .container-login {
+    background-color: #333;
+    padding: 50px;
+    border-radius: 5px;
+    width: 600px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+  
+  .header-login{
+    height: 30px;
+  }
+
+  .header-login h2 {
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .everyone-login {
+    text-align: left;
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #999;
+  }
+  
+  .form-class input[type="text"], .form-class input[type="password"] {
+    width: 100%;
+    padding: 11px; /* Increase padding to make input fields bigger */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Add border radius */
+    font-size: 16px; /* Increase font size */
+    border: 1px solid #555; /* Add border */
+    background-color: #222;
+    color: #f2f2f2;
+  }
+  
+  /* Forgot password */
+  .form-class a {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+ 
+/* Login Button*/  
+  .form-class button[class="login-button-class"] {
+    font-family: "Orienta", sans-serif;
+    font-size: 15px;
+    width: 25%;
+    padding: 10px;
+    margin-left: 220px;
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: var(--important-buttons);
+}
+
+.form-class button[class="login-button-class"]:hover {
+    background-color: var(--important-buttons-hover);
+}
+
+/* Create Account Button*/
+.form-wrapper button[class="createAccount-button-class"] {
+    font-family: "Orienta", sans-serif;
+    font-size: 15px;
+    width: 25%;
+    padding: 10px;
+    margin-top:10px;
+    margin-left: 220px;
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: green;
+}
+
+.form-wrapper button[class="createAccount-button-class"]:hover {
+    background-color: rgb(34, 179, 34);
+}
