@@ -98,13 +98,14 @@
     opacity: 50%;
 }
 
+/* removing any pre-defined margins that affect everything */
 html, body {
     margin: 0px;
     height: 100%;
     width: 100%;
 }
 
-body {
+.bodyContent {
     display: flex;
     flex-direction: column;
 }
@@ -156,10 +157,6 @@ body {
     width: 100%;
 
     display: flex;
-}
-
-.universal_boxshadow {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .sideBar, .mainContent {
@@ -292,9 +289,6 @@ body {
     background-color: var(--background-panel);
 }
 
-/****************************/
-
-/* FORMS AND INPUTS */
 
 .importantButton {
     font-size: 20px;
@@ -324,10 +318,15 @@ body {
 }
 /* UP TO HERE ONLY */
 
+/* taken from original searchBar css */
 .textInput {
     /* make sure class is ruda-regular-lighter too */
     color: white; /* make sure premade text is opacity: 50%; */
     background-color: var(--textInput-background);
     border: 3px solid var(--textInput-border);
     border-radius: 20px;
+}
+
+.universal_boxshadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
