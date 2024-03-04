@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Post</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/common.css"> 
     <title>Bookface</title>
 </head>
@@ -21,30 +29,27 @@
     </div>
     <div class="content">
         <div id="sideBar-left" class="sideBar">
-            <div class="home navigation universal_boxshadow" onclick="window.location.href='feed.html'">
+            <div class="home navigation" onclick="window.location.href='feed.html'">
                 <img src="../../sprites/icons/Dark/icons8-home-96-darkmode.png" alt="home" />
                 <h1 class="ruda-regular">Home</h1>
             </div>
-            <div class="search navigation universal_boxshadow" onclick="window.location.href='search.html'">
+            <div class="search navigation" onclick="window.location.href='search.html'">
                 <img src="../../sprites/icons/Dark/icons8-search-96-darkmode.png" alt="search" />
                 <h1 class="ruda-regular">Search</h1>
             </div>
-            <div class="settings navigation universal_boxshadow" onclick="window.location.href='profile.html'">
+            <div class="settings navigation" onclick="window.location.href='profile.html'">
                 <img src="../../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="settings" />
                 <h1 class="ruda-regular">Settings</h1>  
             </div>
         </div>
         <div class="mainContent">
-            <div class="editor">
-                <div class="editor_border"></div>
-            </div>
             <div class="post">
-                <div class="post_header"></div>
-                <div class="post_content"></div>
-                <div class="post_actions"></div>
+                <div class="postHeader"></div>
+                <div class="postContent"></div>
+                <div class="postActions"></div>
             </div>
         </div>
-        <div id="sideBar-right" class="sideBar universal_boxshadow">
+        <div id="sideBar-right" class="sideBar">
             <h1 class="ruda-bold">Popular Today</h1>
             <div class="featuredUser">
                 <div class="featuredUser_profile">
@@ -59,6 +64,7 @@
                 </div>
             </div>
         </div>
-    </div>
+</body>
+</html>
 </body>
 </html>
