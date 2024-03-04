@@ -81,7 +81,8 @@
 /* left sidebar navigation text,
 * profile-view "followers/following",
 * important buttons "post,
-* edit profile" etc */
+* edit profile" etc
+* premade text for postarea */
 .ruda-regular {
     font-family: "Ruda", sans-serif;
     font-optical-sizing: auto;
@@ -159,7 +160,7 @@ html, body {
     display: flex;
 }
 
-.sideBar, .mainContent {
+.sideBar, .mainContent, .editor, .post {
     border-radius: 25px;
     margin: 15px;
 }
@@ -167,7 +168,7 @@ html, body {
 /* this is the only thing that changes most of the time besides #sideBar-right */
 .mainContent {
     height: 100%;
-    background-color: var(--background-panel);
+    /* background-color: var(--background-panel); */
     width: 90%;
 
     overflow-y: auto; /* allows for scrolling when it overflows with content */
@@ -281,7 +282,60 @@ html, body {
     padding: 3px;
 }
 
-/*** POSTS ***/
+/*** EDITOR ***/
+
+.editor {
+    background-color: var(--background-panel);
+    border-radius: 25px;
+    padding: 15px;
+    height: 170px;
+
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+.editor_sideBorder {
+    background-color: inherit;
+    width: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px 0 8px 0;
+}
+
+.editor_sideBorder img {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+}
+
+.editor_postArea {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.editor_textArea {
+    padding: 10px;
+    height: 80%;
+    overflow: auto; /* to allow scrolling */
+    color: white;
+    font-size: 20px;
+}
+
+.editor_actions {
+    height: 20%;
+    padding: 5px 20px 0px 0px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/*** POSTS AND COMMENTS ***/
 
 .post {
     background-color: var(--background-panel);
@@ -297,6 +351,10 @@ html, body {
     border-radius: 10px;
     padding: 10px 15px 10px 15px;
     width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .importantButton {
