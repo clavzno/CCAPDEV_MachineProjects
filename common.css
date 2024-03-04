@@ -1,4 +1,6 @@
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Orienta&family=Ruda:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 :root {
     --background-darkmode: #18191A;
@@ -68,4 +70,9 @@
     font-weight: 400;
     font-style: normal;
     opacity: 50%;
+}
+
+/* header */
+#header {
+    
 }
