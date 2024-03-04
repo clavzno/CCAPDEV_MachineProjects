@@ -294,3 +294,12 @@ body {
 .post {
     background-color: var(--background-panel);
 }
+
+.importantButton {
+    font-size: 20px;
+    color: white;
+    background-color: var(--important-buttons);
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    width: fit-content;
+}
