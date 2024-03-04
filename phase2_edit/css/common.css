@@ -281,22 +281,26 @@ html, body {
     padding: 3px;
 }
 
-/****************************/
-
-/* for posts */
+/*** POSTS ***/
 
 .post {
     background-color: var(--background-panel);
 }
 
+/*** BUTTONS AND FORMS ***/
 
-.importantButton {
+/* applies to both importantButton and createAccountButton */
+/* NOTE: THIS MEANS THE LAST CLASS TO BE ADDED TO AN ELEMENT MUST BE THE BUTTON ONES */
+[class$="Button"] {
     font-size: 20px;
     color: white;
-    background-color: var(--important-buttons);
     border-radius: 10px;
     padding: 10px 15px 10px 15px;
     width: fit-content;
+}
+
+.importantButton {
+    background-color: var(--important-buttons);
 }
 
 .importantButton:hover {
@@ -305,20 +309,22 @@ html, body {
 
 /* TODO: move these onto the login files */
 .createAccountButton {
-    font-size: 20px;
-    color: white;
     background-color: var(--create-account-button);
-    border-radius: 10px;
-    padding: 10px 15px 10px 15px;
-    width: fit-content;
 }
 
 .createAccountButton:hover {
     background-color: var(--create-account-button-hover);
 }
+
+.createAccountButton p, .importantButton p {
+    margin: 0px;
+}
+
 /* UP TO HERE ONLY */
 
-/* taken from original searchBar css */
+/* taken from original searchBar css;
+* for text areas that isn't create-a-post like create-account, login, 
+* and edit-profile */
 .textInput {
     /* make sure class is ruda-regular-lighter too */
     color: white; /* make sure premade text is opacity: 50%; */
