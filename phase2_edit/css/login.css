@@ -37,12 +37,13 @@ body {
   }
   
   .form-class input[type="text"], .form-class input[type="password"] {
+    font-family: "Orienta", sans-serif;
     width: 100%;
-    padding: 11px; /* Increase padding to make input fields bigger */
+    padding: 11px;
     margin-bottom: 10px;
-    border-radius: 10px; /* Add border radius */
-    font-size: 16px; /* Increase font size */
-    border: 1px solid #555; /* Add border */
+    border-radius: 10px; 
+    font-size: 16px; 
+    border: 1px solid #555; 
     background-color: #222;
     color: #f2f2f2;
   }

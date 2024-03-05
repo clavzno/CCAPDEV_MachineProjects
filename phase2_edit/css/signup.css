@@ -62,6 +62,7 @@ body {
     /* Styling the input boxes  */
   .form-class input[type="text"], .form-class input[type="password"], 
   .form-class input[type="date"], .form-class select {
+    font-family: "Orienta", sans-serif;
     width: 60%;
     padding: 14px;
     margin-bottom: 20px;
