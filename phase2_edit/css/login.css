@@ -77,7 +77,7 @@ body {
 }
 
 /* Create Account Button*/
-.form-wrapper button[class="createAccount-button-class"] {
+.form-wrapper button[class="signup-button-class"] {
     font-family: "Orienta", sans-serif;
     font-size: 15px;
     width: 25%;
@@ -91,6 +91,6 @@ body {
     background-color: green;
 }
 
-.form-wrapper button[class="createAccount-button-class"]:hover {
+.form-wrapper button[class="signup-button-class"]:hover {
     background-color: #22b322;
 }
