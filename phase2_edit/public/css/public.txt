@@ -1,0 +1,7 @@
+Public Folders basically contain what the user can access.
+
+Other than HTML ( which should stay in View ), public folder contains:
+1. CSS
+2. JS ( Frontend )
+3. Images
+etc.. 
