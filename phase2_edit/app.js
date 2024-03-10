@@ -15,9 +15,13 @@ const routes = require('./routes/routes');
 
 
 const app = express(); // app is server object
+hbs.registerPartials(__dirname + '/views/partials'); // link hbs with partials
+
+app.set('views', __dirname + '/views'); //specifies where the views directory is
+app.set('view engine', 'hbs'); //sets the view engine to hbs
 
 
-app.use(express.static('public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
+app.use(express.static(__dirname+ '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
 // ^^ THERE IS A PROBLEM DAWG
 app.use(express.json());
 app.use('/', routes);
@@ -27,6 +31,11 @@ db.connectToDb(() => {
     console.log('Connected to MongoDB');
 });
 app.listen(db.PORT); // listening to port 3000 as it is stated in MCO2 specs
+
+//Only a test route, definitely modify/remove if needed
+app.get('/', (req, res) => {
+    res.render('index', { text: 'yooooooo' });
+});
 
 // Getting request listening in /home
 // app.get('/login' , (req, res) => {
