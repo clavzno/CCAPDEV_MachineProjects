@@ -1,0 +1,117 @@
+.header {
+    background-color: #1a1a1a;
+    padding-bottom: 60px;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: #f2f2f2;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+  }
+  
+  .container-login {
+    background-color: #333;
+    padding: 40px;
+    border-radius: 30px;
+    width: 1500px;    
+    height: 500px;
+  }
+  
+  .header-login{
+    height: 30px;
+  }
+
+  .header-login h2 {
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .everyone-login {
+    text-align: left;
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #999;
+  }
+
+  .form-class{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .first-row{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second-row{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+    /* Styling the input boxes  */
+  .form-class input[type="text"], .form-class input[type="password"], 
+  .form-class input[type="date"], .form-class select {
+    font-family: "Orienta", sans-serif;
+    width: 60%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px; 
+    font-size: 16px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #f2f2f2;
+  }
+  
+  /* I want to seperate the 2 boxes and put em beside each other */
+  .buttons-beside-each-other{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0%;
+  }
+  
+/* Sign Up Button*/  
+  .form-wrapper button[class="finish-button-class"] {
+    font-family: "Orienta", sans-serif;
+    margin-left: 10px;
+    font-size: 15px;
+    width: 15%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: green;
+}
+
+.form-wrapper button[class="finish-button-class"]:hover {
+    background-color: #22b322;
+}
+
+/* Cancel Button*/
+.form-wrapper button[class="cancel-button-class"] {
+    font-family: "Orienta", sans-serif;
+    margin-right: 10px;
+    font-size: 15px;
+    width: 15%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: rgb(105, 105, 105);
+}
+
+.form-wrapper button[class="cancel-button-class"]:hover {
+    background-color: #b32222;
+}
