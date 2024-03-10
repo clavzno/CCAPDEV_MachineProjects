@@ -32,10 +32,11 @@ db.connectToDb(() => {
 });
 app.listen(db.PORT); // listening to port 3000 as it is stated in MCO2 specs
 
-//Only a test route, definitely modify/remove if needed
-app.get('/', (req, res) => {
-    res.render('index', { text: 'yooooooo' });
-});
+var feedRouter = require('./routes/feed'); // creating a router to feed
+var indexRouter = require('./routes/index'); // creating a router to index
+
+app.use('/', indexRouter); // making / associated with index router/hbs
+app.use('/feed', feedRouter); // making /feed associated with feed content
 
 // Getting request listening in /home
 // app.get('/login' , (req, res) => {
