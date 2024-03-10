@@ -38,7 +38,11 @@ app.use('/feed', feedRouter); // making /feed associated with feed content
 
 //Only a test route, definitely modify/remove if needed
 app.get('/', (req, res) => {
-    res.render('index', { text: 'yooooooo' });
+    var data ={
+        feed: "/feed",
+        text: 'yooooo'
+    }
+    res.render('index', data);
 });
 
 // Getting request listening in /home
