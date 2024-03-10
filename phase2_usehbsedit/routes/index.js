@@ -3,9 +3,10 @@ var router = express.Router();
 
 router.get('/', (req, res) => {
     var data ={
-        test: 'nooo'
+        feed: "/feed",
+        text: 'yooooo'
     }
-    res.render('feed', data);
+    res.render('index', data);
 });
 
 module.exports = router;
