@@ -21,7 +21,7 @@ app.set('views', __dirname + '/views'); //specifies where the views directory is
 app.set('view engine', 'hbs'); //sets the view engine to hbs
 
 
-app.use(express.static(__dirname+ '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
+app.use(express.static(__dirname + '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
 // ^^ THERE IS A PROBLEM DAWG
 app.use(express.json());
 app.use('/', routes);
