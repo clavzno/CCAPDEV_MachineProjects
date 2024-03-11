@@ -7,4 +7,4 @@ const mongoose = require('mongoose'); // Importing mongoose module
 
 
 
-module.exports = mainController;
+// module.exports = mainController;
