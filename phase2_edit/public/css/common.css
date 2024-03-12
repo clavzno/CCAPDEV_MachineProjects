@@ -20,6 +20,8 @@
     background-color: var(--background-darkmode);
 }
 
+
+
 /* post contents */
 .work-sans-regular {
     font-family: "Work Sans", sans-serif;
@@ -311,6 +313,39 @@ html, body {
     justify-content: space-between;
 }
 
+/*** VIEW SELECTOR FOR PROFILE AND FEED ***/
+.selector {
+    background-color: var(--background-panel);
+    border-radius: inherit;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 10px 0;
+    /* taken from .navigation */
+
+    color: white;
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.selector_selected {
+    width: 50%;
+    margin: 0px;
+    border-radius: inherit;
+
+    height: inherit;
+    background-color: var(--background-panel-hover);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector_selected:hover {
+    background-color: var(--background-panel);
+}
+
 /*** POSTS AND COMMENTS ***/
 
 .post {
@@ -404,6 +439,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    cursor: pointer;
 }
 
 .importantButton {
@@ -477,4 +514,9 @@ html, body {
     width: fit-content;
     height: fit-content;
     /* change both of these to 100% to fit entire images */
+}
+
+/*** CURSOR ACTIONS ***/
+.point {
+    cursor: pointer;
 }

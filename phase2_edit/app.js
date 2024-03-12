@@ -10,63 +10,56 @@ const express = require('express'); // Creating an express server
 const sessions = require('express-session');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
-const routes = require('./routes/routes');
+const routes = require('./routes/routes'); // Import routes
 // const connect = require('./public/database/server.js');
-
-
+// const controller = require('./controllers/controller');
+const flash = require('express-flash');
 const app = express(); // app is server object
-hbs.registerPartials(__dirname + '/views/partials'); // link hbs with partials
 
+
+hbs.registerPartials(__dirname + '/views/partials'); // link hbs with partials
 app.set('views', __dirname + '/views'); //specifies where the views directory is
 app.set('view engine', 'hbs'); //sets the view engine to hbs
 
 
 app.use(express.static(__dirname + '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
+// app.use(express.static('public'));
 // ^^ THERE IS A PROBLEM DAWG
+
 app.use(express.json());
-app.use('/', routes);
+
+// Session management
+app.use(sessions({
+    secret: "StrongSecretThing", // Replace with a strong random secret
+    resave: false,
+    saveUninitialized: true
+  }));
+
+app.use('/', routes); // Use the router for all routes starting with '/'
 
 const db = require('./public/database/conn'); // Importing database.js
-db.connectToDb(() => {
-    console.log('Connected to MongoDB');
-});
-app.listen(db.PORT); // listening to port 3000 as it is stated in MCO2 specs
-
-var feedRouter = require('./routes/feed'); // creating a router to feed
-var indexRouter = require('./routes/index'); // creating a router to index
-
-app.use('/', indexRouter); // making / associated with index router/hbs // you can edit this to redirect to login
-app.use('/feed', feedRouter); // making /feed associated with feed content
-
-// Getting request listening in /home
-// app.get('/login' , (req, res) => {
-//     console.log("Request has been received for: " + req.url);
-//     // res.send("html/login.html"); <- Use if this includes html code
-//     res.sendFile(__dirname + "/views/login.html"); // Filepath but Express treats it ABSOLUTE , use __dirname +
+// db.connectToDb(() => {
+//     console.log('Connected to MongoDB');
 // });
-// Getting request listening in /profile
-// app.get('/profile/:username' , (req, res) => {
-//     console.log("Request has been received for: " + req.url);
-//     res.send(`
-//     <!DOCTYPE html>
-//     <html>
-//         <head>
-//             <title>ProfilePageTEST</title>
-//         </head>
-//         <body>
-//             <h1>apdev kills me, though my name is ${req.params.username} ..</h1>
-//         </body>
-//     </html>
-//     `);
+app.listen(db.PORT, async function(){
+    console.log("Running on port: " + db.PORT);
+    try{
+        await db.connectToDb();
+        console.log("Connected to MongoDB!");
+        console.log("Connected to: " + db.URI);
+    }catch(err){
+        console.error(err);
+        console.log("Failed to connect to database");
+    }
+  });
 
-// });
+// Keep these commented for now
+// var feedRouter = require('./routes/feed'); // creating a router to feed
+// var indexRouter = require('./routes/index'); // creating a router to index
+
+// app.use('/', indexRouter); // making / associated with index router/hbs // you can edit this to redirect to login
+// app.use('/feed', feedRouter); // making /feed associated with feed content
 
 
-// Console testing
-// app.get('/users/:userId/books/:bookId' , (req, res) => {
-//     console.log("Request Received for /users/../books/");
-//     console.log(req.params);
-//     res.sendStatus(200);
-// });
-
+  
 module.exports = app;

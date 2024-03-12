@@ -3,30 +3,25 @@ const { MongoClient } = require('mongodb') // importing MongoDB client
 const dotenv = require('dotenv').config();
 
 // const port = process.env.PORT || 3000;
-const port = process.env.PORT;
-const mongoURI = 'mongodb+srv://admin:adminpassword@ccapdev-s19-g12.ybpesmo.mongodb.net/?retryWrites=true&w=majority&appName=ccapdev-s19-g12';
+const port = 3000;
+// const port = process.env.PORT;
+// const mongoURI = 'mongodb+srv://admin:adminpassword@ccapdev-s19-g12.ybpesmo.mongodb.net/?retryWrites=true&w=majority&appName=ccapdev-s19-g12';
+const mongoURI = 'mongodb+srv://admin:adminpassword@ccapdev-s19-g12.ybpesmo.mongodb.net/';
 // const mongoURI = process.env.MONGODB_URI;
-const db_name = process.env.DB_NAME;
+// const db_name = process.env.DB_NAME;
+const db_name = 'ccapdev-s19-g12';
 
 const client = new MongoClient(mongoURI);
 
 // Establishes initial connection to  the mongodb process
-const connectToMongo = (callback) => {
-    client.connect().then(() => {
-        callback();
-    }).catch(err => {
-        console.error(err);
-    });
-};
-
-// const connectToMongo = (callback) =>{
-//     client.connect((err,client) => {
-//         if(err || !client) {
-//             return callback(err);
-//         }
-//         return callback();
-//     })
-// }
+const connectToDb = (callback) =>{
+    client.connect((err,client) => {
+        if(err || !client) {
+            return callback(err);
+        }
+        return callback();
+    })
+}
 
 // Returns instance of database with a name defined in .env
 const getDb = () => {
@@ -46,7 +41,7 @@ process.on("SIGQUIT", signalHandler);
 
 // Exporting module
 module.exports = {
-    connectToDb : connectToMongo,
+    connectToDb : connectToDb,
     getDb : getDb,
     PORT : port,
     URI : mongoURI
