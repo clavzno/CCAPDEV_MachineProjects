@@ -7,7 +7,7 @@ NEed routes from JS files ( COntroller )
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController'); // Import authController
-const schemas = requre('../models/Model.js');
+const schemas = require('../models/model.js');
 
 const app = express();
 // app.get('/', authController.login);  // Idk wat to expect
