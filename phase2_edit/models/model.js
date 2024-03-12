@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const userSchema = new mongoose.Schema({
+const schema = new mongoose.Schema //created a separate schema to make stuff reusable
+
+const userSchema = new schema({
   firstName: {
     type: String,
     required: true

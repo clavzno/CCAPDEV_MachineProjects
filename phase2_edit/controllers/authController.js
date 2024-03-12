@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const userModel = require('../models/userModel.js');
-const User = require('../models/userModel'); // Import the User model
+const userModel = require('../models/model.js');
+const User = require('../models/model.js'); // Import the User model
 const bcrypt = require('bcrypt'); // For password hashing
 
 
