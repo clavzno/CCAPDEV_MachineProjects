@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // const userModel = require('../models/model.js');
-const User = require('../models/model.js'); // Import the User model
+const User = require('../models/userModel.js'); // Import the User model
 const bcrypt = require('bcrypt'); // For password hashing
 
 
@@ -8,7 +8,7 @@ const authController = {
 
   // Render the signup page
   getSignup: (req, res) => {
-    res.render('signup'); // Assuming you have a signup.hbs template
+    res.render('signup');
   },
 
  // Handle user signup
@@ -48,7 +48,7 @@ const authController = {
 
   // Render the login page
   getLogin: (req, res) => {
-    res.render('login'); // Assuming you have a login.hbs template
+    res.render('login');
   },
 
 
