@@ -4,22 +4,24 @@
         {{>sidebar_left}}
         <div class="mainContent">
             <!-- TODO: FOR YOU/POPULAR POSTS SELECTOR FOR FEED -->
-            <div class="editor universal_boxshadow">
-                <div class="editor_sideBorder">
-                    <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />
-                </div>
-                <div class="editor_postArea">
-                    <div class="editor_textArea ruda-regular-lighter">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, doloribus dolore, soluta cumque adipisci architecto iste temporibus itaque ex deserunt cum libero neque voluptatum excepturi magni dolores sequi perspiciatis iure. Repellendus, nisi molestias ducimus expedita temporibus et inventore nihil magnam consequatur. Ducimus a ipsam eaque harum voluptatem obcaecati at minus quae quis iure consequatur voluptates, nulla consequuntur eos aspernatur voluptatum error dicta? Suscipit quibusdam quidem odio accusantium optio enim porro laboriosam possimus architecto sed rerum laudantium, a eos ullam animi nam voluptas doloribus non aperiam officiis aliquid error impedit fuga! Optio vel veniam sapiente rerum, minus ratione sint id similique.</p>
+            <form action="/post" method="post">
+                <div class="editor universal_boxshadow">
+                    <div class="editor_sideBorder">
+                        <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />
                     </div>
-                    <div class="editor_actions">
-                        <img class="actionImg" src="../../sprites/icons/Dark/icons8-add-image-96-darkmode.png" alt="image" />
-                        <div class="ruda-regular importantButton">
-                            <p>Post</p>
+                    <div class="editor_postArea">
+                        <div class="editor_textArea ruda-regular-lighter">
+                            <input type="text" name="postContent" placeholder="Write what's on your mind">
+                        </div>
+                        <div class="editor_actions">
+                            <img class="actionImg" src="../../sprites/icons/Dark/icons8-add-image-96-darkmode.png" alt="image" />
+                            <div class="ruda-regular importantButton">
+                                <button type="submit">post</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
             {{#if post}}
                 {{#each posts}}
                 {{>post this}}
