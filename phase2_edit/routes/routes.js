@@ -50,8 +50,10 @@ router.get('/feed', (req, res) => {
 router.post('/post', (req,res) => {
     run()
     async function run() {
-        const post = new posts({user_img:'https://www.1mg.com/articles/wp-content/uploads/2016/01/happy-image-2.jpg', user_name:'Tom Johnson', username:'@TJ123', postContent:'testing123'});
-        await post.save()
+        const user_img = req.body.user_img;
+        const postContent = req.body.postContent
+        const post = new posts({user_img:user_img, user_name:'Tom Johnson', username:'@TJ123', postContent:postContent});
+        await post.save();
         console.log(post);
 
         await posts.find();
