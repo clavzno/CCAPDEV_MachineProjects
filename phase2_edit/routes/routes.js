@@ -40,10 +40,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/feed', (req, res) => {
-    var data ={
-        test: 'nooo'
+    run()
+    async function run(){
+        const post = await posts.find();
+        res.render('feed', {post:post});
     }
-    res.render('feed', data);
 });
 
 router.post('/post', (req,res) => {
@@ -52,7 +53,17 @@ router.post('/post', (req,res) => {
         const post = new posts({user_img:'https://www.1mg.com/articles/wp-content/uploads/2016/01/happy-image-2.jpg', user_name:'Tom Johnson', username:'@TJ123', postContent:'testing123'});
         await post.save()
         console.log(post);
+
+        await posts.find();
+        res.render('feed', {post:post});
     }
+
+    reload()
+    async function reload() {
+        const post = await posts.find();
+        res.render('feed', {post:post});
+    }
+
 });
 
 
