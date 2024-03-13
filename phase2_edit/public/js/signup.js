@@ -21,30 +21,37 @@ $(document).ready(function() {
         alert("Passwords do not match. Please try again.");
         return;
       }
+
+      console.log({
+        firstName: firstName,
+        lastName: lastName,
+        password: password,
+        email: email,
+        birthdate: birthdate,
+        gender: gender
+      });
   
       // Send the signup request to the server
       $.ajax({
         url: "/signup", // Replace this with your actual signup endpoint
         type: "POST",
-        data: {
+        data: JSON.stringify({
           firstName: firstName,
           lastName: lastName,
           password: password,
           email: email,
           birthdate: birthdate,
           gender: gender
-        },
-        success: function(response) {
-          // Handle successful signup response
+        }),
+        contentType: 'application/json', // Add this line
+        processData: true,
+        success: function(response) { // Successful signup response
           console.log("Signup successful!");
-          // Redirect the user to the login page or another page
-          window.location.href = "login.hbs"; // Replace "/login" with your actual login page URL
+          window.location.href = "./views/login.hbs";// Redirect the user to the login page or another page
         },
-        error: function(xhr, status, error) {
-          // Handle signup error
+        error: function(xhr, status, error) { // Signup error
           console.error("Signup failed:", error);
-          // Display an error message to the user
-          alert("Signup failed. Please try again.");
+          alert("Signup failed. Please try again."); // Display an error message to the user
         }
       });
     });
