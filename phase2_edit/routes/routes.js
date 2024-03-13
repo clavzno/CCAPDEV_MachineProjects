@@ -17,6 +17,10 @@ router.get('/signup', authController.getSignup);
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
 
+// router.get('/feed');   <-- We need something like this after the user is logged in
+
+
+
 // router.post('/login', authController.login, (req, res) => {
 //     // If login successful (replace with your logic)
 //     res.render('login', { message: 'Login successful' }); // Or redirect to another page
