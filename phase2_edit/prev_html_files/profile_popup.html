@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/common.css"> 
+    <link rel="stylesheet" href="../public/css/profile.css">
+    <title>Document</title>
+    <script>
+        function editProfile() {
+            var popup = document.querySelector('.editprofile');
+            popup.innerHTML = `
+                <div class="editprofile_content">
+                    <h1 class="ruda-bold">Edit Profile</h1>
+                    <form action="">
+                        <input type="text" class="textInput" placeholder="Name">
+                        <input type="text" class="textInput" placeholder="Username">
+                        <input type="text" class="textInput" placeholder="Description">
+                        <input type="text" class="textInput" placeholder="Profile Picture">
+                        <input type="text" class="textInput" placeholder="Cover Picture">
+                        <input type="submit" class="universal_boxshadow point" value="Save">
+                    </form>
+                </div>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div class="editprofile popup">
+        
+    </div>
+</body>
+</html>

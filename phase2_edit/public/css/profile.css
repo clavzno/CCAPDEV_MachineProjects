@@ -43,7 +43,7 @@
 }
 
 .profile_info {
-    padding: 30px 10px 10px 220px;
+    padding: 30px 10px 10px 230px;
 }
 
 .profile_info h1, .profile_info p {
@@ -72,3 +72,6 @@
 .profile_posts p {
     padding: 10px;
 }
+
+/*** edit profile ***/
+
