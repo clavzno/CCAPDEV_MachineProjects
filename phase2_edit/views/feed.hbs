@@ -4,20 +4,21 @@
         {{>sidebar_left}}
         <div class="mainContent">
             <!-- TODO: FOR YOU/POPULAR POSTS SELECTOR FOR FEED -->
-            <form action="/post" method="post">
+            <form action="/post" class="form-class" method="post">
                 <div class="editor universal_boxshadow">
                     <div class="editor_sideBorder">
                         <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />
                     </div>
                     <div class="editor_postArea">
                         <div class="editor_textArea ruda-regular-lighter">
-                            <input type="text" name="postContent" placeholder="Write what's on your mind">
+                            {{!<input id="postContent" type="text" name="postContent" placeholder="Write what's on your mind">}}
+                            <textarea id="postContent" class="input" name="postContent" placeholder="Write what's on your mind" style="resize:none"></textarea>
                         </div>
                         <div class="editor_actions">
                             <img class="actionImg" src="../../sprites/icons/Dark/icons8-add-image-96-darkmode.png" alt="image" />
-                            <div class="ruda-regular importantButton">
-                                <button type="submit">post</button>
-                            </div>
+                            {{!<div class="ruda-regular importantButton">}}
+                                <button type="submit" class="login-button-class">post</button>
+                            {{!</div>}}
                         </div>
                     </div>
                 </div>

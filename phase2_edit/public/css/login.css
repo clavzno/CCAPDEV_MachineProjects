@@ -47,6 +47,20 @@ body {
     background-color: #222;
     color: #f2f2f2;
   }
+
+   /* Feed pose content text input */
+  .form-class #postContent{
+    font-family: "Orienta", sans-serif;
+    width: 96%;
+    height: 80%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border-radius: 10px; 
+    font-size: 16px; 
+    border: 1px solid #555; 
+    background-color: #222;
+    color: #f2f2f2;
+  }
   
   /* Forgot password */
   .form-class a {
