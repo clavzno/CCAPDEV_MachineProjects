@@ -30,7 +30,7 @@ app.post('/signup', authController.signup);
 
 //Using routes.js for the testing routes for now
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     var data ={
         feed: "/feed",
         text: 'yooooo'
@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
     res.render('index', data);
 });
 
-app.get('/feed', (req, res) => {
+router.get('/feed', (req, res) => {
     var data ={
         test: 'nooo'
     }
@@ -48,3 +48,4 @@ app.get('/feed', (req, res) => {
 
 
 module.exports = app;
+module.exports = router;

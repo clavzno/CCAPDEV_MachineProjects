@@ -1,15 +1,15 @@
 <div class="post universal_boxshadow">
     <div class="post_header">
         <div class="postHeader_pic">
-            <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="post_userprofile" />
+            <img class="userImg" src={{user_img}} alt="post_userprofile" />
         </div>
         <div class="postHeader_info">
             <div>
-                <p class="ruda-regular">User Orienta</p>
-                <p class="ruda-regular-lighter">@orienta</p>
+                <p class="ruda-regular">{{user_name}}</p>
+                <p class="ruda-regular-lighter">{{username}}</p>
             </div>
             <div>
-                <p class="ruda-regular-lighter">Feb 29, 2024 10:00pm</p>
+                <p class="ruda-regular-lighter">{{postDate}}</p>
                 <p class="ruda-regular-lighter">#tag1, #tag2, #tag3</p>
             </div>
         </div>
@@ -20,11 +20,11 @@
     <div class="post_content">
         <div class="postContent_text">
             <p class="work-sans-regular">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur eum beatae officia eveniet numquam similique totam fugiat consectetur laborum, necessitatibus laudantium atque nulla debitis ipsa distinctio cumque deserunt architecto enim expedita veritatis asperiores at magnam cupiditate reiciendis. Ipsum nostrum sequi obcaecati minima, nulla tempora fuga ipsa dolorem quaerat? Obcaecati magni, voluptates ea perspiciatis sit veniam dolorem alias ducimus veritatis velit eveniet suscipit quas quasi sapiente explicabo eum sed quam, voluptatum eius expedita ipsum necessitatibus. Doloribus amet aspernatur vel quo provident suscipit obcaecati repellat ad inventore, officiis, ducimus necessitatibus qui nemo cumque officia modi? Quisquam doloremque, vero fugit excepturi id repellendus.
+                {{postContent}}
             </p>
         </div>
         <div class="postContent_image">
-            <img class="" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.vectorstock.com%2Fi%2F1000x1000%2F77%2F60%2Fbig-smile-emoticon-with-thumbs-up-vector-23657760.jpg&f=1&nofb=1&ipt=08fd70b8bb75cc9952c4cf375277bad69d76663eceb35ee73048f643398e7514&ipo=images" />
+            <img class="" src={{postPicture}} />
         </div>
     </div>
     <div class="post_actions">
