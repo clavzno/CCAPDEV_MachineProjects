@@ -10,7 +10,7 @@ $(document).ready(function() {
       var lastName = $("#lastName").val();
       var password = $("#password").val();
       var confirmPassword = $("#confirmPassword").val();
-      var emailOrUsername = $("#emailusername").val();
+      var email = $("#email").val();
       var birthdate = $("#birthdate").val();
       var gender = $("#gender").val();
   
@@ -30,7 +30,7 @@ $(document).ready(function() {
           firstName: firstName,
           lastName: lastName,
           password: password,
-          emailOrUsername: emailOrUsername,
+          email: email,
           birthdate: birthdate,
           gender: gender
         },
@@ -38,7 +38,7 @@ $(document).ready(function() {
           // Handle successful signup response
           console.log("Signup successful!");
           // Redirect the user to the login page or another page
-          window.location.href = "login.html"; // Replace "/login" with your actual login page URL
+          window.location.href = "login.hbs"; // Replace "/login" with your actual login page URL
         },
         error: function(xhr, status, error) {
           // Handle signup error

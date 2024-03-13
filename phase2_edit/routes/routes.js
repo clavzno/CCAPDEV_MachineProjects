@@ -11,11 +11,11 @@ const schemas = require('../models/model.js');
 
 const app = express();
 // app.get('/', authController.login);  // Idk wat to expect
-app.get('/login', authController.getLogin);
-app.get('/signup', authController.getSignup);
+router.get('/login', authController.getLogin);
+router.get('/signup', authController.getSignup);
 
-app.post('/login', authController.login); 
-app.post('/signup', authController.signup);
+router.post('/login', authController.login); 
+router.post('/signup', authController.signup);
 
 // router.post('/login', authController.login, (req, res) => {
 //     // If login successful (replace with your logic)
@@ -30,22 +30,22 @@ app.post('/signup', authController.signup);
 
 //Using routes.js for the testing routes for now
 
-router.get('/', (req, res) => {
-    var data ={
-        feed: "/feed",
-        text: 'yooooo'
-    }
-    res.render('index', data);
-});
+// router.get('/', (req, res) => {
+//     var data ={
+//         feed: "/feed",
+//         text: 'yooooo'
+//     }
+//     res.render('index', data);
+// });
 
-router.get('/feed', (req, res) => {
-    var data ={
-        test: 'nooo'
-    }
-    res.render('feed', data);
-});
+// router.get('/feed', (req, res) => {
+//     var data ={
+//         test: 'nooo'
+//     }
+//     res.render('feed', data);
+// });
 
 
 
-module.exports = app;
+// module.exports = app;
 module.exports = router;
