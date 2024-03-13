@@ -20,6 +20,10 @@ const routes = require('./routes/routes'); // Import routes
 // const controller = require('./controllers/controller');
 const flash = require('express-flash');
 let app = express(); // app is server object
+// Parse JSON request bodies
+app.use(bodyParser.json());
+// Parse URL-encoded request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Session management
 app.use(sessions({
