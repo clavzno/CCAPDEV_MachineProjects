@@ -3,10 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/common.css"> 
+    <link rel="stylesheet" href="../public/css/common.css">
+    <link rel="stylesheet" href="../public/css/search.css"> 
     <title>Bookface</title>
 </head>
 <body>
-    
+    <!-- start header -->
+    <div class="header">
+        <h1 class="point logotype ruda-bold">Bookface</h1>
+        <div class="point searchBar textInput">
+            <img src="../../sprites/icons/Dark/icons8-search-96-darkmode.png" alt="searchBar" />
+            <p class="ruda-regular-lighter">Search...</p>
+        </div>
+        <div class="point userProfile">
+            <a href="profile.html">
+                <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="userprofile" />
+            </a>
+        </div>
+    </div>
+    <!-- end header -->
+    <!-- start content -->
+    <div class="content">
+        <!-- start left sidebar -->
+        <div id="sideBar-left" class="sideBar">
+            <div class="home navigation universal_boxshadow point" onclick="window.location.href='feed.html'">
+                <img src="../../sprites/icons/Dark/icons8-home-96-darkmode.png" alt="home" />
+                <h1 class="ruda-regular">Home</h1>
+            </div>
+            <div class="search navigation universal_boxshadow point" onclick="window.location.href='search.html'">
+                <img src="../../sprites/icons/Dark/icons8-search-96-darkmode.png" alt="search" />
+                <h1 class="ruda-regular">Search</h1>
+            </div>
+            <div class="settings navigation universal_boxshadow point" onclick="window.location.href='profile.html'">
+                <img src="../../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="settings" />
+                <h1 class="ruda-regular">Settings</h1>  
+            </div>
+        </div>
+        <!-- end left sidebar -->
+        <!-- start mid content -->
+        <div class="mainContent">
+            <!-- selector -->
+            <div class="searchOptions_main">
+                <div class="selector ruda-regular point searchOptions" id="searchOptions_dropdown">
+                    <p>Search options</p>
+                    <img src="../public/sprites/icons/Dark/icons8-filter-96-darkmode.png" class="actionImg" alt="searchFilter" />
+                </div>
+            </div>
+            <!-- end selector -->
+            <!-- start search results -->
+            <div class="searchResults">
+                <p style="color: white;" class="work-sans-regular">Uh oh! We couldn't find anything that matches your search criteria. Don't try again.</p>
+            </div> <!-- end search results -->
+
+        </div> <!-- end main content -->
+        <!-- start right sidebar -->
+        <div id="sideBar-right" class="sideBar universal_boxshadow">
+        <!-- this should fit up to 3 users, let's keep it at that. this should have the same code as calculating top posts, except it shows the users -jack -->
+            <h1 class="ruda-bold">Popular Today</h1>
+            <!-- start featured user -->
+            <div class="featuredUser point">
+                <div class="featuredUser_profile">
+                    <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />
+                </div>
+                <div class="featuredUser_info">
+                    <p class="orienta-regular">User Orienta</p>
+                    <p class="orienta-regular-lighter">@orienta</p>
+                </div>
+                <div class="featuredUser_follow">
+                    <img class="actionImg" src="../../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />
+                </div>
+            </div>
+            <!-- end featured user -->
+            <!-- start featured user -->
+            <div class="featuredUser point">
+                <div class="featuredUser_profile">
+                    <img class="userImg" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />
+                </div>
+                <div class="featuredUser_info">
+                    <p class="orienta-regular">User Orienta</p>
+                    <p class="orienta-regular-lighter">@orienta</p>
+                </div>
+                <div class="featuredUser_follow">
+                    <img class="actionImg" src="../../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />
+                </div>
+            </div>
+            <!-- end featured user -->
+        </div> <!-- start right sidebar -->
+        <div class="logoutButton">
+            <img class="" src="../../sprites/icons/Dark/icons8-login-rounded-96-darkmode.png" alt="logout" />
+        </div>
+    </div> <!-- end  content -->    
 </body>
 </html>

@@ -1,0 +1,40 @@
+.searchOptions_main {
+    min-width: 100%;
+    height: auto; /* adjust to content */
+    
+    display: flex;
+    justify-content: flex-end;
+    border-radius: inherit;
+    padding-right: 20px;
+}
+
+.searchOptions {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.searchOptions:hover {
+    background-color: var(--background-panel-hover);
+}
+
+.searchOptions * {
+    padding: 10px;
+}
+
+.searchResults {
+    /* this is the same as profile.css/profile_posts */
+    background-color: var(--background-panel);
+    color: white;
+
+    background-color: var(--background-panel);
+    border-radius: inherit;
+
+    min-width: 100%;
+    min-height: 50%;
+    text-align: center;
+}
+
+.searchResults p {
+    padding: 10px;
+}
