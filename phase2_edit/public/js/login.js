@@ -25,7 +25,7 @@ $(document).ready(function() {
           // Handle successful login response
           console.log("Login successful!");
           // Redirect the user to the dashboard or another page
-          window.location.href = "/dashboard"; // Replace "/dashboard" with your actual dashboard URL
+          window.location.href = "/feed"; // Replace "/dashboard" with your actual dashboard URL
         },
         error: function(xhr, status, error) {
           // Handle login error

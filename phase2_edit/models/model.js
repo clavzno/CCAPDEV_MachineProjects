@@ -55,6 +55,7 @@ const postSchema = new schema({
     type: String
   }
 });
-
-module.exports = mongoose.model('User', userSchema); // Export User model based on the user schema
+const User = mongoose.model('User', userSchema);
+module.exports = User;
+// module.exports = mongoose.model('User', userSchema); // Export User model based on the user schema
 module.exports = mongoose.model('post', postSchema); // Export post model based on the post schema

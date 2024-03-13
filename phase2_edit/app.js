@@ -9,12 +9,16 @@ const dotenv = require('dotenv').config(); // Load variables stated in .env in a
 const express = require('express'); // Creating an express server
 const sessions = require('express-session');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const bodyParser = require('body-parser');
+const LocalStrategy = require('passport-local');
+const passportlocalmongoose = require('passport-local-mongoose');
 const hbs = require('hbs');
 const routes = require('./routes/routes'); // Import routes
 // const connect = require('./public/database/server.js');
 // const controller = require('./controllers/controller');
 const flash = require('express-flash');
-const app = express(); // app is server object
+let app = express(); // app is server object
 
 
 hbs.registerPartials(__dirname + '/views/partials'); // link hbs with partials
@@ -23,8 +27,6 @@ app.set('view engine', 'hbs'); //sets the view engine to hbs
 
 
 app.use(express.static(__dirname + '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
-// app.use(express.static('public'));
-// ^^ THERE IS A PROBLEM DAWG
 
 app.use(express.json());
 
@@ -37,29 +39,24 @@ app.use(sessions({
 
 app.use('/', routes); // Use the router for all routes starting with '/'
 
+  // Import all models so far
+  require('./models/model');
+
+
+
+
+// Connecting to the Database
 const db = require('./public/database/conn'); // Importing database.js
-// db.connectToDb(() => {
-//     console.log('Connected to MongoDB');
-// });
 app.listen(db.PORT, async function(){
     console.log("Running on port: " + db.PORT);
     try{
         await db.connectToDb();
         console.log("Connected to MongoDB!");
-        console.log("Connected to: " + db.URI);
+        console.log("Connected to: " + process.env.MONGODB_URI);
+        console.log("Connected to cluster: " + process.env.DB_NAME);
     }catch(err){
         console.error(err);
         console.log("Failed to connect to database");
     }
   });
-
-// Keep these commented for now
-// var feedRouter = require('./routes/feed'); // creating a router to feed
-// var indexRouter = require('./routes/index'); // creating a router to index
-
-// app.use('/', indexRouter); // making / associated with index router/hbs // you can edit this to redirect to login
-// app.use('/feed', feedRouter); // making /feed associated with feed content
-
-
-  
 module.exports = app;
