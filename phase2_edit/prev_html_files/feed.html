@@ -7,6 +7,7 @@
     <title>Bookface</title>
 </head>
 <body class="bodyContent">
+    <!-- start header -->
     <div class="header">
         <h1 class="point logotype ruda-bold">Bookface</h1>
         <div class="point searchBar textInput">
@@ -19,7 +20,10 @@
             </a>
         </div>
     </div>
+    <!-- end header -->
+    <!-- start content -->
     <div class="content">
+        <!-- start left sidebar -->
         <div id="sideBar-left" class="sideBar">
             <div class="home navigation universal_boxshadow point" onclick="window.location.href='feed.html'">
                 <img src="../../sprites/icons/Dark/icons8-home-96-darkmode.png" alt="home" />
@@ -34,6 +38,8 @@
                 <h1 class="ruda-regular">Settings</h1>  
             </div>
         </div>
+        <!-- end left sidebar -->
+        <!-- start mid content -->
         <div class="mainContent">
             <!-- selector -->
             <div class="selector ruda-regular point">
@@ -250,6 +256,7 @@
             </div>
             <!-- end post -->
         </div> <!-- end main content -->
+        <!-- start right sidebar -->
         <div id="sideBar-right" class="sideBar universal_boxshadow">
         <!-- this should fit up to 3 users, let's keep it at that. this should have the same code as calculating top posts, except it shows the users -jack -->
             <h1 class="ruda-bold">Popular Today</h1>
@@ -281,10 +288,10 @@
                 </div>
             </div>
             <!-- end featured user -->
-        </div>
+        </div> <!-- start right sidebar -->
         <div class="logoutButton">
             <img class="" src="../../sprites/icons/Dark/icons8-login-rounded-96-darkmode.png" alt="logout" />
         </div>
-    </div>
+    </div> <!-- end  content -->
 </body>
 </html>
