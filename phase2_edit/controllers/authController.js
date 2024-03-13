@@ -13,6 +13,7 @@ const authController = {
 
  // Handle user signup
  async signup(req, res) {
+  console.log(req.body); 
   const { firstName, lastName, email, password, birthdate, gender } = req.body;
 
   try {
@@ -55,6 +56,7 @@ const authController = {
 
  // Handle user login
  async login(req, res) {
+  console.log(req.body); 
   const { email, password } = req.body;
 
   try {
@@ -72,7 +74,7 @@ const authController = {
     // Login successful (implementation depends on your authentication strategy)
     // You might create a session, generate a token, or redirect to a protected page
     // In this example, we'll redirect to a placeholder page (replace with your logic)
-    res.redirect('/protected'); // Replace with your desired redirect path
+    res.redirect('/feed'); // Replace with your desired redirect path
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: 'Server error' });

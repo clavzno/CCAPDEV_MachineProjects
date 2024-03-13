@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb') 
+const mongoURI = process.env.MONGODB_URI;
+const client = new MongoClient(mongoURI);
 
 async function connect(){
     return await mongoose.connect(process.env.MONGODB_URI);
