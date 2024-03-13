@@ -8,6 +8,7 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController'); // Import authController
 const schemas = require('../models/userModel.js');
+const posts = require('../models/postModel.js');
 
 const app = express();
 // app.get('/', authController.login);  // Idk wat to expect
@@ -30,20 +31,30 @@ router.post('/signup', authController.signup);
 
 //Using routes.js for the testing routes for now
 
-// router.get('/', (req, res) => {
-//     var data ={
-//         feed: "/feed",
-//         text: 'yooooo'
-//     }
-//     res.render('index', data);
-// });
+router.get('/', (req, res) => {
+    var data ={
+        feed: "/feed",
+        text: 'yooooo'
+    }
+    res.render('index', data);
+});
 
-// router.get('/feed', (req, res) => {
-//     var data ={
-//         test: 'nooo'
-//     }
-//     res.render('feed', data);
-// });
+router.get('/feed', (req, res) => {
+    var data ={
+        test: 'nooo'
+    }
+    res.render('feed', data);
+});
+
+router.post('/post', (req,res) => {
+    run()
+    async function run() {
+        const post = new posts({user_img:'https://www.1mg.com/articles/wp-content/uploads/2016/01/happy-image-2.jpg', user_name:'Tom Johnson', username:'@TJ123', postContent:'testing123'});
+        await post.save()
+        console.log(post);
+    }
+});
+
 
 
 

@@ -26,4 +26,4 @@ const postSchema = new mongoose.Schema({
     }
   });
 
-module.exports = mongoose.model('post', postSchema); // Export post model based on the post schema
+module.exports = mongoose.model('posts', postSchema); // Export post model based on the post schema
