@@ -35,7 +35,7 @@ app.set('view engine', 'hbs'); //sets the view engine to hbs
 
 
 app.use(express.static(__dirname + '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', routes); // Use the router for all routes starting with '/'
 

@@ -22,16 +22,12 @@ $(document).ready(function() {
           rememberMe: rememberMe
         },
         success: function(response) {
-          // Handle successful login response
-          console.log("Login successful!");
-          // Redirect the user to the dashboard or another page
-          window.location.href = "/feed"; // Replace "/dashboard" with your actual dashboard URL
+          console.log("Login successful!"); // Handle successful login response
+          window.location.href = "../views/feed.hbs"; // Replace with actual dashboard URL
         },
-        error: function(xhr, status, error) {
-          // Handle login error
-          console.error("Login failed:", error);
-          // Display an error message to the user
-          alert("Login failed. Please check your credentials and try again.");
+        error: function(xhr, status, error) {    
+          console.error("Login failed:", error); // Handle login error
+          alert("Login failed. Please check your credentials and try again."); // Display an error message to the user
         }
       });
     });
