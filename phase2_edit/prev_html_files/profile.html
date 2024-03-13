@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/common.css"> 
+    <link rel="stylesheet" href="../public/css/profile.css">
     <title>Bookface</title>
 </head>
 <body>
@@ -21,6 +22,7 @@
         </div>
     </div>
     <!-- end header -->
+
     <!-- start content -->
     <div class="content">
         <!-- start left sidebar -->
@@ -39,24 +41,38 @@
             </div>
         </div>
         <!-- end left sidebar -->
-
         <!-- start mid content -->
         <div class="mainContent">
             <!-- user profile display -->
             <div class="profile">
-                <div class="profile_header"></div>
-                <div class="profile_picture"></div>
-                <div class="profile_info"></div>
+                <div class="profile_header">
+                    <img src="../public/images/zappy.jpg" class="profile_images" alt="userProfileCover" />
+                </div>
+                <div class="profile_picture">
+                    <img src="../public/images/lorem.jpg" class="profile_images" alt="userProfilePicture" />
+                </div>
+                <div class="profile_info">
+                    <h1 id="userprofile_name" class="ruda-bold">User Orienta</h1>
+                    <p id="userprofile_username" class="orienta-regular-lighter">@username</p>
+                    <p id="userprofile_description" class="work-sans-light">
+                        Passionate explorer of technology and innovation. Lifelong learner with a knack for dudes and girls.
+                    </p>
+                </div>
             </div>
 
             <!-- selector -->
             <div class="selector ruda-regular point">
                     <p class="selector_selected">Posts</p>
                     <p class="" style="margin-left:20%;">Replies</p>
+            </div> <!-- end selector -->
+
+            <!-- start post area -->
+            <div class="profile_posts">
+                <!-- load posts using partial for single posts here -->
+                <p style="color: white;" class="work-sans-regular">end of feed</p>
             </div>
-            <!-- end selector -->
-        </div>
-        <!-- end main content -->
+            <!-- end post area -->
+        </div> <!-- end main content -->
 
         <!-- start right sidebar -->
         <div id="sideBar-right" class="sideBar universal_boxshadow">
