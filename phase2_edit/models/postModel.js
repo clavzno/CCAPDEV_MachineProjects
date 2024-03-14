@@ -23,7 +23,19 @@ const postSchema = new mongoose.Schema({
     },
     postPicture: {
       type: String
-    }
+    },
+    postLikes: {
+      type: Number,
+      default: 0
+    },
+    postDislikes: {
+      type: Number,
+      default: 0
+    },
+    postComments: {
+      type: Number,
+      default: 0
+    },
   });
 
 module.exports = mongoose.model('posts', postSchema); // Export post model based on the post schema

@@ -1,3 +1,5 @@
+// for authentication for signup and login
+
 const mongoose = require('mongoose');
 const User = require('../models/userModel.js'); // Import the User model
 const bcrypt = require('bcrypt'); // For password hashing
