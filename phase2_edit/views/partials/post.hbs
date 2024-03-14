@@ -10,7 +10,7 @@
             </div>
             <div>
                 <p class="ruda-regular-lighter">{{postDate}}</p>
-                <p class="ruda-regular-lighter">#tag1, #tag2, #tag3</p>
+                <p class="ruda-regular-lighter">{{postTags}}</p>
             </div>
         </div>
         <div class="postHeader_follow">
@@ -20,6 +20,9 @@
     <div class="post_content">
         <div class="postContent_text point">
             <a href="/feed/{{_id}}">
+                <p class="work-sans-regular">
+                    {{postTitle}}
+                </p>
                 <p class="work-sans-regular">
                     {{postContent}}
                 </p>

@@ -15,8 +15,11 @@ router.post('/', (req,res) => {
     run()
     async function run() {
         //const user_img = req.body.user_img; not working
+        //res.send(req.body.postTitle)
+        const postTitle = req.body.postTitle;
         const postContent = req.body.postContent;
-        const post = new posts({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', postContent:postContent});
+        const postTags = req.body.postTags;
+        const post = new posts({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', postTitle:postTitle, postContent:postContent, postTags:postTags});
         await post.save();
         console.log(post);
     }

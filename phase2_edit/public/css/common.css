@@ -393,13 +393,19 @@ html, body {
 .post_content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .postContent_text {
     flex: 1;
     padding: 5px 10px 10px 10px;
     height: fit-content;
+    display: hidden;
+}
+
+.postContent_text a{
+    color: white;
+    text-decoration: none;
 }
 
 .postContent_text p{

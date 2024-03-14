@@ -17,7 +17,15 @@ const postSchema = new mongoose.Schema({
       type: Date, 
       default:Date.now
     },
+    postTitle: {
+      type: String,
+      required: true
+    },
     postContent: {
+      type: String,
+      required: true
+    },
+    postTags: {
       type: String,
       required: true
     },
