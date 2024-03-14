@@ -402,6 +402,11 @@ html, body {
     height: fit-content;
 }
 
+.postContent_text p{
+    word-break: break-all;
+    white-space: normal;
+}
+
 .postContent_image {
     background-color: var(--background-darkmode);
     border-radius: 25px;
