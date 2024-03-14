@@ -1,0 +1,39 @@
+    /* Feed maker text area */
+    .form-class #postMaker{
+    padding: 1px 10px 10px 10px;
+    height: 80%;
+    overflow: auto; /* to allow scrolling */
+    color: white;
+    font-size: 20px;
+}
+
+   /* Feed post content text input */
+   .form-class textarea[id="postContent"]{
+    font-family: "Orienta", sans-serif;
+    width: 96%;
+    height: 80%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border-radius: 10px; 
+    font-size: 16px; 
+    border: 1px solid #555; 
+    background-color: #222;
+    color: #f2f2f2;
+  }
+
+  /* Post Button*/  
+  .form-class button[class="post-button-class"] {
+    font-family: "Ruda", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    width: 25%;
+    padding: 10px;
+    margin-left: 220px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: var(--important-buttons);
+}
