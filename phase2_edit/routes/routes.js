@@ -75,5 +75,5 @@ router.post('/post', (req,res) => {
 
 
 
-// module.exports = app;
+// module.exports = app; i dont think we will be exporting 'app' anymore, but let's keep in case
 module.exports = router;

@@ -10,11 +10,9 @@ $(document).ready(function() {
       var password = $("#password").val();
       var rememberMe = $("#rememberMe").is(":checked");
   
-      // Perform validation here if needed
-  
       // Send the login request to the server
       $.ajax({
-        url: "/login", // Replace this with your actual login endpoint
+        url: "/login",
         type: "POST",
         data: {
             email: email,

@@ -33,7 +33,7 @@ $(document).ready(function() {
   
       // Send the signup request to the server
       $.ajax({
-        url: "/signup", // Replace this with your actual signup endpoint
+        url: "/signup",
         type: "POST",
         data: JSON.stringify({
           firstName: firstName,
@@ -43,7 +43,7 @@ $(document).ready(function() {
           birthdate: birthdate,
           gender: gender
         }),
-        contentType: 'application/json', // Add this line
+        contentType: 'application/json',
         processData: true,
         success: function(response) { // Successful signup response
           console.log("Signup successful!");
