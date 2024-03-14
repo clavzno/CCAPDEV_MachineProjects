@@ -1,15 +1,15 @@
 <div class="post universal_boxshadow">
     <div class="post_header">
         <div class="postHeader_pic">
-            <img class="userImg point"  src={{user_img}} alt="post_userprofile" ></img>
+            <img class="userImg point"  src={{singlepost.user_img}} alt="post_userprofile" ></img>
         </div>
         <div class="postHeader_info">
             <div>
-                <p class="ruda-regular point">{{user_name}}</p>
-                <p class="ruda-regular-lighter">{{username}}</p>
+                <p class="ruda-regular point">{{singlepost.user_name}}</p>
+                <p class="ruda-regular-lighter">{{singlepost.username}}</p>
             </div>
             <div>
-                <p class="ruda-regular-lighter">{{postDate}}</p>
+                <p class="ruda-regular-lighter">{{singlepost.postDate}}</p>
                 <p class="ruda-regular-lighter">#tag1, #tag2, #tag3</p>
             </div>
         </div>
@@ -19,30 +19,28 @@
     </div>
     <div class="post_content">
         <div class="postContent_text point">
-            <a href="/feed/{{_id}}">
-                <p class="work-sans-regular">
-                    {{postContent}}
-                </p>
-            </a>
+            <p class="work-sans-regular">
+                {{singlepost.postContent}}
+            </p>
         </div>
-        {{#if postPicture}}
+        {{#if singlepost.postPicture}}
         <div class="postContent_image point">
-            <img class="" src={{postPicture}} />
+            <img class="" src={{singlepost.postPicture}} />
         </div>
         {{/if}}
     </div>
     <div class="post_actions">
         <div class="postActions_like">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
-            <p>{{postLikes}}</p>
+            <p>{{singlepost.postLikes}}</p>
         </div>
         <div class="postActions_dislike">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
-            <p>{{postDislikes}}</p>
+            <p>{{singlepost.postDislikes}}</p>
         </div>
         <div class="postActions_comment">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
-            <p>{{postComments}}</p>
+            <p>{{singlepost.postComments}}</p>
         </div>
         <img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />
     </div>

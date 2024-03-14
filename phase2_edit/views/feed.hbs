@@ -11,7 +11,7 @@
             </div>
             <!-- end selector -->
 
-            <form action="/post" class="form-class" method="post">
+            <form action="/feed" class="form-class" method="post">
                 <div class="editor universal_boxshadow">
                     <div class="editor_sideBorder">
                         <img class="userImg" name="user_img" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />
@@ -32,11 +32,15 @@
             </form>
             {{#if post}}
                 {{#each post}}
-                {{>post this}}
+                {{>post}}
                 {{/each}}
             {{else}}
-                <p>posts are empty</p>
-            {{/if}}    
+                {{#if singlepost}}
+                    {{>singlepost}}
+                {{else}}
+                    <p>posts are empty</p>
+                {{/if}}    
+            {{/if}}   
         </div>
         {{>sidebar_right}}
         <div class="logoutButton">

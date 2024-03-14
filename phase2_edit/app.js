@@ -16,6 +16,7 @@ const LocalStrategy = require('passport-local');
 const passportlocalmongoose = require('passport-local-mongoose');
 const hbs = require('hbs');
 const routes = require('./routes/routes'); // Import routes
+const feed = require('./routes/feed');
 // const connect = require('./public/database/server.js');
 // const controller = require('./controllers/controller');
 const flash = require('express-flash');
@@ -42,6 +43,7 @@ app.use(express.static(__dirname + '/public')); // This allows the user to acces
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', routes); // Use the router for all routes starting with '/'
+app.use('/feed', feed); // Use the feed router for all feed routes
 
 
 const port = process.env.PORT;
