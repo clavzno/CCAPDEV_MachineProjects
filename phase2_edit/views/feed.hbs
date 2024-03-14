@@ -3,7 +3,14 @@
     <div class="content">
         {{>sidebar_left}}
         <div class="mainContent">
-            <!-- TODO: FOR YOU/POPULAR POSTS SELECTOR FOR FEED -->
+
+            <!-- selector -->
+            <div class="selector ruda-regular point">
+                    <p class="selector_selected">Feed</p>
+                    <p style="margin-left:20%;">Popular</p>
+            </div>
+            <!-- end selector -->
+
             <form action="/post" class="form-class" method="post">
                 <div class="editor universal_boxshadow">
                     <div class="editor_sideBorder">
@@ -15,7 +22,7 @@
                             <textarea id="postContent" class="input" name="postContent" placeholder="Write what's on your mind" style="resize:none"></textarea>
                         </div>
                         <div class="editor_actions">
-                            <img class="actionImg" src="../../sprites/icons/Dark/icons8-add-image-96-darkmode.png" alt="image" />
+                            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-add-image-96-darkmode.png" alt="image" />
                             {{!<div class="ruda-regular importantButton">}}
                                 <button type="submit" class="post-button-class">Post</button>
                             {{!</div>}}
