@@ -1,3 +1,5 @@
+// for authentication for signup and login
+
 const mongoose = require('mongoose');
 // const userModel = require('../models/model.js');
 const User = require('../models/userModel.js'); // Import the User model
