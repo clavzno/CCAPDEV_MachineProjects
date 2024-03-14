@@ -1,6 +1,6 @@
 /* fonts and sprites */
 @import url('https://fonts.googleapis.com/css2?family=Orienta&family=Ruda:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('../../sprites/css-sprites.css');
+@import url('../sprites/css-sprites.css');
 
 :root {
     --background-darkmode: #18191A;

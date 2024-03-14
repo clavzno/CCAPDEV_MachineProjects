@@ -75,3 +75,100 @@
 
 /*** edit profile ***/
 
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* using rgba wont affect children */
+    z-index: 2;
+}
+
+.editProfile {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editProfileDialog {
+    background-color: var(--background-panel);
+    height: 80%;
+    width: 500px;
+    border-radius: 25px;
+    padding: 20px;
+
+    overflow: auto;
+}
+
+.editProfileDialog h1 {
+    color: white;
+    margin: 10px;
+}
+
+.editImages {
+    border-radius: inherit;
+}
+
+.imagePreviews {
+    border-radius: inherit;
+    background-color: gray;
+    overflow: hidden;
+}
+
+.imagePreviews:hover {
+    cursor: pointer;
+}
+
+.headerPreview {
+    height: 200px;
+    overflow: hidden;
+}
+
+.profilePicPreview {
+    height: 168px;
+    width: 168px;
+    border: 3px solid var(--background-panel);
+    background-color: #6D7278;
+
+    position: relative; 
+    top: 50%; /* vertically centered */
+    left: 50%; /* for horizontally centered, make 50 but i moved this to the left */
+    transform: translate(-50%, -50%); /* center perfectly */
+    z-index: 1; 
+
+    overflow: hidden;
+}
+
+.editInfo {
+    padding: 10px;
+}
+
+.editInfo label {
+    color: white;
+    margin: 5px;
+    padding: 5px;
+}
+
+.editInfo input {
+    width: 85%;
+    height: 30px;
+}
+
+.editInfo textarea {
+    width: 85%;
+    max-height: 500px;
+    height: 100px;
+    overflow: auto;
+    resize: none;
+}
+
+.editInfo button {
+    justify-self: flex-end;
+}
