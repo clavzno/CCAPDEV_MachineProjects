@@ -1,5 +1,6 @@
+// for authentication for signup and login
+
 const mongoose = require('mongoose');
-// const userModel = require('../models/model.js');
 const User = require('../models/userModel.js'); // Import the User model
 const bcrypt = require('bcrypt'); // For password hashing
 
@@ -40,7 +41,7 @@ const authController = {
     await newUser.save(); // Save the user to the database
 
     // Send success response or redirect to a confirmation page (optional)
-    res.status(201).json({ message: 'User created successfully' }); // Replace with your logic
+    res.status(201).json({ message: 'User created successfully' });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: 'Server error' });
