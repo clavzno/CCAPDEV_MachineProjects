@@ -1,0 +1,24 @@
+    <div class="editProfile fullscreen-overlay" id="editProfile" hidden>
+        <div class="editProfileDialog">
+            <h1 class="ruda-regular">Edit Profile</h1>
+            <div class="editImages">
+                <div class="headerPreview imagePreviews">
+                    <img src="../images/default.jpg" class="profile_images"/>
+                </div>
+                <div class="profilePicPreview imagePreviews">
+                    <img src="../images/default.jpg" class="profile_images" />
+                </div>
+            </div>
+            <div class="editInfo">
+                <form id="editProfileInfo" method="post">
+                    <label for="displayName" class="orienta-regular">Display Name</label> <br>
+                    <input name="displayName" type="text" class="textInput" placeholder={{user}}>
+                    <br><br>
+                    <label for="bio" class="orienta-regular">Bio</label> <br>
+                    <textarea name="bio" class="textInput" type="description"></textarea>
+                    <br><br>
+                    <button type="submit" class="importantButton" onclick="closePopup();">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
