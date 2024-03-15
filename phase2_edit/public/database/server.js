@@ -4,7 +4,7 @@ const mongoURI = process.env.MONGODB_URI;
 const client = new MongoClient(mongoURI);
 
 async function connect(){
-    return await mongoose.connect(process.env.MONGODB_URI);
+    return await mongoose.connect(process.env.MONGODB_URI, {dbName: process.env.DB_NAME});
 };
 
 function signalHandler() {
