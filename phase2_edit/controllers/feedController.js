@@ -81,6 +81,7 @@ const feedController = {
             const commentContent = req.body.commentContent;
             const comment = new comments({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent, post:id});
             await comment.save();
+            await posts.updateOne({_id:id}, { $set: {postComment:comment}}).sort({'postDate' : -1});
             console.log(comment);
         }catch(e){
             console.log(e.message);
