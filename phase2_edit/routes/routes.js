@@ -20,6 +20,7 @@ router.get('/logout', authController.logout);
 router.get('/guestFeed', authController.getGuestFeed); // EXPERIMENT
 
 router.get('/feed', feedController.getFeed);
+router.get('/profile', feedController.getProfile);
 
 // POSTERS
 router.post('/login', authController.login); 

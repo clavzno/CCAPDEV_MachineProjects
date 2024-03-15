@@ -24,6 +24,11 @@ getFeed: async (req, res) => {
   }
 },
 
+  // Render the profile page
+  getProfile: (req, res) => {
+    res.render('profile');
+  },
+
   
   // Handle creating a new post
   createPost: async (req, res) => {
