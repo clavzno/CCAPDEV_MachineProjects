@@ -18,14 +18,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  //remove confirm password
   birthdate: {
     type: Date,
-    required: false
+    required: true
   },
   gender: {
     type: String,
     enum: ['Male', 'Female', 'Other'],
-    required: false
+    required: true
   }
 });
 

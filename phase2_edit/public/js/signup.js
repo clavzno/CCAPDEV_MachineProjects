@@ -1,4 +1,13 @@
 // signup.js
+/*
+
+  I have been lied to, this JS folder does not and will not affect
+  any handlebar files that we have, rendering the JS files useless.
+
+  ! DON'T REMOVE THE /js FOLDER in /Public THOUGH UNTIL WE ARE CERTAIN THEY HAVE NO USE !
+
+
+*/
 
 $(document).ready(function() {
     // Function to handle form submission

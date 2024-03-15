@@ -1,4 +1,17 @@
-<div class="editProfile fullscreen-overlay" id="editProfile">
+const editProfileDiv = document.getElementById('editProfile');
+
+function closePopup(event) {
+    //editProfileDiv.style.visibility = "hidden";
+    event.preventDefault();
+    editProfileDiv.remove();
+}
+
+function openPopup(event) {
+    event.preventDefault();
+    const editProfileDiv = document.createElement('div');
+    editProfileDiv.id = 'editProfile';
+    editProfileDiv.innerHTML = `
+    <div class="editProfile fullscreen-overlay" id="editProfile">
     <div class="editProfileDialog">
         <h1 class="ruda-regular">Edit Profile</h1>
         <div class="editImages">
@@ -21,4 +34,7 @@
             </form>
         </div>
     </div>
-</div>
+    `
+    document.body.appendChild(editProfileDiv);
+    document.getElementById('editProfileInfo').addEventListener('submit', closePopup);
+}

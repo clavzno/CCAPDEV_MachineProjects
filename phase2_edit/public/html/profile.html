@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/common.css"> 
     <link rel="stylesheet" href="../css/profile.css">
+    <script src="../js/profile.js" defer></script>
     <title>Bookface</title>
 </head>
 <body>
+    <div class="editProfile fullscreen-overlay" id="editProfile">
+        <div class="editProfileDialog">
+            <h1 class="ruda-regular">Edit Profile</h1>
+            <div class="editImages">
+                <div class="headerPreview imagePreviews">
+                    <img src="../images/zappy.jpg" class="profile_images"/>
+                </div>
+                <div class="profilePicPreview imagePreviews">
+                    <img src="../images/lorem.jpg" class="profile_images" />
+                </div>
+            </div>
+            <div class="editInfo">
+                <form id="editProfileInfo" method="post">
+                    <label for="displayName" class="orienta-regular">Display Name</label> <br>
+                    <input name="displayName" type="text" class="textInput">
+                    <br><br>
+                    <label for="bio" class="orienta-regular">Bio</label> <br>
+                    <textarea name="bio" class="textInput" type="description"></textarea>
+                    <br><br>
+                    <button type="submit" class="importantButton" onclick="closePopup();">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="header">
         <h1 class="point logotype ruda-bold">Bookface</h1>
         <div class="point searchBar textInput">
@@ -52,6 +78,9 @@
                     <p id="userprofile_description" class="work-sans-light">
                         Passionate explorer of technology and innovation. Lifelong learner with a knack for dudes and girls.
                     </p>
+                </div>
+                <div class="profile_actions">
+                    <button class="importantButton point" onclick="openPopup();">Edit Profile</button>
                 </div>
             </div>
 
