@@ -22,6 +22,12 @@
                 {{#if singlepost}}
                     {{>singlepost}}
                     {{>content_input}}
+                    {{#if comment}}
+                        <p>testing2</p>
+                        {{#each comment}}
+                        {{>comment}}
+                        {{/each}}
+                    {{/if}}
                 {{else}}
                     {{#if editsinglepost}}
                         {{>editsinglepost}}

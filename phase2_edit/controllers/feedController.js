@@ -9,6 +9,7 @@ const express = require('express');
 const cookieParser = require("cookie-parser");
 const users = require('../models/userModel.js');
 const posts = require('../models/postModel.js');
+const comments = require('../models/commentModel.js')
 
 //loadFeed, feedPost, loadPost, postComment, loadEditPost, postEditPost, deletePost
 
@@ -71,13 +72,27 @@ const feedController = {
     run()
     async function run() {
         try{
+            const id = req.params.id;
             const commentContent = req.body.commentContent;
-            const comment = new comments({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent});
+            const comment = new comments({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent, post:id});
             await comment.save();
             console.log(comment);
         }catch(e){
             console.log(e.message);
         }
+    }
+
+    reload()
+    async function reload(){
+      try{
+        const id = req.params.id;
+        const post = await posts.findById({_id:id});
+        //res.send(post);
+        console.log(post);
+        res.render('feed', {singlepost:post, comment:post.postComments});
+      }catch(e){
+        console.log(e.message);
+      }
     }
   },
 
