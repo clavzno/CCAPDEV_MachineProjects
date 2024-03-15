@@ -33,17 +33,24 @@
             <input type="checkbox" id="rememberMeLogin" name="rememberMeLogin">
             <label for="rememberMeLogin">Remember me</label>
           </div>
-          {{!-- <a href="#" class="ruda-bold">Forgot Password?</a> --}}
+          {{!-- <a href="#" class="ruda-bold">Forgot Password?</a>  --}} {{! Keep commented uwu }}
           <button type="submit" class="login-button-class" method="POST">Login</button>
         </form>
 
         {{!-- <button onclick="location.href='signup.html'" class="signup-button-class">Create Account</button> --}}
         <button type="button" id="signupButton" class="signup-button-class">Create Account</button>
+        <button type="button" id="guestButton" class="guest-button-class">Guest Mode Baby</button>
+
         <script>
         const signupButton = document.getElementById('signupButton');
         signupButton.addEventListener('click', () => {
             window.location.href = '/signup'; // Redirect to signup route
         });
+
+        const guestButton = document.getElementById('guestButton');
+        guestButton.addEventListener('click', () => {
+          window.location.href = '/feed'; // Redirect to feed route
+        })
         </script>
       </div>
     </div>
