@@ -68,6 +68,7 @@ const authController = {
  async login(req, res) {
   console.log(req.body); 
   const { email, password } = req.body;
+  const rememberMe = req.body.rememberMeLogin;
 
   try {
     const user = await User.findOne({ email });
@@ -84,10 +85,10 @@ const authController = {
     }
 
   // NOT YET IMPLEMENTED
-  //   if(rememberMe) {
-  //     session = req.session;
-  //     session.email = req.body.user;
-  // }
+    if(rememberMe) {
+      session = req.session;
+      session.email = req.body.user;
+  }
 
     // Login successful (implementation depends on your authentication strategy)
     // You might create a session, generate a token, or redirect to a protected page
