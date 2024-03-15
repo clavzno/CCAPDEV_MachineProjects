@@ -41,9 +41,13 @@
         <div class="mainContent">
             <!-- selector -->
             <div class="searchOptions_main">
-                <div class="selector ruda-regular point searchOptions" id="searchOptions_dropdown">
+                <div class="selector ruda-regular point searchOptions" id="searchOptions_dropdown" onclick="toggleDropdown()">
                     <p>Search options</p>
-                    <img src="../sprites/icons/Dark/icons8-filter-96-darkmode.png" class="actionImg" alt="searchFilter" />
+                    <img id="search-dropdown" src="../sprites/icons/Dark/icons8-filter-96-darkmode.png" class="actionImg" alt="searchFilter" />
+                    <div class="searchOptions_dropdown" id="searchOptions_dropdown">
+                        <ul id="TopPost" onclick=""></ul>
+                        <ul id="latestPost" onclick=""></ul>
+                    </div>
                 </div>
             </div>
             <!-- end selector -->

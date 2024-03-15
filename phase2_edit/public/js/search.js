@@ -14,6 +14,9 @@ var database = [
 ];
 
 // Dropdown
+const sprite = document.getElementById("search-dropdown");
+sprite.addEventListener("click", toggleDropdown);
+
 function toggleDropdown() {
     const dropdown = document.getElementById("searchOptions_dropdown");
     dropdown.classList.toggle("open");
