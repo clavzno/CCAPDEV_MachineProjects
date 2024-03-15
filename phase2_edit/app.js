@@ -17,16 +17,13 @@ const passportlocalmongoose = require('passport-local-mongoose');
 const hbs = require('hbs');
 const routes = require('./routes/routes'); // Import routes
 const feed = require('./routes/feed');
-// const connect = require('./public/database/server.js');
-// const controller = require('./controllers/controller');
 const flash = require('express-flash');
 let app = express(); // app is server object
-// Parse JSON request bodies
-app.use(bodyParser.json());
-// Parse URL-encoded request bodies
-app.use(bodyParser.urlencoded({ extended: true }));
 
-// Session management
+app.use(bodyParser.json()); // Parse JSON request bodies
+app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded request bodies
+
+// Session management that we dont need for MCO2 but im keeping it because its not destroying our code :)
 app.use(sessions({
     secret: "StrongSecretThing", // Replace with a strong random secret
     resave: false,
@@ -50,26 +47,9 @@ const port = process.env.PORT;
 const uri = process.env.MONGODB_URI
 const cluster = process.env.DB_NAME;
 
-
-
-// Connecting to the Database
-// const db = require('./public/database/conn'); // Importing database.js
-// app.listen(db.PORT, async function(){
-//     console.log("Running on port: " + db.PORT);
-//     try{
-//         await db.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-//         console.log("Connected to MongoDB!");
-//         console.log("Connected to: " + process.env.MONGODB_URI);
-//         console.log("Connected to cluster: " + process.env.DB_NAME);
-//           // Import all models so far
-//         require('./models/model');
-//     }catch(err){
-//         console.error(err);
-//         console.log("Failed to connect to database");
-//     }
-//   });
-
-const connect = require('./public/database/server');
+// Arguably the most important part of app.js 
+// THEREFORE DO NOT TOUCH THIS PART OF THE FILE
+const connect = require('./models/database/server');
 app.listen(process.env.PORT, async function(){
   console.log("Running on port: " + process.env.PORT);
   try{
@@ -81,4 +61,3 @@ app.listen(process.env.PORT, async function(){
       console.log("Failed to connect to database");
   }
 });
-// module.exports = app;
