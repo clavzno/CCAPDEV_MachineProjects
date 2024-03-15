@@ -37,15 +37,15 @@ const userSchema = new mongoose.Schema({
   },
   //profile and feed requirements
   followers: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User' // referring to this model (exported as 'User' below)
   }], 
   following: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User' // referring to this model (exported as 'User' below)
   }],
   posts: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Post' // referring to the model 'posts' in postModel.js
   }],
 });
