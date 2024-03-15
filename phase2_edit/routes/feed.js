@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const posts = require('../models/postModel.js');
+const comments = require('../models/commentModel.js')
 
 router.get('/', (req, res) => {
     run()
@@ -26,7 +27,7 @@ router.post('/', (req,res) => {
 
     reload()
     async function reload() {
-        const post = await posts.find();
+        const post = await posts.find().sort({'postDate' : -1});
         res.render('feed', {post:post});
     }
 
@@ -48,5 +49,22 @@ router.get('/:id', (req,res) => {
     }
 
 });
+
+router.post('/:id', (req,res) => {
+
+    run()
+    async function run() {
+        try{
+            const commentContent = req.body.commentContent;
+            const comment = new comments({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent});
+            await comment.save();
+            console.log(comment);
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+
+});
+
 
 module.exports = router;
