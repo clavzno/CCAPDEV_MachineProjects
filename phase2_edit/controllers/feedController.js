@@ -16,6 +16,10 @@ const comments = require('../models/commentModel.js')
 
 const feedController = {
 
+  getProfile: (req, res) => {
+    res.render('profile');
+  },
+
   async loadFeed(req,res){
     run()
     async function run(){

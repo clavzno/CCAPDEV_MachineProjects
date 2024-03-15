@@ -17,12 +17,13 @@ const app = express();
 // GETTERS
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
-//router.get('/logout', feedController.logout);
+router.get('/logout', authController.logout);
 
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
 //router.post('/createPost', feedController.createPost);
 
+router.get('/profile', feedController.getProfile);
 router.get('/feed', feedController.loadFeed); 
 router.post('/feed', feedController.feedPost);
 router.get('/feed/:id', feedController.loadPost); 
