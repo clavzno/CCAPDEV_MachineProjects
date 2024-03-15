@@ -100,13 +100,13 @@
 //         }
 //     }
 
-    reload()
-    async function reload() {
-        const id = req.params.id;
-        const post = await posts.findById({_id:id});
-        res.redirect('/feed/'+id);
-    }
-})
+//     reload()
+//     async function reload() {
+//         const id = req.params.id;
+//         const post = await posts.findById({_id:id});
+//         res.redirect('/feed/'+id);
+//     }
+// })
 
 
-module.exports = router;
+// module.exports = router;

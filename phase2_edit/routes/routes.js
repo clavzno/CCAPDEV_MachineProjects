@@ -17,11 +17,11 @@ const app = express();
 // GETTERS
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
-router.get('/logout', feedController.logout);
+//router.get('/logout', feedController.logout);
 
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
-router.post('/createPost', feedController.createPost);
+//router.post('/createPost', feedController.createPost);
 
 router.get('/feed', feedController.loadFeed); 
 router.post('/feed', feedController.feedPost);
@@ -55,11 +55,7 @@ router.post('/feed/:id/delete', feedController.deletePost);
 //Using routes.js for the testing routes for now
 
 router.get('/', (req, res) => {
-    var data ={
-        feed: "/feed",
-        text: 'yooooo'
-    }
-    res.render('index', data);
+    res.render('index');
 });
 
 

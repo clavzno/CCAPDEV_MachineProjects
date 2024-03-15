@@ -42,7 +42,7 @@ app.use(express.static(__dirname + '/public')); // This allows the user to acces
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', routes); // Use the router for all routes starting with '/'
-app.use('/feed', feed); // Use the feed router for all feed routes
+//app.use('/feed', feed); // Use the feed router for all feed routes
 
 
 const port = process.env.PORT;
