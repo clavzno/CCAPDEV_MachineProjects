@@ -108,5 +108,20 @@ router.post('/:id/edit', (req,res) => {
     }
 })
 
+router.post('/:id/delete', (req,res) => {
+
+    run()
+    async function run() {
+        try{
+            const id = req.params.id;
+            const post = await posts.deleteOne({_id:id});
+            res.redirect('/feed');
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+
+});
+
 
 module.exports = router;
