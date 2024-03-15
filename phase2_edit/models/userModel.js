@@ -9,16 +9,19 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  email: {
+  username: {
     type: String,
     required: true,
     unique: true
+  },
+  user_img: {
+    type: String,
+    default: '../public/images/helldivers_2.jpg' // Default profile image
   },
   password: {
     type: String,
     required: true
   },
-  //remove confirm password
   birthdate: {
     type: Date,
     required: true
