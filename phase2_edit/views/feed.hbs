@@ -10,9 +10,11 @@
                     <p style="margin-left:20%;">Popular</p>
             </div>
             <!-- end selector -->
+            {{#if edit}}
+                {{>content_input}}
+            {{/if}}
 
             {{#if post}}
-                {{>content_input}}
                 {{#each post}}
                 {{>post}}
                 {{/each}}

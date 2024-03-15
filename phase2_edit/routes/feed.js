@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     run()
     async function run(){
         const post = await posts.find();
-        res.render('feed', {post:post});
+        res.render('feed', {post:post, edit:true});
     }
 });
 
@@ -28,7 +28,7 @@ router.post('/', (req,res) => {
     reload()
     async function reload() {
         const post = await posts.find().sort({'postDate' : -1});
-        res.render('feed', {post:post});
+        res.render('feed', {post:post, edit:true});
     }
 
 });
