@@ -8,6 +8,7 @@ const express = require('express'); // IMPORTANT! KEEP
 const router = express.Router(); // IMPORTANT! KEEP
 const authController = require('../controllers/authController'); // Import authController
 const feedController = require('../controllers/feedController'); // Import feedController
+// const profileController = require('../controllers/profileController'); // Import profileController
 const users = require('../models/userModel.js');
 const posts = require('../models/postModel.js');
 
@@ -29,7 +30,7 @@ router.post('/login', authController.login);
 router.post('/signup', authController.signup);
 router.post('/createPost', feedController.createPost);
 
-router.post('/editProfile', profileController.editProfile); //added, will go back later
+// router.post('/editProfile', profileController.editProfile); //added, will go back later
 
 
 
