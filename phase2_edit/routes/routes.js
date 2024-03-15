@@ -17,19 +17,21 @@ const app = express();
 // GETTERS
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
-router.get('/logout', authController.logout);
-router.get('/guestFeed', authController.getGuestFeed); // EXPERIMENT
+//router.get('/logout', feedController.logout);
 
-router.get('/feed', feedController.getFeed);
-router.get('/', feedController.getFeed);
-router.get('/profile', feedController.getProfile);
-
-
-
-// POSTERS
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
-router.post('/createPost', feedController.createPost);
+//router.post('/createPost', feedController.createPost);
+
+router.get('/feed', feedController.loadFeed); 
+router.post('/feed', feedController.feedPost);
+router.get('/feed/:id', feedController.loadPost); 
+router.post('/feed/:id', feedController.postComment);
+router.get('/feed/:id/edit', feedController.loadEditPost); 
+router.post('/feed/:id/edit', feedController.postEditPost);
+router.post('/feed/:id/delete', feedController.deletePost);
+
+
 
 // router.post('/editProfile', profileController.editProfile); //added, will go back later
 
@@ -52,9 +54,9 @@ router.post('/createPost', feedController.createPost);
 
 //Using routes.js for the testing routes for now
 
-// router.get('/', (req, res) => {
-//     res.render('feed', data);
-// });
+router.get('/', (req, res) => {
+    res.render('index');
+});
 
 
 
