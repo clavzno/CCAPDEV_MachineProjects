@@ -327,6 +327,11 @@ html, body {
     align-items: center;
 }
 
+.selector a{
+    color: white;
+    text-decoration: none;
+}
+
 .selector_selected {
     width: 50%;
     margin: 0px;

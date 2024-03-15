@@ -3,13 +3,13 @@
 // const posts = require('../models/postModel.js');
 // const comments = require('../models/commentModel.js')
 
-// router.get('/', (req, res) => {
-//     run()
-//     async function run(){
-//         const post = await posts.find();
-//         res.render('feed', {post:post, input:true});
-//     }
-// });
+router.get('/', (req, res) => {
+    run()
+    async function run(){
+        const post = await posts.find().sort({'postDate' : -1});
+        res.render('feed', {post:post, input:true});
+    }
+});
 
 
 // router.post('/', (req,res) => {
@@ -86,19 +86,19 @@
 
 //     run()
 
-//     async function run() {
-//         try{
-//             const id = req.params.id;
-//             const postTitle = req.body.postTitle;
-//             const postContent = req.body.postContent;
-//             const postTags = req.body.postTags;
-//             const post = await posts.updateOne({_id:id}, { $set: {postTitle:postTitle, postContent:postContent, postTags:postTags}});
-//             //console.log(post);
-//             res.render('feed', {singlepost:post});
-//         }catch(e){
-//             console.log(e.message);
-//         }
-//     }
+    async function run() {
+        try{
+            const id = req.params.id;
+            const postTitle = req.body.postTitle;
+            const postContent = req.body.postContent;
+            const postTags = req.body.postTags;
+            const post = await posts.updateOne({_id:id}, { $set: {postTitle:postTitle, postContent:postContent, postTags:postTags}}).sort({'postDate' : -1});
+            //console.log(post);
+            res.render('feed', {singlepost:post});
+        }catch(e){
+            console.log(e.message);
+        }
+    }
 
 //     reload()
 //     async function reload() {

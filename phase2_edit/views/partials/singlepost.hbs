@@ -14,10 +14,13 @@
             </div>
         </div>
         <div class="postHeader_follow">
-                            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />
+            {{!<img class="actionImg point" src="../../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />}}
             <a href="/feed/{{singlepost._id}}/edit">
                 <img class="actionImg point" src="../../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="edit" />
             </a>
+            <form action="/feed" class="form-class" method="post">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-clear-96-darkmode.png" alt="delete" />
+            </form>
         </div>
     </div>
     <div class="post_content">
