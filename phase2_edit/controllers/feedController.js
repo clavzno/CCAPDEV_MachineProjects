@@ -12,17 +12,6 @@ const cookieParser = require("cookie-parser");
 
 const feedController = {
 
-    // Logout
-    logout(req, res) {
-        // As you can see, we have multiple ways of logging out, such as clearing session data or cookies
-        // res.clearCookie('rememberToken');                // Clear the remember me token cookie
-        // res.redirect('/login');                          // Redirect the user to the login page
-        req.session.destroy();                              // Destroy the session
-        console.log('Logout Success!');
-        res.clearCookie('rememberToken').redirect('/login'); // Let's try this for now
-      }
-
-
 
 
 };
