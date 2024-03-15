@@ -21,8 +21,15 @@ getProfile (req, res) {
     res.render('profile');
 }, 
 
+};
+
+function openPopup() {
+    document.getElementById("editProfile").style.display = "block";
 }
 
+function closePopup() {
+    document.getElementById("editProfile").style.display = "none";
+}
 
 module.exports = profileController; // Exporting the profileController module
 
