@@ -21,6 +21,7 @@ router.get('/logout', authController.logout);
 router.get('/guestFeed', authController.getGuestFeed); // EXPERIMENT
 
 router.get('/feed', feedController.getFeed);
+router.get('/', feedController.getFeed);
 router.get('/profile', feedController.getProfile);
 
 
@@ -51,13 +52,9 @@ router.post('/createPost', feedController.createPost);
 
 //Using routes.js for the testing routes for now
 
-router.get('/', (req, res) => {
-    var data ={
-        feed: "/feed",
-        text: 'yooooo'
-    }
-    res.render('index', data);
-});
+// router.get('/', (req, res) => {
+//     res.render('feed', data);
+// });
 
 
 
