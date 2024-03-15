@@ -13,17 +13,23 @@ const posts = require('../models/postModel.js');
 
 const app = express();
 
+// GETTERS
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
-router.get('/logout', feedController.logout);
+router.get('/logout', authController.logout);
+router.get('/guestFeed', authController.getGuestFeed); // EXPERIMENT
 
+router.get('/feed', feedController.getFeed);
+
+// POSTERS
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
+router.post('/createPost', feedController.createPost);
 
 
 
 
-// router.get('/feed');   <-- We need something like this after the user is logged in
+// router.get('/feed');   //<-- We need something like this after the user is logged in
 
 
 
