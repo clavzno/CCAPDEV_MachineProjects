@@ -5,6 +5,7 @@
 */
 
 const mongoose = require('mongoose');
+const Post = require('../models/postModel.js'); // Import the Post model
 const express = require('express');
 const cookieParser = require("cookie-parser");
 const users = require('../models/userModel.js');

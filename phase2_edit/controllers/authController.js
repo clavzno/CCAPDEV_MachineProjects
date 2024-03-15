@@ -10,6 +10,7 @@
 
 const mongoose = require('mongoose');
 const User = require('../models/userModel.js'); // Import the User model
+const Post = require('../models/postModel.js'); // Import the Post model
 const bcrypt = require('bcrypt'); // For password hashing
 const session = require('express-session'); // To remember user that logged in
 
@@ -25,14 +26,14 @@ const authController = {
  // Handle user signup
  async signup(req, res) {
   console.log(req.body); 
-  const { firstName, lastName, email, password, confirmPassword, birthdate, gender } = req.body;
+  const { firstName, lastName, username, password, confirmPassword, birthdate, gender } = req.body;
 
   try {
-    // Check for existing user with the same email
-    const existingUser = await User.findOne({ email });
+    // Check for existing user with the same username
+    const existingUser = await User.findOne({ username });
     if (existingUser) {
-      console.log('Email already exists:', email);
-      return res.status(400).json({ message: 'Email already exists' });
+      console.log('username already exists:', username);
+      return res.status(400).json({ message: 'username already exists' });
     }
         // Check if passwords match
         if (password !== confirmPassword) {
@@ -48,7 +49,7 @@ const authController = {
     const newUser = new User({
       firstName,
       lastName,
-      email,
+      username,
       password: hashedPassword, // Store hashed password
       birthdate,
       gender,
@@ -75,14 +76,14 @@ const authController = {
  // Handle user login
  async login(req, res) {
   console.log(req.body); 
-  const { email, password, rememberMe } = req.body;
+  const { username, password, rememberMe } = req.body;
   // const rememberMe = req.body.rememberMeLogin;
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username });
     if (!user) {
-      console.log('Invalid email:', email);
-      return res.status(401).json({ message: 'Invalid email' });
+      console.log('Invalid username:', username);
+      return res.status(401).json({ message: 'Invalid username' });
     }
 
     // Compare hashed password with provided password
@@ -95,7 +96,7 @@ const authController = {
   // IDK IF ITS CORRECT
     if(rememberMe) {
       // session = req.session;
-      // session.email = req.body.user;
+      // session.username = req.body.user;
       res.cookie('rememberToken', token, { maxAge: 1000 * 60 * 60 * 24 * 21 });
   }
 
@@ -107,7 +108,34 @@ const authController = {
     console.error(err);
     return res.status(500).json({ message: 'Server error' });
   }
-}
+},
+
+    // Logout
+    logout(req, res) {
+      // As you can see, we have multiple ways of logging out, such as clearing session data or cookies
+      // res.clearCookie('rememberToken');                // Clear the remember me token cookie
+      // res.redirect('/login');                          // Redirect the user to the login page
+      req.session.destroy();                              // Destroy the session
+      console.log('Logout Success!');
+      res.clearCookie('rememberToken').redirect('/login'); // Let's try this for now
+    },
+
+    // Render the feed page for guests
+  getGuestFeed: async (req, res) => {
+    try {    
+      const posts = await Post.find()
+                              .sort({ postDate: -1 })
+                              .limit(20)
+                              .populate('user', 'username user_img'); // Fetch the 15-20 most recent posts
+      
+      // Render the posts on the feed page
+      res.render('guestFeed', { posts });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Server error' });
+    }
+  }
+
 };
 
 module.exports = authController;

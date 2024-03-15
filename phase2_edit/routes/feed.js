@@ -100,28 +100,13 @@
 //         }
 //     }
 
-//     reload()
-//     async function reload() {
-//         const id = req.params.id;
-//         const post = await posts.findById({_id:id});
-//         res.redirect('/feed/'+id);
-//     }
-// })
-
-// router.post('/:id/delete', (req,res) => {
-
-//     run()
-//     async function run() {
-//         try{
-//             const id = req.params.id;
-//             const post = await posts.deleteOne({_id:id});
-//             res.redirect('/feed');
-//         }catch(e){
-//             console.log(e.message);
-//         }
-//     }
-
-// });
+    reload()
+    async function reload() {
+        const id = req.params.id;
+        const post = await posts.findById({_id:id});
+        res.redirect('/feed/'+id);
+    }
+})
 
 
-// module.exports = router;
+module.exports = router;

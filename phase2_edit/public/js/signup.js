@@ -19,7 +19,7 @@ $(document).ready(function() {
       var lastName = $("#lastName").val();
       var password = $("#password").val();
       var confirmPassword = $("#confirmPassword").val();
-      var email = $("#email").val();
+      var username = $("#username").val();
       var birthdate = $("#birthdate").val();
       var gender = $("#gender").val();
   
@@ -35,7 +35,7 @@ $(document).ready(function() {
         firstName: firstName,
         lastName: lastName,
         password: password,
-        email: email,
+        username: username,
         birthdate: birthdate,
         gender: gender
       });
@@ -48,7 +48,7 @@ $(document).ready(function() {
           firstName: firstName,
           lastName: lastName,
           password: password,
-          email: email,
+          username: username,
           birthdate: birthdate,
           gender: gender
         }),

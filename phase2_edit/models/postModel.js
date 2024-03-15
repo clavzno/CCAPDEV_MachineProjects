@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const User = require('../models/userModel');
 
 const postSchema = new mongoose.Schema({
     user_img: {  //is it technically possible link the profile image to this?
@@ -11,6 +12,12 @@ const postSchema = new mongoose.Schema({
     },
     username: { //same with this
       type: String,
+      required: true
+    },
+    // MY ADDITION IDEA 
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
       required: true
     },
     postDate: {

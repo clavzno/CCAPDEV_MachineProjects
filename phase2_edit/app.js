@@ -1,8 +1,10 @@
 /*
-    STILL TEST FILE grr
 
- Please don't try to move this to a specific folder, keep it here
- there will be future problems with res.sendFile method if so.
+    MAIN FILE !
+    Where all the magic functions
+
+    I miss her so much man, but I got ghosted
+
 */
 
 const dotenv = require('dotenv').config(); // Load variables stated in .env in as environment variables.
@@ -16,7 +18,7 @@ const LocalStrategy = require('passport-local');
 const passportlocalmongoose = require('passport-local-mongoose');
 const hbs = require('hbs');
 const routes = require('./routes/routes'); // Import routes
-//const feed = require('./routes/feed');
+// const feed = require('./routes/feed');
 const flash = require('express-flash');
 let app = express(); // app is server object
 
@@ -40,7 +42,7 @@ app.use(express.static(__dirname + '/public')); // This allows the user to acces
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', routes); // Use the router for all routes starting with '/'
-//app.use('/feed', feed); // Use the feed router for all feed routes
+app.use('/feed', feed); // Use the feed router for all feed routes
 
 
 const port = process.env.PORT;

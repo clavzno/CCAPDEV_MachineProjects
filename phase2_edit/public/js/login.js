@@ -15,7 +15,7 @@ $(document).ready(function() {
       event.preventDefault(); // Prevent the form from submitting normally
   
       // Get the values from the form fields
-      var email = $("#email").val();
+      var username = $("#username").val();
       var password = $("#password").val();
       var rememberMe = $("#rememberMe").is(":checked");
   
@@ -24,7 +24,7 @@ $(document).ready(function() {
         url: "/login",
         type: "POST",
         data: {
-            email: email,
+            username: username,
           password: password,
           rememberMe: rememberMe
         },

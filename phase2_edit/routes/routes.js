@@ -8,17 +8,20 @@ const express = require('express'); // IMPORTANT! KEEP
 const router = express.Router(); // IMPORTANT! KEEP
 const authController = require('../controllers/authController'); // Import authController
 const feedController = require('../controllers/feedController'); // Import feedController
+// const profileController = require('../controllers/profileController'); // Import profileController
 const users = require('../models/userModel.js');
 const posts = require('../models/postModel.js');
 
 const app = express();
 
+// GETTERS
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
-//router.get('/logout', feedController.logout);
+router.get('/logout', feedController.logout);
 
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
+router.post('/createPost', feedController.createPost);
 
 router.get('/feed', feedController.loadFeed); 
 router.post('/feed', feedController.feedPost);
@@ -30,10 +33,11 @@ router.post('/feed/:id/delete', feedController.deletePost);
 
 
 
+// router.post('/editProfile', profileController.editProfile); //added, will go back later
 
 
 
-// router.get('/feed');   <-- We need something like this after the user is logged in
+// router.get('/feed');   //<-- We need something like this after the user is logged in
 
 
 
