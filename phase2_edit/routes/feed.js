@@ -28,7 +28,7 @@ router.post('/', (req,res) => {
     reload()
     async function reload() {
         const post = await posts.find().sort({'postDate' : -1});
-        res.render('feed', {post:post, edit:true});
+        res.render('feed', {post:post, input:true});
     }
 
 });
