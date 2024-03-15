@@ -1,4 +1,12 @@
-// for authentication for signup and login
+/*
+
+  Handles server-side functionality for the authentication of user
+  getSignup:  renders signup page
+  signup:     handles registration functionality
+  getLogin:   renders login page
+  login:      handles ... logging in..
+
+*/
 
 const mongoose = require('mongoose');
 const User = require('../models/userModel.js'); // Import the User model
@@ -67,8 +75,8 @@ const authController = {
  // Handle user login
  async login(req, res) {
   console.log(req.body); 
-  const { email, password } = req.body;
-  const rememberMe = req.body.rememberMeLogin;
+  const { email, password, rememberMe } = req.body;
+  // const rememberMe = req.body.rememberMeLogin;
 
   try {
     const user = await User.findOne({ email });
@@ -84,15 +92,16 @@ const authController = {
       return res.status(401).json({ message: 'Invalid password' });
     }
 
-  // NOT YET IMPLEMENTED
+  // IDK IF ITS CORRECT
     if(rememberMe) {
-      session = req.session;
-      session.email = req.body.user;
+      // session = req.session;
+      // session.email = req.body.user;
+      res.cookie('rememberToken', token, { maxAge: 1000 * 60 * 60 * 24 * 21 });
   }
 
-    // Login successful (implementation depends on your authentication strategy)
-    // You might create a session, generate a token, or redirect to a protected page
-    // In this example, we'll redirect to a placeholder page (replace with your logic)
+    // Login successful
+    // Might create a session, generate a token, or redirect to another page
+    // In this, we'll redirect to feed page
     res.redirect('/feed'); // Replace with your desired redirect path
   } catch (err) {
     console.error(err);
