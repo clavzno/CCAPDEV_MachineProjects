@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     run()
     async function run(){
         const post = await posts.find();
-        res.render('feed', {post:post, edit:true});
+        res.render('feed', {post:post, input:true});
     }
 });
 
@@ -65,6 +65,48 @@ router.post('/:id', (req,res) => {
     }
 
 });
+
+router.get('/:id/edit', (req,res) => {
+
+    run()
+    async function run() {
+        try{
+            const id = req.params.id;
+            const post = await posts.findById({_id:id});
+            console.log(post);
+            res.render('feed', {editsinglepost:post, edit:true});
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+
+});
+
+router.post('/:id/edit', (req,res) => {
+
+    run()
+
+    async function run() {
+        try{
+            const id = req.params.id;
+            const postTitle = req.body.postTitle;
+            const postContent = req.body.postContent;
+            const postTags = req.body.postTags;
+            const post = await posts.updateOne({_id:id}, { $set: {postTitle:postTitle, postContent:postContent, postTags:postTags}});
+            //console.log(post);
+            res.render('feed', {singlepost:post});
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+
+    reload()
+    async function reload() {
+        const id = req.params.id;
+        const post = await posts.findById({_id:id});
+        res.redirect('/feed/'+id);
+    }
+})
 
 
 module.exports = router;

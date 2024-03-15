@@ -1,4 +1,4 @@
-{{#if edit}}
+{{#if input}}
     <form action="/feed" class="form-class" method="post">
         <div class="editor universal_boxshadow">
             <div class="editor_sideBorder">
@@ -23,7 +23,7 @@
 {{/if}}
 
 {{#if singlepost}}
-    <form action="/feed/{{_id}}" class="form-class" method="post">
+    <form action="/feed/{{singlepost._id}}" class="form-class" method="post">
         <div class="editor universal_boxshadow">
             <div class="editor_sideBorder">
                 <img class="userImg" name="user_img" src="../../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="user" />

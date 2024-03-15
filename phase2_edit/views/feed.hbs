@@ -10,7 +10,7 @@
                     <p style="margin-left:20%;">Popular</p>
             </div>
             <!-- end selector -->
-            {{#if edit}}
+            {{#if input}}
                 {{>content_input}}
             {{/if}}
 
@@ -23,7 +23,11 @@
                     {{>singlepost}}
                     {{>content_input}}
                 {{else}}
-                    <p>posts are empty</p>
+                    {{#if editsinglepost}}
+                        {{>editsinglepost}}
+                        {{else}}
+                        <p>posts are empty</p>
+                    {{/if}}
                 {{/if}}    
             {{/if}}   
         </div>
