@@ -22,11 +22,14 @@ router.get('/guestFeed', authController.getGuestFeed); // EXPERIMENT
 router.get('/feed', feedController.getFeed);
 router.get('/profile', feedController.getProfile);
 
+
+
 // POSTERS
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
 router.post('/createPost', feedController.createPost);
 
+router.post('/editProfile', profileController.editProfile); //added, will go back later
 
 
 
