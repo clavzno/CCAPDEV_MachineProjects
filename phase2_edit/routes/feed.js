@@ -6,7 +6,7 @@ const comments = require('../models/commentModel.js')
 router.get('/', (req, res) => {
     run()
     async function run(){
-        const post = await posts.find();
+        const post = await posts.find().sort({'postDate' : -1});
         res.render('feed', {post:post, input:true});
     }
 });
@@ -92,7 +92,7 @@ router.post('/:id/edit', (req,res) => {
             const postTitle = req.body.postTitle;
             const postContent = req.body.postContent;
             const postTags = req.body.postTags;
-            const post = await posts.updateOne({_id:id}, { $set: {postTitle:postTitle, postContent:postContent, postTags:postTags}});
+            const post = await posts.updateOne({_id:id}, { $set: {postTitle:postTitle, postContent:postContent, postTags:postTags}}).sort({'postDate' : -1});
             //console.log(post);
             res.render('feed', {singlepost:post});
         }catch(e){
