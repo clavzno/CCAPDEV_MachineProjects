@@ -13,7 +13,7 @@
   - PORT: 3000
 
 ## We had issues with sample data, so we created 5 users to prove that it connects to the database, though you've already seen it during consultation lmao but here you go
-- username : password
+### username : password
 
 - TheKing420 : qwerty
 - jackieboy : asd
