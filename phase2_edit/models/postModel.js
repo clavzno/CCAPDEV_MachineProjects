@@ -18,7 +18,7 @@ const postSchema = new mongoose.Schema({
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true
+      required: false
     },
     postDate: {
       type: Date, 
@@ -39,15 +39,15 @@ const postSchema = new mongoose.Schema({
     postPicture: {
       type: String
     },
+    postComments: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'comments'
+    },
     postLikes: {
       type: Number,
       default: 0
     },
     postDislikes: {
-      type: Number,
-      default: 0
-    },
-    postComments: {
       type: Number,
       default: 0
     },

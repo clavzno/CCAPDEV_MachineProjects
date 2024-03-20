@@ -18,10 +18,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  user_img: {
-    type: String,
-    default: '../public/images/helldivers_2.jpg' // Default profile image
-  },
   password: {
     type: String,
     required: true
@@ -37,17 +33,26 @@ const userSchema = new mongoose.Schema({
   },
   //profile and feed requirements
   followers: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User' // referring to this model (exported as 'User' below)
   }], 
   following: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User' // referring to this model (exported as 'User' below)
   }],
   posts: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Post' // referring to the model 'posts' in postModel.js
   }],
+  // moved user_img down here
+  user_img: {
+    type: String,
+    default: '../public/images/helldivers_2.jpg' // Default profile image
+  },
+  user_header: {
+    type: String,
+    default: '../public/images/helldivers_2.jpg' // Default header image
+  },
 });
 
 module.exports = mongoose.model('User', userSchema); // Export User model based on the user schema

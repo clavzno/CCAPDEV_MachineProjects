@@ -1,15 +1,15 @@
 <div class="post universal_boxshadow">
     <div class="post_header">
         <div class="postHeader_pic">
-            <img class="userImg point"  src={{user_img}} alt="post_userprofile" ></img>
+            <img class="userImg point"  src={{comment.user_img}} alt="post_userprofile" ></img>
         </div>
         <div class="postHeader_info">
             <div>
-                <p class="ruda-regular point">{{user_name}}</p>
-                <p class="ruda-regular-lighter">{{username}}</p>
+                <p class="ruda-regular point">{{comment.user_name}}</p>
+                <p class="ruda-regular-lighter">{{comment.username}}</p>
             </div>
             <div>
-                <p class="ruda-regular-lighter">{{commentDate}}</p>
+                <p class="ruda-regular-lighter">{{comment.commentDate}}</p>
             </div>
         </div>
         <div class="postHeader_follow">
@@ -19,22 +19,22 @@
     <div class="post_content">
         <div class="postContent_text point">
             <p class="work-sans-regular">
-                {{commentContent}}
+                {{comment.commentContent}}
             </p>
         </div>
     </div>
     <div class="post_actions">
         <div class="postActions_like">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
-            <p>{{commentLikes}}</p>
+            <p>{{comment.commentLikes}}</p>
         </div>
         <div class="postActions_dislike">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
-            <p>{{commentDislikes}}</p>
+            <p>{{comment.commentDislikes}}</p>
         </div>
         <div class="postActions_comment">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
-            <p>{{commentComments}}</p>
+            <p>{{comment.commentComments}}</p>
         </div>
         {{!<img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />}}
     </div>
