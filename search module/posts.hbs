@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/search.css"> 
-    <title>Bookface</title>
-</head>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/search.css"> 
+
+
+<hr />
+{{#if posts}}
+    {{#each posts}}
+    {{> post this}}
+    <br>
+    {{/each}}
+{{else}}
+<p> No posts to show...</p>
+{{/if}}
+
+<title>Bookface</title>
 <body>
     <div class="header">
         <h1 class="point logotype ruda-bold">Bookface</h1>
@@ -101,4 +107,3 @@
     </div> <!-- end  content -->    
     <script src="../phase2_edit/search.js"></script>
 </body>
-</html>
