@@ -1,0 +1,20 @@
+View Folder:
+
+• All views for the features must be visible and can be navigated to and from the
+index webpage.
+
+• All views must be accessible from navigational links and buttons within the
+application.
+
+
+-- So what goes in this folder..? Pages that clients can see.
+1. HTML
+
+
+• The layouts folder will contain main templates
+     Layouts are the main container for the views.
+     The entire HTML document minus the body.
+• The partials folder will contain partial (reusable)
+templates
+     Partials are meant for reusable snippets for components
+    (typically shared between views).

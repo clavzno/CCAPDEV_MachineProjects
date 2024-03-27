@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookface Signup 2.0</title>
+  <link href="../public/css/common.css" rel="stylesheet">
+  <link href="../public/css/signup.css" rel="stylesheet">
+  {{!-- Unfortunately not all of the CSS is working in sign.up , this will do for now --}}
+  <style>
+    .header {
+    background-color: #1a1a1a;
+    padding-bottom: 60px;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: #f2f2f2;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+  }
+  
+  .container-login {
+    background-color: #333;
+    padding: 40px;
+    border-radius: 30px;
+    width: 1500px;    
+    height: 500px;
+  }
+  
+  .header-login{
+    height: 30px;
+  }
+
+  .header-login h2 {
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .everyone-login {
+    text-align: left;
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #999;
+  }
+
+  .form-class{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .first-row{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second-row{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+    /* Styling the input boxes  */
+  .form-class input[type="text"], .form-class input[type="password"], 
+  .form-class input[type="date"], .form-class select {
+    font-family: "Orienta", sans-serif;
+    width: 60%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px; 
+    font-size: 16px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #f2f2f2;
+  }
+  
+  /* I want to seperate the 2 boxes and put em beside each other */
+  .buttons-beside-each-other{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0%;
+  }
+  
+/* Sign Up Button*/  
+  .form-wrapper button[class="finish-button-class"] {
+    font-family: "Orienta", sans-serif;
+    margin-left: 10px;
+    font-size: 15px;
+    width: 15%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: green;
+}
+
+.form-wrapper button[class="finish-button-class"]:hover {
+    background-color: #22b322;
+}
+
+/* Cancel Button*/
+.form-wrapper button[class="cancel-button-class"] {
+    font-family: "Orienta", sans-serif;
+    margin-right: 10px;
+    font-size: 15px;
+    width: 15%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: rgb(105, 105, 105);
+}
+
+.form-wrapper button[class="cancel-button-class"]:hover {
+    background-color: #b32222;
+}
+  </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="container">  
+        <div class="container-login universal_boxshadow">
+          <div class="header-login ruda-regular">
+            <h2>Make a Bookface Account</h2>
+          </div>
+    
+          <div class="everyone-login ruda-bold">
+            <p>Everyone's doing it!</p>
+          </div>
+    
+          <div class="form-wrapper">
+              <form id="signupForm" method="post" class="form-class">
+                <div class="first-row">
+                    <label for="firstName" class="orienta-regular">First Name</label>
+                    <input type="text" name="firstName" id="firstName" required>
+                    <label for="lastName" class="orienta-regular">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" required>
+                    <label for="password" class="orienta-regular">Password</label>
+                    <input type="password" name="password" id="password" required>
+                    <label for="confirmPassword" class="orienta-regular"> Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required>
+                </div>
+                <div class="second-row">
+                    <label for="username" class="orienta-regular">Username</label>
+                    <input type="text" name="username" id="username" required>
+                    <label for="birthdate" name="birthdate" class="orienta-regular">Birthdate</label>
+                    <input type="date" class="form-control" name="birthdate" id="birthdate">
+                    <label for="gender" class="orienta-regular" name="gender" id="gender">Gender</label>
+                    <select class="form-control" name="gender" id="gender">
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                    <div class="buttons-beside-each-other">
+                        <button type="button" class="cancel-button-class" onclick="event.preventDefault(); window.location.href = '/login';">Cancel</button>
+                        <button type="submit" class="finish-button-class">Finish</button>
+                    </div>    
+                </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+</body>
+</html>

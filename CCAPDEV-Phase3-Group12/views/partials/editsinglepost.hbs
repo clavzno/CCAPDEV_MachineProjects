@@ -1,0 +1,52 @@
+<div class="post universal_boxshadow">
+    <div class="post_header">
+        <div class="postHeader_pic">
+            <img class="userImg point"  src={{editsinglepost.user_img}} alt="post_userprofile" ></img>
+        </div>
+        <div class="postHeader_info">
+            <div>
+                <p class="ruda-regular point">{{editsinglepost.user_name}}</p>
+                <p class="ruda-regular-lighter">{{editsinglepost.username}}</p>
+            </div>
+            <div>
+                <p class="ruda-regular-lighter">{{editsinglepost.postDate}}</p>
+            </div>
+        </div>
+        <div class="postHeader_follow">
+            {{!<img class="actionImg point" src="../../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />}}
+        </div>
+    </div>
+    <form action="/feed/{{editsinglepost._id}}/edit" class="form-class" method="post">
+        <div class="editor universal_boxshadow">
+            <div class="editor_postArea">
+                <div id="postMaker" class="ruda-regular-lighter">
+                    {{!<input id="postContent" type="text" name="postContent" placeholder="Write what's on your mind">}}
+                    <input id="postTitle" type="text" name="postTitle" placeholder="Write the title on your mind" value={{editsinglepost.postTitle}}></input>
+                    <textarea id="postContent" class="input" name="postContent" placeholder="Write what's on your mind" style="resize:none">{{editsinglepost.postContent}}</textarea>
+                    <input id="postTags" type="text" name="postTags" placeholder="Write the tags that suit the post best" value={{editsinglepost.postTags}}></input>
+                </div>
+                <div class="editor_actions">
+                    <img class="actionImg point" src="../../sprites/icons/Dark/icons8-add-image-96-darkmode.png" alt="image" />
+                    {{!<div class="ruda-regular importantButton">}}
+                        <button type="submit" class="post-button-class">Edit</button>
+                    {{!</div>}}
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="post_actions">
+        <div class="postActions_like">
+            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
+            <p>{{editsinglepost.postLikes}}</p>
+        </div>
+        <div class="postActions_dislike">
+            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
+            <p>{{editsinglepost.postDislikes}}</p>
+        </div>
+        <div class="postActions_comment">
+            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
+            <p>{{editsinglepost.postComments}}</p>
+        </div>
+        <img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />
+    </div>
+</div>
