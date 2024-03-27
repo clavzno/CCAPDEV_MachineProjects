@@ -34,8 +34,9 @@ app.use(sessions({
 
 app.use(cookieParser());
 hbs.registerPartials(__dirname + '/views/partials'); // link hbs with partials
-app.set('views', __dirname + '/views'); //specifies where the views directory is
 app.set('view engine', 'hbs'); //sets the view engine to hbs
+app.set('views', __dirname + '/views'); //specifies where the views directory is
+
 
 
 app.use(express.static(__dirname + '/public')); // This allows the user to access the files in public folder: css , frontend js , images and stuff

@@ -6,6 +6,7 @@ NEed routes from JS files ( COntroller )
 
 const express = require('express'); // IMPORTANT! KEEP
 const router = express.Router(); // IMPORTANT! KEEP
+const mainController = require('../controllers/mainController'); // Import mainController
 const authController = require('../controllers/authController'); // Import authController
 const feedController = require('../controllers/feedController'); // Import feedController
 // const profileController = require('../controllers/profileController'); // Import profileController
@@ -15,6 +16,8 @@ const posts = require('../models/postModel.js');
 const app = express();
 
 // GETTERS
+// Changed default route from 'index.hbs' to 'login.hbs'
+router.get('/', (req, res) => {res.render('login')});
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
 router.get('/logout', authController.logout);
@@ -32,7 +35,8 @@ router.get('/feed/:id/edit', feedController.loadEditPost);
 router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);
 
-
+// USES
+router.use(mainController.errorPage);
 
 // router.post('/editProfile', profileController.editProfile); //added, will go back later
 
@@ -55,9 +59,7 @@ router.post('/feed/:id/delete', feedController.deletePost);
 
 //Using routes.js for the testing routes for now
 
-router.get('/', (req, res) => {
-    res.render('index');
-});
+
 
 
 

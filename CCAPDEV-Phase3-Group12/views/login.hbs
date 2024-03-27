@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bookface Login 2.0</title>
-  <link href="../public/css/common.css" rel="stylesheet">
-  <link href="../public/css/login.css" rel="stylesheet">
-</head>
+<link href="../public/css/common.css" rel="stylesheet">
+<link href="../public/css/login.css" rel="stylesheet">
+<script src="/public/js/login.js" defer></script>
 
 <body>
   <div class="header">
@@ -24,7 +18,7 @@
 
       <div class="form-wrapper">
         <!-- <form action="#" method="post" class="form-class "> -->
-        <form id="loginForm" method="post" class="form-class" action="/login">
+        <form id="loginForm" name="loginForm" method="post" class="form-class" action="/login">
           <label for="username" class="orienta-regular">Username</label>
           <input type="text" name="username" id="username" required>
           <label for="password" class="orienta-regular">Password</label>
@@ -34,13 +28,11 @@
             <label for="rememberMeLogin">Remember me</label>
           </div>
           {{!-- <a href="#" class="ruda-bold">Forgot Password?</a>  --}} {{! Keep commented uwu }}
-          <button type="submit" class="login-button-class" method="POST">Login</button>
+          <button class="login-button-class" type="submit" method="POST">Login</button>
         </form>
 
-        {{!-- <button onclick="location.href='signup.html'" class="signup-button-class">Create Account</button> --}}
         <button type="button" id="signupButton" class="signup-button-class">Create Account</button>
         <button type="button" id="guestButton" class="guest-button-class">Guest Mode Baby</button>
-
         <script>
         const signupButton = document.getElementById('signupButton');
         signupButton.addEventListener('click', () => {
