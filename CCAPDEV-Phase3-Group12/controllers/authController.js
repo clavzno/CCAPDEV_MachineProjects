@@ -33,12 +33,14 @@ const authController = {
     const existingUser = await User.findOne({ username });
     if (existingUser) {
       console.log('username already exists:', username);
-      return res.status(400).json({ message: 'username already exists' });
+      console.log('Redirecting back to signup page because user already exists');
+      return res.redirect('/signup?error=usernameExists');
     }
         // Check if passwords match
         if (password !== confirmPassword) {
           console.log('Passwords do not match'); 
-          return res.status(400).json({ message: 'Passwords do not match' });
+          console.log('Redirecting back to signup page because passwords do not match');
+          return res.redirect('/signup?error=passwordsDoNotMatch');
         }
 
     // Hash the password before saving the user
@@ -59,7 +61,7 @@ const authController = {
 
     // Send success response or redirect to a confirmation page (optional)
     console.log('User created successfully');
-    res.status(201).json({ message: 'User created successfully' });
+    res.redirect('/login');
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: 'Server error' });
@@ -83,14 +85,14 @@ const authController = {
     const user = await User.findOne({ username });
     if (!user) {
       console.log('Invalid username:', username);
-      return res.status(401).json({ message: 'Invalid username' });
+      return res.redirect('/login?error=invalidUsername'); // changed according to sir's comment
     }
 
     // Compare hashed password with provided password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       console.log('Invalid password');
-      return res.status(401).json({ message: 'Invalid password' });
+      return res.redirect('/login?error=invalidPassword'); // changed according to sir's comment
     }
 
   // IDK IF ITS CORRECT
@@ -103,7 +105,7 @@ const authController = {
     // Login successful
     // Might create a session, generate a token, or redirect to another page
     // In this, we'll redirect to feed page
-    res.redirect('/feed'); // Replace with your desired redirect path
+    res.redirect('/feed');
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: 'Server error' });

@@ -34,15 +34,27 @@
         <button type="button" id="signupButton" class="signup-button-class">Create Account</button>
         <button type="button" id="guestButton" class="guest-button-class">Guest Mode Baby</button>
         <script>
-        const signupButton = document.getElementById('signupButton');
-        signupButton.addEventListener('click', () => {
-            window.location.href = '/signup'; // Redirect to signup route
-        });
+          // Front-end js is here for now because apparently my handlebar code CANNOT detect the js file
+          document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
 
-        const guestButton = document.getElementById('guestButton');
-        guestButton.addEventListener('click', () => {
-          window.location.href = '/feed'; // Redirect to feed route
-        })
+            if (error === 'invalidUsername') {
+              alert('Invalid username. Please try again.');
+            } else if (error === 'invalidPassword') {
+              alert('Invalid password. Please try again.');
+            }       history.replaceState({}, document.title, window.location.pathname);
+          });
+
+          const signupButton = document.getElementById('signupButton');
+          signupButton.addEventListener('click', () => {
+            window.location.href = '/signup'; // Redirect to signup route
+          });
+
+          const guestButton = document.getElementById('guestButton');
+          guestButton.addEventListener('click', () => {
+            window.location.href = '/feed'; // Redirect to feed route
+          });
         </script>
       </div>
     </div>
