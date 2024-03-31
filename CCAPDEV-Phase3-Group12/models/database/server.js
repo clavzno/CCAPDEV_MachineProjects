@@ -1,3 +1,11 @@
+/*
+    If you're wondering, where did conn.js go?
+    I removed it, it had no purpose.
+
+    Thank you,
+    Yazan
+
+*/ 
 const mongoose = require('mongoose');
 const { MongoClient } = require('mongodb') 
 const mongoURI = process.env.MONGODB_URI;
