@@ -22,9 +22,8 @@
                 {{#if singlepost}}
                     {{>singlepost}}
                     {{>content_input}}
-                    {{#if comment}}
-                        <p>testing2</p>
-                        {{#each comment}}
+                    {{#if singlepost.postComments}}
+                        {{#each singlepost.postComments}}
                         {{>comment}}
                         {{/each}}
                     {{/if}}

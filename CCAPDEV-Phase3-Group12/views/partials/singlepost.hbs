@@ -13,15 +13,15 @@
                 <p class="ruda-regular-lighter">{{singlepost.postTags}}</p>
             </div>
         </div>
-        <div class="postHeader_follow">
+        {{!-- <div class="postHeader_follow"> --}}
             {{!<img class="actionImg point" src="../../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />}}
-            <a href="/feed/{{singlepost._id}}/edit">
-                <img class="actionImg point" src="../../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="edit" />
-            </a>
+            <form action="/feed/{{singlepost._id}}/edit" class="form-class" method="get">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="edit" />
+            </form>
             <form action="/feed/{{singlepost._id}}/delete" class="form-class" method="post">
                 <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-clear-96-darkmode.png" alt="delete" />
             </form>
-        </div>
+        {{!-- </div> --}}
     </div>
     <div class="post_content">
         <div class="postContent_text point">
@@ -49,7 +49,7 @@
         </div>
         <div class="postActions_comment">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
-            <p>{{singlepost.postComments}}</p>
+            <p>{{singlepost.postComments.length}}</p>
         </div>
         <img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />
     </div>

@@ -39,10 +39,10 @@ const postSchema = new mongoose.Schema({
     postPicture: {
       type: String
     },
-    postComments: {
+    postComments: [{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'comments'
-    },
+      ref: 'Comment',
+    }],
     postLikes: {
       type: Number,
       default: 0
@@ -53,4 +53,4 @@ const postSchema = new mongoose.Schema({
     },
   });
 
-module.exports = mongoose.model('posts', postSchema); // Export post model based on the post schema
+module.exports = mongoose.model('Post', postSchema); // Export post model based on the post schema

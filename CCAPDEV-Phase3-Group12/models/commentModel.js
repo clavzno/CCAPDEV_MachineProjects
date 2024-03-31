@@ -23,7 +23,8 @@ const commentSchema = new mongoose.Schema({
     },
     post: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'posts'
+      ref: 'Post',
+      required: true
     },
     commentLikes: {
       type: Number,
@@ -39,4 +40,4 @@ const commentSchema = new mongoose.Schema({
     },
   });
 
-module.exports = mongoose.model('comments', commentSchema); // Export post model based on the post schema
+module.exports = mongoose.model('Comment', commentSchema); // Export post model based on the post schema
