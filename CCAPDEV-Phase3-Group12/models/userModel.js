@@ -48,6 +48,8 @@ const userSchema = new mongoose.Schema({
   user_img: {
     type: String,
     default: '../public/images/helldivers_2.jpg' // Default profile image
+    // plan: make it like ../pub/img/<username>.jpg and same for userheader
+    // anytime there's a change it will overwrite and keep the same file name
   },
   user_header: {
     type: String,
