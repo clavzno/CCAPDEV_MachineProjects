@@ -8,31 +8,46 @@
 */
 
 const dotenv = require('dotenv').config(); // Load variables stated in .env in as environment variables.
-const express = require('express'); // Creating an express server
-const sessions = require('express-session');
 const mongoose = require('mongoose');
-const cookieParser = require("cookie-parser");
+const express = require('express'); // Creating an express server
+const sessions = require('express-session'); // store data server side unlike cookies
 const passport = require('passport');
-const bodyParser = require('body-parser');
 const LocalStrategy = require('passport-local');
 const passportlocalmongoose = require('passport-local-mongoose');
+const cookieParser = require("cookie-parser"); // will allow website to become stateful, stores pieces of data client side
+const bodyParser = require('body-parser');
 const hbs = require('hbs');
 const routes = require('./routes/routes'); // Import routes
 const feed = require('./routes/feed');
 const flash = require('express-flash');
 let app = express(); // app is server object
 
+app.use(cookieParser());
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 
-// Session management that we dont need for MCO2 but im keeping it because its not destroying our code :)
+// Session management that we probably need for MCO3, im working on it :)
 app.use(sessions({
-    secret: "StrongSecretThing", // Replace with a strong random secret
-    resave: false,
-    saveUninitialized: true
+    secret: "StrongSecretThing",  // used to sign the session ID cookie.
+    resave: false,                // forces session to be saved back to the session store if not modified
+    saveUninitialized: true,      // forces a session that isnt uninitialized to be saved to the store
+    cookie: {                     // cookie properties set over here
+      maxAge:1000*60*60*24*30,
+      httpOnly:true
+    }
   }));
 
-app.use(cookieParser());
+// Cookies and Cream
+app.get('/check-cookie', (req,res) => {
+  let cookiefoo = req.cookies.foo
+  if(cookiefoo){
+    console.log("foo: " + cookiefoo)
+  }  res.send('Cookie checked');
+})
+
+
+
+
 hbs.registerPartials(__dirname + '/views/partials'); // link hbs with partials
 app.set('view engine', 'hbs'); //sets the view engine to hbs
 app.set('views', __dirname + '/views'); //specifies where the views directory is
@@ -44,11 +59,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', routes); // Use the router for all routes starting with '/'
 //app.use('/feed', feed); // Use the feed router for all feed routes
-
-
-const port = process.env.PORT;
-const uri = process.env.MONGODB_URI
-const cluster = process.env.DB_NAME;
 
 // Arguably the most important part of app.js 
 // THEREFORE DO NOT TOUCH THIS PART OF THE FILE
