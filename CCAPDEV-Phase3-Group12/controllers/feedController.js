@@ -50,8 +50,9 @@ const feedController = {
 
     reload()
     async function reload() {
-        const post = await Post.find().sort({'postDate' : -1});
-        res.render('feed', {post:post, input:true});
+      const post = await Post.find().sort({'postDate' : -1});
+      res.redirect('back');
+      //res.render('feed', {post:post, input:true});
     }
 
   },
@@ -61,10 +62,10 @@ const feedController = {
     async function run() {
         try{
             const id = req.params.id;
-            const post = await Post.findById({_id:id});
+            const post = await Post.findById({_id:id}).populate('postComments');
             //res.send(post);
             console.log(post);
-            res.render('feed', {singlepost:post, comment:post.postComments});
+            res.render('feed', {singlepost:post});
         }catch(e){
             console.log(e.message);
         }
@@ -80,7 +81,7 @@ const feedController = {
             const post = await Post.findById({_id:id});
             const commentContent = req.body.commentContent;
             const comment = new Comment({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent, post:post._id});
-            post.postComments.push(comment._id);
+            post.postComments.push(comment);
             await post.save();
             await comment.save();
             console.log(comment);
@@ -93,13 +94,13 @@ const feedController = {
     async function reload(){
       try{
         const id = req.params.id;
-        const post = await Post.findById({_id:id});
+        const post = await Post.findById({_id:id}).populate('postComments');
         //res.send(post);
         console.log(post);
-        res.render('feed', {singlepost:post, comment:post.postComments});
-      }catch(e){
+        res.redirect('back');
+    }catch(e){
         console.log(e.message);
-      }
+    }
     }
   },
 
