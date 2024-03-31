@@ -169,9 +169,37 @@ body {
                     </div>    
                 </div>
             </form>
-          </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const urlParams = new URLSearchParams(window.location.search);
+              const error = urlParams.get('error');
 
+              if (error === 'usernameExists') {
+                alert('Username already exists. Please choose a different username.');
+              } else if (error === 'passwordsDoNotMatch') {
+                alert('Passwords do not match. Please make sure the passwords match.');
+              }
+            });
+
+            const signupForm = document.getElementById('signupForm');
+            signupForm.addEventListener('submit', function(event) {
+              const password = document.getElementById('password').value;
+              const confirmPassword = document.getElementById('confirmPassword').value;
+
+              if (password !== confirmPassword) {
+                event.preventDefault(); // Prevent form submission
+                alert('Passwords do not match. Please make sure the passwords match.');
+              }
+            });
+
+            const cancelButton = document.querySelector('.cancel-button-class');
+            cancelButton.addEventListener('click', function(event) {
+              event.preventDefault(); // Prevent form submission
+              window.location.href = '/login'; // Redirect to login route
+            });
+          </script>
+          </div>
         </div>
-      </div>
+      </div>     
 </body>
 </html>
