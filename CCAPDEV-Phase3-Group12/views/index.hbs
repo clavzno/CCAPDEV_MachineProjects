@@ -1,6 +1,24 @@
-{{! I feel like index should just be login.hbs page }}
-<body>
+{{! I feel like index should just be login.hbs page 
+ <body>
     <h1>Welcome to Bookface</h1>
     <a href='/feed'>Proceed to feed</a>
     <a href="/login">Proceed to login</a>
+</body>  }}
+
+{{! added in the case that index.hbs loads - jack }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=/login">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="/login">click here</a>.</p>
+    <script>
+        // in case meta refresh isn't supported
+        window.location.href = "/login";
+    </script>
 </body>
+</html>

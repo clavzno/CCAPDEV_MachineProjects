@@ -17,7 +17,10 @@ const app = express();
 
 // GETTERS
 // Changed default route from 'index.hbs' to 'login.hbs'
-router.get('/', (req, res) => {res.render('login')});
+router.get('/', (req, res) => {
+    console.log("REQUEST URL: " + req.url);
+    res.render('login')
+});
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
 router.get('/logout', authController.logout);
