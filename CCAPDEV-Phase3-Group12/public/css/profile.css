@@ -157,18 +157,36 @@
 }
 
 .editInfo input {
-    width: 85%;
+    border: solid 1px var(--textInput-border);
+    border-radius: 10px;
+
+    width: 100%;
     height: 30px;
 }
 
 .editInfo textarea {
-    width: 85%;
+    border: solid 1px var(--textInput-border);
+    border-radius: 10px;
+
+    width: 100%;
     max-height: 500px;
-    height: 100px;
+    height: 110px;
     overflow: auto;
     resize: none;
 }
 
-.editInfo button {
-    justify-self: flex-end;
+.editInfoActions {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editInfoActions button {
+    box-shadow: none;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
 }
