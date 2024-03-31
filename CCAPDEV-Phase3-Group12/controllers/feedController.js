@@ -76,9 +76,12 @@ const feedController = {
     run()
     async function run() {
         try{
+            const id = req.params.id;
             const post = await Post.findById({_id:id});
             const commentContent = req.body.commentContent;
             const comment = new Comment({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent, post:post._id});
+            post.postComments.push(comment._id);
+            await post.save();
             await comment.save();
             console.log(comment);
         }catch(e){

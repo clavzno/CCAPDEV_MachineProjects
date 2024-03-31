@@ -40,8 +40,8 @@ const postSchema = new mongoose.Schema({
       type: String
     },
     postComments: [{
-      type: Number,
-      ref: 'comments',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment',
     }],
     postLikes: {
       type: Number,
