@@ -18,7 +18,6 @@ const LocalStrategy = require('passport-local');
 const passportlocalmongoose = require('passport-local-mongoose');
 const hbs = require('hbs');
 const routes = require('./routes/routes'); // Import routes
-const feed = require('./routes/feed');
 const flash = require('express-flash');
 let app = express(); // app is server object
 
