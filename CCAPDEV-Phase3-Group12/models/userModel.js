@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //importing the schema from the postModel.js
 const Post = require('./postModel');
 
-//pick a random default image for the user profile user_img
+//pick a random default image for the user profile user_img - TO MOVE TO HELPER JS FILE
 const getRandom = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
@@ -56,7 +56,7 @@ const userSchema = new mongoose.Schema({
     // plan: make it like ../pub/img/<username>.jpg and same for userheader
     // anytime there's a change it will overwrite and keep the same file name
     default: function() {
-      const randomIndex = getRandomNumber(0, 3);
+      const randomIndex = getRandom(0, 3);
       const defaultImages = [
         '../public/images/default0.jpg', //jack default
         '../public/images/default1.jpg', //yazan default
