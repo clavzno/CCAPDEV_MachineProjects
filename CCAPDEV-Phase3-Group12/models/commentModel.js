@@ -26,6 +26,11 @@ const commentSchema = new mongoose.Schema({
       ref: 'Post',
       required: true
     },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: false
+    },
     commentLikes: {
       type: Number,
       default: 0
@@ -34,10 +39,10 @@ const commentSchema = new mongoose.Schema({
       type: Number,
       default: 0
     },
-    commentComments: {
-      type: Number,
-      default: 0
-    },
+    commentComments: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment'
+    }],
   });
 
 module.exports = mongoose.model('Comment', commentSchema); // Export post model based on the post schema

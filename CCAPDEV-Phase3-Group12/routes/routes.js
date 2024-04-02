@@ -36,6 +36,7 @@ router.post('/feed/:id', feedController.postComment);
 router.get('/feed/:id/edit', feedController.loadEditPost); 
 router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);
+router.get('/feed/:id/:comment_id', feedController.loadComment);
 
 // USES
 router.use(mainController.errorPage);
