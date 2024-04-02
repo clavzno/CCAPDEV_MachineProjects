@@ -33,7 +33,9 @@
             <p>{{commentDislikes}}</p>
         </div>
         <div class="postActions_comment">
-            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
+            <form action="/feed/:id/{{this._id}}" class="form-class" method="get">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
+            </form>
             <p>{{commentComments}}</p>
         </div>
         {{!<img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />}}
