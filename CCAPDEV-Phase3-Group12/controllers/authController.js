@@ -9,12 +9,15 @@
 */
 
 const mongoose = require('mongoose');
+const express = require('express'); // Creating an express server
+const session = require('express-session'); // store data server side unlike cookies
 const User = require('../models/userModel.js'); // Import the User model
 const Post = require('../models/postModel.js'); // Import the Post model
 const bcrypt = require('bcrypt'); // For password hashing
-const session = require('express-session'); // To remember user that logged in
+const crypto = require('crypto'); // For the remember me option
 
-const remMe = (1000 * 60 * 60 * 24) * 21; // NOT YET IMPLEMENTED , For the Remember Me option
+
+const remMe = 1000 * 60 * 60 * 24 * 7 * 3; // 3 weeks in milliseconds
 
 const authController = {
 
@@ -77,7 +80,6 @@ const authController = {
 
  // Handle user login
  async login(req, res) {
-  console.log(req.body); 
   const { username, password, rememberMe } = req.body;
   // const rememberMe = req.body.rememberMeLogin;
 
@@ -94,12 +96,17 @@ const authController = {
       console.log('Invalid password');
       return res.redirect('/login?error=invalidPassword'); // changed according to sir's comment
     }
+    // Working on the Session Management:
+    console.log("Login Details: ",req.body);
+    req.session.userId = user._id;
+    console.log("Request Session: ",req.session);
 
-  // IDK IF ITS CORRECT
-    if(rememberMe) {
-      // session = req.session;
-      // session.username = req.body.user;
-      res.cookie('rememberToken', token, { maxAge: 1000 * 60 * 60 * 24 * 21 });
+  // EXPERIMENTAL !!! ( Does not destroy code anyways, making use of crypto )
+  if (rememberMe) {
+    const token = crypto.randomBytes(64).toString('hex'); // Generates a secure token
+    user.rememberMe = token; // Saves the token in the user document
+    await user.save(); // Saves the user document
+    res.cookie('rememberMe', token, { maxAge: remMe }); // Sets a cookie that lasts for 3 weeks
   }
 
     // Login successful
@@ -108,7 +115,7 @@ const authController = {
     res.redirect('/feed');
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ message: 'Server error' });
+    return res.status(500).json({ message: err.message }); // Providing more specific error message, just a minor change
   }
 },
 
@@ -137,7 +144,6 @@ const authController = {
       return res.status(500).json({ message: 'Server error' });
     }
   }
-
 };
 
 module.exports = authController;
