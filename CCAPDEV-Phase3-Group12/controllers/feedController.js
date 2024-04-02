@@ -156,6 +156,31 @@ const feedController = {
     }
   },
 
+  async loadComment(req,res){
+    run()
+    async function run() {
+        try{
+            const id = req.params.id;
+            // //const comment_id = req.params.comment_id;
+            // const post = await Post.findById({_id:id});
+            // const comment = await populateComments(post.postComments);
+            // //res.send(post);
+            // console.log(comment);
+            // res.render('feed', {singlepost:post, comment:comment});
+            res.send(id)
+        }catch(e){
+            console.log(e.message);
+        }
+    }
+    
+    async function populateComments(comments) {
+      for (let comment of comments) {
+        await comment.populate('commentComments').execPopulate(); // Populate children comments
+        await populateComments(comment.commentComments); // Recursively populate children's children
+      }
+    }
+  },
+
 };
 
 module.exports = feedController;

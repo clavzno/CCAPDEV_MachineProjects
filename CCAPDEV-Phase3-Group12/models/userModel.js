@@ -27,6 +27,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  rememberMe: { // Testing for rememberMe option
+    type: String
+  },
   birthdate: {
     type: Date,
     required: true
