@@ -13,8 +13,7 @@ const feedController = require('../controllers/feedController'); // Import feedC
 const users = require('../models/userModel.js');
 const posts = require('../models/postModel.js');
 
-const app = express();
-
+// =================================================================
 // GETTERS
 // Changed default route from 'index.hbs' to 'login.hbs'
 router.get('/', (req, res) => {
@@ -48,25 +47,6 @@ router.use(mainController.errorPage);
 // router.get('/feed');   //<-- We need something like this after the user is logged in
 
 
-
-// router.post('/login', authController.login, (req, res) => {
-//     // If login successful (replace with your logic)
-//     res.render('login', { message: 'Login successful' }); // Or redirect to another page
-//   });
-//   router.post('/signup', authController.signup, (req, res) => {
-//     // If signup successful (replace with your logic)
-//     res.render('signup', { message: 'Signup successful' }); // Or redirect to another page
-//   });
-
-
-
-//Using routes.js for the testing routes for now
-
-
-
-
-
-
-
-// module.exports = app; i dont think we will be exporting 'app' anymore, but let's keep in case
+// =================================================================
+// Better clean allat once you are all done defining your request methods ^^^
 module.exports = router;
