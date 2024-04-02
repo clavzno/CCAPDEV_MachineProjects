@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/common.css"> 
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/profile.css">
-    <script src="../../controllers/profileController.js" defer></script> <!-- changed -->
+    <script src="../../controllers/profileController.js" defer></script>
     <title>Bookface</title>
 </head>
+
 <body>
-    <div class="editProfile fullscreen-overlay" id="editProfile">
+    <!-- HIDE THIS -->
+    <div class="fullscreen-overlay editProfile" id="editProfile" style="display: none">
         <div class="editProfileDialog">
             <h1 class="ruda-regular">Edit Profile</h1>
             <div class="editImages">
                 <div class="headerPreview imagePreviews">
-                    <img src="../images/defaultheader.jpg" class="profile_images"/>
+                    <img src="../images/default0.jpg" class="profile_images" />
                 </div>
                 <div class="profilePicPreview imagePreviews">
                     <img src="../images/default0.jpg" class="profile_images" />
@@ -22,18 +25,17 @@
             </div>
             <div class="editInfo">
                 <form id="editProfileInfo" method="post">
-                    <label for="displayName" class="orienta-regular">Display Name</label> <br>
-                    <input name="displayName" type="text" class="textInput">
+                    <label for="Username" class="orienta-regular">Username</label> <br>
+                    <input name="user_name" type="text" class="textInput" placeholder="   @username">
                     <br><br>
-                    <label for="username" class="orienta-regular">Username</label> <br>
-                    <input name="username" type="text" class="textInput" placeholder="username">
+                    <label for="displayName" class="orienta-regular">Display Name</label> <br>
+                    <input name="displayName" type="text" class="textInput" placeholder="   Display Name">
                     <br><br>
                     <label for="bio" class="orienta-regular">Bio</label> <br>
-                    <textarea name="bio" class="textInput" type="description"></textarea>
+                    <textarea name="bio" class="textInput" type="description"
+                        placeholder="   Enter bio here."></textarea>
                     <br><br>
-                    <div class="editInfoActions">
-                        <button type="submit" class="importantButton" onclick="">Save changes</button>
-                    </div>
+                    <button type="submit" class="importantButton">Save changes</button>
                 </form>
             </div>
         </div>
@@ -64,7 +66,7 @@
             </div>
             <div class="settings navigation universal_boxshadow point" onclick="window.location.href='profile.html'">
                 <img src="../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="settings" />
-                <h1 class="ruda-regular">Settings</h1>  
+                <h1 class="ruda-regular">Settings</h1>
             </div>
         </div> <!-- end navigation -->
 
@@ -72,7 +74,7 @@
             <!-- user profile display -->
             <div class="profile">
                 <div class="profile_header">
-                    <img src="../images/defaultheader.jpg" class="profile_images" alt="userProfileCover" />
+                    <img src="../images/default0.jpg" class="profile_images" alt="userProfileCover" />
                 </div>
                 <div class="profile_picture">
                     <img src="../images/default0.jpg" class="profile_images" alt="userProfilePicture" />
@@ -81,30 +83,32 @@
                     <h1 id="userprofile_name" class="ruda-bold">User Orienta</h1>
                     <p id="userprofile_username" class="orienta-regular-lighter">@username</p>
                     <p id="userprofile_description" class="work-sans-light">
-                        Passionate explorer of technology and innovation. Lifelong learner with a knack for dudes and girls.
+                        Passionate explorer of technology and innovation. Lifelong learner with a knack for dudes and
+                        girls.
                     </p>
-                </div>
-                <div class="profile_actions">
-                    <button class="importantButton point" onclick="openPopup();">Edit Profile</button>
+                    <div class="profile_actions">
+                        <button class="point importantButton" id="toggleEditProfileInfo">Edit
+                            Profile</button>
+                    </div>
                 </div>
             </div>
 
             <!-- selector -->
-            <div class="selector ruda-regular point">
-                    <p class="selector_selected">Posts</p>
-                    <p class="" style="margin-left:20%;">Replies</p>
+            <div class="selector ruda-regular point" id="viewSelector">
+                <div class="selector_selected"  id="viewPostsButton">Posts</div>
+                <div style="margin: auto" id="viewRepliesButton">Replies</div>
             </div> <!-- end selector -->
 
-            
+
             <div class="profile_posts">
                 <!-- load posts using partial for single posts here -->
                 <p style="color: white;" class="work-sans-regular">end of feed</p>
             </div>
-           
+
         </div> <!-- end main content -->
 
         <div id="sideBar-right" class="sideBar universal_boxshadow">
-        <!-- this should fit up to 3 users, let's keep it at that. this should have the same code as calculating top posts, except it shows the users -jack -->
+            <!-- this should fit up to 3 users, let's keep it at that. this should have the same code as calculating top posts, except it shows the users -jack -->
             <h1 class="ruda-bold">Popular Today</h1>
 
             <!-- start featured user -->
@@ -117,7 +121,8 @@
                     <p class="orienta-regular-lighter">@orienta</p>
                 </div>
                 <div class="featuredUser_follow">
-                    <img class="actionImg" src="../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />
+                    <img class="actionImg" src="../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png"
+                        alt="follow" />
                 </div>
             </div>
             <!-- end featured user -->
@@ -132,7 +137,8 @@
                     <p class="orienta-regular-lighter">@orienta</p>
                 </div>
                 <div class="featuredUser_follow">
-                    <img class="actionImg" src="../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png" alt="follow" />
+                    <img class="actionImg" src="../sprites/icons/Dark/icons8-add-user-male-96-darkmode.png"
+                        alt="follow" />
                 </div>
             </div>
             <!-- end featured user -->
@@ -143,5 +149,105 @@
         </div>
 
     </div> <!-- end content -->
+
+    <script>
+        //adding event listeners to all
+        document.addEventListener('DOMContentLoaded', function () {
+            //adds event listener to the save changes button in edit profile
+            document.getElementById("editProfileInfo").addEventListener("submit", function (event) {
+                event.preventDefault(); // prevent the default form submission behavior
+                console.log("id editProfileInfo event listener added.");
+                closePopup();
+            });
+
+            //adds event listener to the edit profile button in main profile page
+            document.getElementById("toggleEditProfileInfo").addEventListener("click", function (event) {
+                console.log("id toggleEditProfileInfo event listener added.");
+                openPopup();
+            });
+
+            //adds event listener to the other p within view selector
+            document.getElementById("viewRepliesButton").addEventListener("click", function (event) {
+                console.log("id viewRepliesButton event listener added.");
+                viewReplies();
+            });
+
+            //adds event listener to the p within the view selector
+            document.getElementById("viewPostsButton").addEventListener("click", function (event) {
+                console.log("id viewPostsButton event listener added.");
+                viewPosts();
+            });
+        });
+
+        /******** EDIT PROFILE BUTTON *********/
+
+        function closePopup() {
+            console.log("function closePopup() called.");
+            document.getElementById("editProfile").style.display = "none";
+        }
+
+        function openPopup() {
+            console.log("function openPopup() called.");
+            document.getElementById("editProfile").style.display = "flex";
+            //DO NOT CHANGE THIS TO BLOCK it will break the flex stuff i set up
+        }
+
+        /******** SELECTOR BUTTON *********/
+
+        const viewSelector = document.getElementById("viewSelector");
+
+        const viewPostsButton = document.getElementById("viewPostsButton");
+        const viewRepliesButton = document.getElementById("viewRepliesButton");
+
+        //anything with selector_selected should have no margin
+        //anything without selector_selected should have margin: auto;
+
+        function viewPosts() {
+            console.log("function viewPosts called.");
+            //switch selector_selected class to go to POSTS and remove class from REPLIES
+            document.getElementById("viewRepliesButton").classList.remove("selector_selected");
+            document.getElementById("viewPostsButton").classList.add("selector_selected");
+
+            if (viewPostsButton.classList.contains("selector_selected")) {
+                // viewPostsButton has selector_selected class, so remove its margin
+                viewPostsButton.style.margin = "0";
+            } else {
+                // viewPostsButton doesn't have selector_selected class, so apply margin: auto
+                viewPostsButton.style.margin = "auto";
+            }
+
+            if (viewRepliesButton.classList.contains("selector_selected")) {
+                // viewRepliesButton has selector_selected class, so remove its margin
+                viewRepliesButton.style.margin = "0";
+            } else {
+                // viewRepliesButton doesn't have selector_selected class, so apply margin: auto
+                viewRepliesButton.style.margin = "auto";
+            }
+        }
+
+        function viewReplies() {
+            console.log("function viewReplies called.");
+            //switch selector_selected class to go to REPLIES and remove class from POSTS
+            document.getElementById("viewPostsButton").classList.remove("selector_selected");
+            document.getElementById("viewRepliesButton").classList.add("selector_selected");
+
+            if (viewPostsButton.classList.contains("selector_selected")) {
+                // viewPostsButton has selector_selected class, so remove its margin
+                viewPostsButton.style.margin = "0";
+            } else {
+                // viewPostsButton doesn't have selector_selected class, so apply margin: auto
+                viewPostsButton.style.margin = "auto";
+            }
+
+            if (viewRepliesButton.classList.contains("selector_selected")) {
+                // viewRepliesButton has selector_selected class, so remove its margin
+                viewRepliesButton.style.margin = "0";
+            } else {
+                // viewRepliesButton doesn't have selector_selected class, so apply margin: auto
+                viewRepliesButton.style.margin = "auto";
+            }
+        }
+    </script>
 </body>
+
 </html>
