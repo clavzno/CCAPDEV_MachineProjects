@@ -13,6 +13,10 @@ const profileController = {
 //get post lists and comment lists
 
 //event listener for edit profile dialog (editProfileDialog.hbs)
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('editProfile').addEventListener('click', openPopup);
+    document.getElementById('closeEditProfile').addEventListener('click', closePopup);
+}),
 
 //event listener for the posts/comments selector (postsCommentsSelector.hbs)
 
