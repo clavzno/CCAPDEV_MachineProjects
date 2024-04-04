@@ -82,6 +82,13 @@ const userSchema = new mongoose.Schema({
             message: props => `${props.value} exceeds the maximum character limit of 101`
         }
     },
+    displayName: {
+        type: String,
+        default: function() {
+          var name = firstName + " " + lastName;
+          return name;
+        }
+    },
 });
 
 module.exports = mongoose.model('User', userSchema); // Export User model based on the user schema
