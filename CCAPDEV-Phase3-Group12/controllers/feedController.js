@@ -11,7 +11,7 @@ const User = require('../models/userModel.js');
 const Post = require('../models/postModel.js');
 const Comment = require('../models/commentModel.js')
 
-//loadFeed, feedPost, loadPost, postComment, loadEditPost, postEditPost, deletePost
+//loadFeed, feedPost[Yazan Changes], loadPost, postComment, loadEditPost, postEditPost, deletePost
 
 const feedController = {
 
