@@ -60,8 +60,36 @@
 
             <!-- start search results -->
             <div class="searchResults">
-                
+                {{#if posts}}
+                    {<div class="post">
+                <div class="post-header">
+                    <div class="post-userImg">
+                        <img src="{{userImg}}" alt="userImg">
+                    </div>
+                    <div class="post-userInfo">
+                        <p class="post-username">{{username}}</p>
+                        <p class="post-date">{{postDate}}</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>{{postContent}}</p>
+                </div>
+                <div class="post-actions">
+                    <div class="post-like">
+                        <img src="../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like">
+                        <p>{{likesCount}}</p>
+                    </div>
+                    <div class="post-comment">
+                        <img src="../sprites/icons/Dark/icons8-comment-96-darkmode.png" alt="comment">
+                        <p>{{commentsCount}}</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+                    {{/each}}
+                {{else}}
                 <p style="color: white;" class="work-sans-regular">Uh oh! We couldn't find anything that matches your search criteria. Don't try again.</p>
+                {{/if}}
             </div> <!-- end search results -->
 
         </div> <!-- end main content -->
