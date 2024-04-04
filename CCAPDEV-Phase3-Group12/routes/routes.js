@@ -38,10 +38,17 @@ router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);
 router.get('/feed/:id/:comment_id', feedController.loadComment);
 
+//TESTING :3
+router.get('/profile', (req, res) => {
+    console.log("app.js: routing to /profile, rendering profile.hbs");
+    res.render('profile', { layout: 'layout' });
+});
+
 // USES
 router.use(mainController.errorPage);
 
 // router.post('/editProfile', profileController.editProfile); //added, will go back later
+
 
 
 

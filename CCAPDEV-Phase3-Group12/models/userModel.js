@@ -58,10 +58,11 @@ const userSchema = new mongoose.Schema({
         default: function () {
             const randomIndex = getRandom(0, 3);
             const defaultImages = [
-                '../public/images/default0.jpg', //jack default
-                '../public/images/default1.jpg', //yazan default
-                '../public/images/default2.jpg', //fred default
-                '../public/images/default3.jpg' //gerome default
+                '/images/default0.jpg', //jack default
+                '/images/default1.jpg', //yazan default
+                '/images/default2.jpg', //fred default
+                '/images/default3.jpg' //gerome default
+                //since express knows static files through app.use(express.static(__dirname + '/public'));, we can just use the path from the public folder
             ];
             return defaultImages[randomIndex];
         }
@@ -69,7 +70,7 @@ const userSchema = new mongoose.Schema({
     user_header: {
         //ADDED COMMENT ONLY: make sure to change the new header uploaded in js to {{username}}header.jpg
         type: String,
-        default: '../public/images/defaultheader.jpg' //grey bg
+        default: '/images/defaultheader.jpg' //grey bg
     },
     bio: {
         type: String,
