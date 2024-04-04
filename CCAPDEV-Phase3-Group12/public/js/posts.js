@@ -5,7 +5,7 @@ const postForm = document.forms.postForm;
 postBtn?.addEventListener("click", async (e) => {
     e.preventDefault();
     console.log('click'); 
-    // TODO 3.1: retrieve form data send POST request to `/post`
+    // Retrieves form data send POST request to `/post`
     const data = new FormData(postForm); // Retrieve data from postform
     const jstring = JSON.stringify(Object.fromEntries(data)); // convert formdata to js object, then stringify
     console.log(jstring);
@@ -21,7 +21,7 @@ postBtn?.addEventListener("click", async (e) => {
 
         console.log(response);
 
-        // TODO 3.2: handle response based on statuscode
+        // Handle response based on statuscode
         if (response.status == 200) {
             location.reload(); // refresh the page
         } else {
@@ -33,3 +33,5 @@ postBtn?.addEventListener("click", async (e) => {
         console.error(err);
     }
 });
+
+
