@@ -5,11 +5,11 @@ const commentSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    user_name: { //same with this
+    user_name: { // We are keeping this, I am importing firstName and lastName into this one object
       type: String,
       required: true
     },
-    username: { //same with this
+    username: { // Keep this, importing from the User model
       type: String,
       required: true
     },
