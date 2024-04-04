@@ -7,7 +7,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cookieParser = require("cookie-parser");
-const users = require('../models/userModel.js');
+const User = require('../models/userModel.js');
 const Post = require('../models/postModel.js');
 const Comment = require('../models/commentModel.js')
 
@@ -31,31 +31,38 @@ const feedController = {
     }
   },
 
-  async feedPost(req,res){
-    run()
-    async function run() {
-      try{
-        //const user_img = req.body.user_img; not working
-        //res.send(req.body.postTitle)
-        const postTitle = req.body.postTitle;
-        const postContent = req.body.postContent;
-        const postTags = req.body.postTags;
-        const post = new Post({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', postTitle:postTitle, postContent:postContent, postTags:postTags});
-        await post.save();
-        console.log(post);
-      }catch(e){
-        console.log(e.message);
+  async feedPost(req, res) {
+    try {
+      const userId = req.session.userId;          // Get logged-in user's ID from the current session
+      const user = await User.findById(userId);   // Finding user in the database
+      if(!user){
+        console.log('User not found:', userId);
+        return res.redirect('login'); //          // Redirect to login page if user is not logged in
       }
-    }
-
-    reload()
-    async function reload() {
-      const post = await Post.find().sort({'postDate' : -1});
+  
+      // Get the post data from the request body from Gerome's old code
+      const { postTitle, postContent, postTags } = req.body;
+  
+      const post = new Post({
+        user_img: user.user_img, // [ERROR] user's image from User model
+        user_name: `${user.firstName} ${user.lastName}`, // combine firstName and lastName from User model
+        username: user.username, // username from User model
+        postTitle,
+        postContent,
+        postTags,
+      });
+  
+      // [ERROR] Save the post to the database
+      await post.save();
+  
+      console.log('Post created successfully:', post);
       res.redirect('back');
-      //res.render('feed', {post:post, input:true});
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Server error' });
     }
-
   },
+  
 
   async loadPost(req,res){
     run()
