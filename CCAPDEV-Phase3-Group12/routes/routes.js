@@ -33,6 +33,7 @@ router.get('/feed', feedController.loadFeed);
 router.post('/feed', feedController.feedPost);
 router.get('/feed/:id', feedController.loadPost); 
 router.post('/feed/:id', feedController.postComment);
+router.post('/feed/:id/like', feedController.likePost);
 router.get('/feed/:id/edit', feedController.loadEditPost); 
 router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);

@@ -43,10 +43,10 @@ const postSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Comment',
     }],
-    postLikes: {
-      type: Number,
-      default: 0
-    },
+    postLikes: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    }],
     postDislikes: {
       type: Number,
       default: 0

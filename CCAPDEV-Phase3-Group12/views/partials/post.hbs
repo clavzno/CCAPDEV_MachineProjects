@@ -35,10 +35,12 @@
         {{/if}}
     </div>
     <div class="post_actions">
-        <div class="postActions_like">
-            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
-            <p>{{postLikes}}</p>
-        </div>
+        <form action="/feed/{{_id}}/like" class="form-class" method="post">
+            <div class="postActions_like">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
+                <p>{{postLikes.length}}</p>
+            </div>
+        </form>
         <div class="postActions_dislike">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
             <p>{{postDislikes}}</p>
