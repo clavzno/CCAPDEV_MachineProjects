@@ -33,7 +33,7 @@
             <p>{{commentDislikes}}</p>
         </div>
         <div class="postActions_comment">
-            <form action="/feed/:id/{{this._id}}" class="form-class" method="get">
+            <form action="/feed/{{this.post}}/{{this._id}}" class="form-class" method="get">
                 <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
             </form>
             <p>{{commentComments}}</p>
