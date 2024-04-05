@@ -32,10 +32,6 @@ const profileController = {
             }
         );
 
-        res.render('profile', {user: user_img});
-
-        //load the stuff
-
         } catch (error) {
             console.log("profileController: getCurrentUser error.");
             console.error(err);
@@ -45,13 +41,17 @@ const profileController = {
 
     //testing stuff below idk what's going on, these are supposed to connect to the selector frontend js
     async viewCurrentUserPosts(req, res) {
-        try {
-            const userId = req.session.userId;
-            const posts = await Post.find({ user: userId });
-            res.json({ posts }); // Example: return user's posts as JSON
-        } catch (error) {
-            console.error("profileController: viewCurrentUserPosts: Error fetching user posts:", error);
-            res.status(500).json({ error: "Internal Server Error" });
+        this.getCurrentUser(req, res);
+        loadUserPosts();
+        async function loadUserPosts() {
+            try {
+                const userId = req.session.userId;
+                const posts = await Post.find({ user: userId });
+                res.render('profile', { posts });
+            } catch (error) {
+                console.error("profileController: viewCurrentUserPosts: Error fetching user posts:", error);
+                res.status(500).json({ error: "Internal Server Error" });
+            }
         }
     },
 

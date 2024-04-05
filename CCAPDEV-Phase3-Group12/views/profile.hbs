@@ -43,14 +43,20 @@
 
             <!-- selector -->
             <div class="selector ruda-regular point" id="viewSelector">
-                <div class="selector_selected"  id="viewPostsButton">Posts</div>
+                <div class="selector_selected" id="viewPostsButton">Posts</div>
                 <div style="margin: auto" id="viewRepliesButton">Replies</div>
             </div> <!-- end selector -->
 
 
             <div class="profile_posts">
                 <!-- load posts using partial for single posts here -->
+                {{#if user.posts}}
+                    {{#each user.posts}}
+                    {{>post}}
+                    {{/each}}
+                {{else}}
                 <p style="color: white;" class="work-sans-regular">end of feed</p>
+                {{/if}}
             </div>
 
         </div> <!-- end main content -->
