@@ -47,10 +47,10 @@ const postSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     }],
-    postDislikes: {
-      type: Number,
-      default: 0
-    },
+    postDislikes: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    }],
   });
 
 module.exports = mongoose.model('Post', postSchema); // Export post model based on the post schema

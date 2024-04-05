@@ -41,10 +41,12 @@
                 <p>{{postLikes.length}}</p>
             </div>
         </form>
-        <div class="postActions_dislike">
-            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
-            <p>{{postDislikes}}</p>
-        </div>
+        <form action="/feed/{{_id}}/dislike" class="form-class" method="post">
+            <div class="postActions_dislike">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
+                <p>{{postDislikes.length}}</p>
+            </div>
+        </form>
         <form action="/feed/{{_id}}" class="form-class" method="get">
             <div class="postActions_comment">
                 <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
