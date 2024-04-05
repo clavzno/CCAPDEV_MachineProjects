@@ -46,11 +46,8 @@ router.get('/profile', async (req, res) => {
     const user_got = await User.findById(userId); 
     res.render('profile', { layout: 'layout' , user: user_got});
 });
-
-// accept the data from edit profile form
-
 // update profile
-router.post('/profile', async (req, res) => {
+router.post('/profile/:username/:displayName/:bio', async (req, res) => {
     console.log("app.js: routing to /profile, updating profile.hbs");
     profileController.updateProfile(req, res);
 });

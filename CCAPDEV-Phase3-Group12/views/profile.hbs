@@ -107,6 +107,7 @@
         function closePopup() {
             console.log("function closePopup() called.");
             document.getElementById("editProfile").style.display = "none";
+            getFormData(event);
         }
 
         function openPopup() {
@@ -171,31 +172,47 @@
             }
         }
 
-        //man idk where to put this
-        function handleFormSubmit(event) {
+        function getFormData(event) {
             event.preventDefault();
-
             const form = document.getElementById('editProfileInfo');
             const formData = new FormData(form);
-
             const username = formData.get('user_name');
             const displayName = formData.get('displayName');
             const bio = formData.get('bio');
 
-            // send data
-            fetch('/updateProfile', { // Replace with your actual route
+            console.log(username, displayName, bio);
+
+            // Construct the data object to be sent
+            const data = {
+                username: username,
+                displayName: displayName,
+                bio: bio
+            };
+
+            //fetch request here?
+            fetch('/updateProfile', {
                 method: 'POST',
-                body: formData, // Or a JSON object with username, displayName, bio
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
             })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to update profile');
+                    }
+                    // Optionally handle the response here
+                    return response.json(); // if expecting JSON response
+                })
                 .then(data => {
-                    // Handle server response (success or error)
-                    console.log(data);
-                    // Update UI or redirect based on response
+                    // Handle successful response
+                    console.log('Profile updated successfully:', data);
+                    // Optionally, perform any UI updates or redirection
                 })
                 .catch(error => {
-                    console.error(error);
-                    // Handle errors during submission
+                    // Handle error
+                    console.error('Error updating profile:', error);
+                    // Optionally, display an error message to the user
                 });
         }
     </script>
