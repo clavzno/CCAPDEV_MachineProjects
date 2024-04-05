@@ -21,16 +21,20 @@ const profileController = {
         }
         // end referenced code from feedController
 
-        // store it in a user thing
+        // store it in a user thing || Yazan Comment: It works even if u comment this part out of the code lol
         const user = new User(
             {
                 user_header: foundUser.user_header, 
                 user_img: foundUser.user_img,
                 username: foundUser.username,
+                // user_name: `${foundUser.firstName} ${foundUser.lastName}`,
                 displayName: foundUser.displayName,
                 bio: foundUser.bio
             }
         );
+                // Pass the found user to the template
+                // res.render('profile', { User });
+                // ^^ Keep that if u want, they both work, the 'User' acts as the template we are accessing when rendering profile.
 
         } catch (error) {
             console.log("profileController: getCurrentUser error.");
