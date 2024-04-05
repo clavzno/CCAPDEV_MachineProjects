@@ -24,7 +24,7 @@ const feedController = {
     async function run(){
       try{
         const post = await Post.find().sort({'postDate' : -1});
-        res.render('feed', {post:post, input:true});
+        res.render('feed', {post:post, input:true, normal:true});
       }catch(e){
         console.log(e.message);
       }
@@ -62,7 +62,48 @@ const feedController = {
       return res.status(500).json({ message: 'Server error' });
     }
   },
-  
+
+  async likePost(req,res){
+    try{
+      const userId = req.session.userId;          // Get logged-in user's ID from the current session
+      const user = await User.findById(userId);   // Finding user in the database
+      if(!user){
+        console.log('User not found:', userId);
+        return res.redirect('login'); //          // Redirect to login page if user is not logged in
+      }
+      const id = req.params.id;
+      const post = await Post.findById({_id:id});
+      post.postLikes.push(user);
+      await post.save();
+      console.log(post);
+      res.redirect('back');
+      //res.render('feed', {post:post, input:true});
+    }catch(err){
+      console.error(err);
+      return res.status(500).json({ message: 'Server error' });
+    }
+  },
+
+  async dislikePost(req,res){
+    try{
+      const userId = req.session.userId;          // Get logged-in user's ID from the current session
+      const user = await User.findById(userId);   // Finding user in the database
+      if(!user){
+        console.log('User not found:', userId);
+        return res.redirect('login'); //          // Redirect to login page if user is not logged in
+      }
+      const id = req.params.id;
+      const post = await Post.findById({_id:id});
+      post.postDislikes.push(user);
+      await post.save();
+      console.log(post);
+      res.redirect('back');
+      //res.render('feed', {post:post, input:true});
+    }catch(err){
+      console.error(err);
+      return res.status(500).json({ message: 'Server error' });
+    }
+  },
 
   async loadPost(req,res){
     run()

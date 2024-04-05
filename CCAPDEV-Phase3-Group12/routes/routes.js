@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
 router.get('/logout', authController.logout);
+router.get('/search', mainController.searchPosts);
 
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
@@ -33,6 +34,8 @@ router.get('/feed', feedController.loadFeed);
 router.post('/feed', feedController.feedPost);
 router.get('/feed/:id', feedController.loadPost); 
 router.post('/feed/:id', feedController.postComment);
+router.post('/feed/:id/like', feedController.likePost);
+router.post('/feed/:id/dislike', feedController.dislikePost);
 router.get('/feed/:id/edit', feedController.loadEditPost); 
 router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);

@@ -39,14 +39,18 @@
         {{/if}}
     </div>
     <div class="post_actions">
-        <div class="postActions_like">
-            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
-            <p>{{singlepost.postLikes}}</p>
-        </div>
-        <div class="postActions_dislike">
-            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
-            <p>{{singlepost.postDislikes}}</p>
-        </div>
+        <form action="/feed/{{singlepost._id}}/like" class="form-class" method="post">
+            <div class="postActions_like">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
+                <p>{{singlepost.postLikes.length}}</p>
+            </div>
+        </form>
+        <form action="/feed/{{_id}}/dislike" class="form-class" method="post">
+            <div class="postActions_dislike">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
+                <p>{{singlepost.postDislikes.length}}</p>
+            </div>
+        </form>
         <div class="postActions_comment">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
             <p>{{singlepost.postComments.length}}</p>
