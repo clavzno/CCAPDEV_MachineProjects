@@ -183,6 +183,8 @@
 
         //on the client side, handle the form data
         function getFormData() {
+            const userId = req.session.userId;
+            const user = await User.findById(userId);
             //event.preventDefault();
             const form = document.getElementById('editProfileInfo');
             //use formData object to get the values of the form
