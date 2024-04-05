@@ -9,8 +9,9 @@
 - You can view the running application via the link `http://localhost:3000/login` <- Will be changed if ever
 
 ## How to use? ( Deployed Website version )
-- https://bookface-p8qd.onrender.com/
-- Yeah honestly ^^^ Just click that link and it should load the website, starting with the login page.
+- https://bookface-p8qd.onrender.com/ <-- You may click that link and it should load the website, starting with the login page.
+- Note from Jack: this website runs on the free plan from Render and it states the following: "Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more." so as long as it says "Live" on my end the website should be able to access the MongoDB anytime (Gave the Static Outbound IP Addresses from Render permissions on the MongoDB settings)
+- it also only pulls latest commits from the github folder: "CCAPDEV-Phase3-Group12"
 
   ## Additional Information
   - MONGODB_URI: mongodb+srv://admin:adminpassword@ccapdev-s19-g12.ybpesmo.mongodb.net/
