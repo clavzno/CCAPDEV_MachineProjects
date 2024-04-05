@@ -12,63 +12,13 @@
 
 <body>
     <!-- HIDE THIS -->
-    <div class="fullscreen-overlay editProfile" id="editProfile" style="display: none">
-        <div class="editProfileDialog">
-            <h1 class="ruda-regular">Edit Profile</h1>
-            <div class="editImages">
-                <div class="headerPreview imagePreviews">
-                    <img src="{{user.user_img}}" class="profile_images" />
-                </div>
-                <div class="profilePicPreview imagePreviews">
-                    <img src="{{user.user_img}}" class="profile_images" />
-                </div>
-            </div>
-            <div class="editInfo">
-                <form id="editProfileInfo" method="post">
-                    <label for="Username" class="orienta-regular">Username</label> <br>
-                    <input name="user_name" type="text" class="textInput" placeholder="   {{user.username}}">
-                    <br><br>
-                    <label for="displayName" class="orienta-regular">Display Name</label> <br>
-                    <input name="displayName" type="text" class="textInput" placeholder="   {{user.displayName}}">
-                    <br><br>
-                    <label for="bio" class="orienta-regular">Bio</label> <br>
-                    <textarea name="bio" class="textInput" type="description"
-                        placeholder="   Enter bio here."></textarea>
-                    <br><br>
-                    <button type="submit" class="importantButton">Save changes</button>
-                </form>
-            </div> 
-        </div>
-    </div>
+    {{>editProfileDialog}}
 
-    <div class="header">
-        <h1 class="point logotype ruda-bold">Bookface</h1>
-        <div class="point searchBar textInput">
-            <img src="../sprites/icons/Dark/icons8-search-96-darkmode.png" alt="searchBar" />
-            <p class="ruda-regular-lighter">Search...</p>
-        </div>
-        <div class="point userProfile">
-            <a href="/profile">
-                <img class="userImg" src="../sprites/icons/Dark/icons8-male-user-96-darkmode.png" alt="userprofile" />
-            </a>
-        </div>
-    </div>
+    <!-- header -->
+    {{>header}}
 
     <div class="content">
-        <div id="sideBar-left" class="sideBar">
-            <div class="home navigation universal_boxshadow point" onclick="window.location.href='/feed'">
-                <img src="../sprites/icons/Dark/icons8-home-96-darkmode.png" alt="home" />
-                <h1 class="ruda-regular">Home</h1>
-            </div>
-            <div class="search navigation universal_boxshadow point" onclick="window.location.href='/search'">
-                <img src="../sprites/icons/Dark/icons8-search-96-darkmode.png" alt="search" />
-                <h1 class="ruda-regular">Search</h1>
-            </div>
-            <div class="settings navigation universal_boxshadow point" onclick="window.location.href='/profile'">
-                <img src="../sprites/icons/Dark/icons8-edit-96-darkmode.png" alt="settings" />
-                <h1 class="ruda-regular">Settings</h1>
-            </div>
-        </div> <!-- end navigation -->
+        {{>sidebar_left}}
 
         <div class="mainContent">
             <!-- user profile display -->
@@ -143,9 +93,7 @@
             <!-- end featured user -->
         </div> <!-- end right sidebar -->
 
-        <div class="logoutButton">
-            <img class="" src="../sprites/icons/Dark/icons8-login-rounded-96-darkmode.png" alt="logout" />
-        </div>
+        {{>logoutButton}}
 
     </div> <!-- end content -->
 
