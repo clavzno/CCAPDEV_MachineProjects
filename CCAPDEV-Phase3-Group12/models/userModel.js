@@ -64,6 +64,10 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment' // referring to the model 'posts' in postModel.js
     }],
+    dislikedComments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Post' // referring to the model 'posts' in postModel.js
+    }],
     user_img: {
         //ADDED COMMENT ONLY: make sure to change the new header uploaded in js to {{username}}.jpg
         type: String,

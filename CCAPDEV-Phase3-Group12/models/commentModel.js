@@ -31,14 +31,14 @@ const commentSchema = new mongoose.Schema({
       ref: 'User',
       required: false
     },
-    commentLikes: {
-      type: Number,
-      default: 0
-    },
-    commentDislikes: {
-      type: Number,
-      default: 0
-    },
+    commentLikes: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    }],
+    commentDislikes: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    }],
     commentComments: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Comment'

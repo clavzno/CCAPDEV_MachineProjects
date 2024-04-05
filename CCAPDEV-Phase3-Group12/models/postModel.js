@@ -51,6 +51,10 @@ const postSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     }],
+    likesCount: {
+      type: Number,
+      default: 0
+    },
   });
 
 module.exports = mongoose.model('Post', postSchema); // Export post model based on the post schema

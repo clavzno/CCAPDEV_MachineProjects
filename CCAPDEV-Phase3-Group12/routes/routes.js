@@ -31,6 +31,7 @@ router.post('/signup', authController.signup);
 
 //router.get('/profile', feedController.getProfile);
 router.get('/feed', feedController.loadFeed); 
+router.get('/feed/popular', feedController.loadPopular);
 router.post('/feed', feedController.feedPost);
 router.get('/feed/:id', feedController.loadPost); 
 router.post('/feed/:id', feedController.postComment);
@@ -40,6 +41,7 @@ router.get('/feed/:id/edit', feedController.loadEditPost);
 router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);
 router.get('/feed/:id/:comment_id', feedController.loadComment);
+router.get('/feed/:id/:comment_id/like', feedController.likeComment);
 
 //render profile
 router.get('/profile', async (req, res) => {

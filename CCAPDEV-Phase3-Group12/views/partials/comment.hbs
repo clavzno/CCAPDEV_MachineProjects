@@ -24,19 +24,25 @@
         </div>
     </div>
     <div class="post_actions">
-        <div class="postActions_like">
+        {{!-- <div class="postActions_like">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
             <p>{{commentLikes}}</p>
-        </div>
+        </div> --}}
+        <form action="/feed/{{this.post}}/{{this._id}}/like" class="form-class" method="post">
+            <div class="postActions_like">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-like-96-darkmode.png" alt="like" />
+                <p>0</p>
+            </div>
+        </form>
         <div class="postActions_dislike">
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
-            <p>{{commentDislikes}}</p>
+            <p>0</p>
         </div>
         <div class="postActions_comment">
             <form action="/feed/{{this.post}}/{{this._id}}" class="form-class" method="get">
                 <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
             </form>
-            <p>{{commentComments}}</p>
+            <p>0</p>
         </div>
         {{!<img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />}}
     </div>

@@ -31,6 +31,18 @@ const feedController = {
     }
   },
 
+  async loadPopular(req,res){
+    run()
+    async function run(){
+      try{
+        const post = await Post.find().sort({'likesCount' : -1});
+        res.render('feed', {post:post, input:true, normal:true});
+      }catch(e){
+        console.log(e.message);
+      }
+    }
+  },
+
   async feedPost(req, res) {
     try {
       const userId = req.session.userId;          // Get logged-in user's ID from the current session
@@ -74,8 +86,30 @@ const feedController = {
       const id = req.params.id;
       const post = await Post.findById({_id:id});
       post.postLikes.push(user);
+      post.likesCount = post.postLikes.length;
       await post.save();
       console.log(post);
+      res.redirect('back');
+      //res.render('feed', {post:post, input:true});
+    }catch(err){
+      console.error(err);
+      return res.status(500).json({ message: 'Server error' });
+    }
+  },
+
+  async likeComment(req,res){
+    try{
+      const userId = req.session.userId;          // Get logged-in user's ID from the current session
+      const user = await User.findById(userId);   // Finding user in the database
+      if(!user){
+        console.log('User not found:', userId);
+        return res.redirect('login'); //          // Redirect to login page if user is not logged in
+      }
+      const id = req.params.id;
+      const comment = await Comment.findById({_id:id});
+      comment.commentLikes.push(user);
+      await comment.save();
+      console.log(comment);
       res.redirect('back');
       //res.render('feed', {post:post, input:true});
     }catch(err){
