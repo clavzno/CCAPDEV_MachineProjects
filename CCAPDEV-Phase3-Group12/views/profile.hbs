@@ -107,6 +107,7 @@
         function closePopup() {
             console.log("function closePopup() called.");
             document.getElementById("editProfile").style.display = "none";
+            getFormData(event);
         }
 
         function openPopup() {
@@ -171,21 +172,20 @@
             }
         }
 
-        //man idk where to put this
-        function handleFormSubmit(event) {
+        function getFormData(event) {
             event.preventDefault();
-
             const form = document.getElementById('editProfileInfo');
             const formData = new FormData(form);
-
             const username = formData.get('user_name');
             const displayName = formData.get('displayName');
             const bio = formData.get('bio');
 
+            console.log(username, displayName, bio);
+
             // send data
             fetch('/updateProfile', { // Replace with your actual route
                 method: 'POST',
-                body: formData, // Or a JSON object with username, displayName, bio
+                body: formData
             })
                 .then(response => response.json())
                 .then(data => {

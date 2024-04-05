@@ -71,30 +71,32 @@ const profileController = {
         }
     },
 
-    //uses editProfileDialog.hbs
+    //uses editProfileDialog.hbs, handles form data and updates the user profile
     async updateProfile(req, res) {
-        try {
-            const userId = req.session.userId;
-            const { user_name, displayName, bio } = req.body;
+        console.log("profileController: updateProfile called");
+        const userId = req.session.userId;
+        const { user_name, displayName, bio } = req.body;
 
+        try {
             const updatedUser = await User.findByIdAndUpdate(userId, {
                 user_name,
                 displayName,
                 bio,
             }, { new: true });
 
-            if (!updatedUser) {
-                console.error("profileController: updateProfile error: User not found or update failed.");
-                return res.status(400).json({ message: "Failed to update profile." });
+            if(!updatedUser) {
+                console.log("User not found:", userId);
+                return res.redirect('/profile');
             }
 
-            console.log("User profile updated successfully:", updatedUser);
-            res.redirect('profile');
+            console.log("profileController: updateProfile: User profile updated successfully:");
+            res.redirect('/profile');
         } catch (error) {
             console.error("profileController: updateProfile error:", error);
-            return res.status(500).json({ message: "Internal server error." });
+            return res.status(500).redirect('/profile');
         }
     }
+    
 };
 
 module.exports = profileController;
