@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
 router.get('/logout', authController.logout);
+router.get('/search', mainController.searchPosts);
 
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
