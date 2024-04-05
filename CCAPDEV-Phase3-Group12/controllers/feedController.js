@@ -24,7 +24,7 @@ const feedController = {
     async function run(){
       try{
         const post = await Post.find().sort({'postDate' : -1});
-        res.render('feed', {post:post, input:true});
+        res.render('feed', {post:post, input:true, normal:true});
       }catch(e){
         console.log(e.message);
       }

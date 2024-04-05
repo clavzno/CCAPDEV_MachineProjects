@@ -4,12 +4,7 @@
         {{>sidebar_left}}
         <div class="mainContent">
 
-            <!-- selector -->
-            <div class="selector ruda-regular point">
-                    <a href="/feed" class="selector_selected">Feed</a>
-                    <p style="margin-left:20%;">Popular</p>
-            </div>
-            <!-- end selector -->
+            {{>selector}}
             {{#if input}}
                 {{>content_input}}
             {{/if}}
