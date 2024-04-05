@@ -10,8 +10,8 @@ const mainController = require('../controllers/mainController'); // Import mainC
 const authController = require('../controllers/authController'); // Import authController
 const feedController = require('../controllers/feedController'); // Import feedController
 // const profileController = require('../controllers/profileController'); // Import profileController
-const users = require('../models/userModel.js');
-const posts = require('../models/postModel.js');
+const User = require('../models/userModel.js');
+const Post = require('../models/postModel.js');
 
 // =================================================================
 // GETTERS
@@ -28,7 +28,7 @@ router.post('/login', authController.login);
 router.post('/signup', authController.signup);
 //router.post('/createPost', feedController.createPost);
 
-router.get('/profile', feedController.getProfile);
+//router.get('/profile', feedController.getProfile);
 router.get('/feed', feedController.loadFeed); 
 router.post('/feed', feedController.feedPost);
 router.get('/feed/:id', feedController.loadPost); 
@@ -39,9 +39,11 @@ router.post('/feed/:id/delete', feedController.deletePost);
 router.get('/feed/:id/:comment_id', feedController.loadComment);
 
 //TESTING :3
-router.get('/profile', (req, res) => {
+router.get('/profile', async (req, res) => {
     console.log("app.js: routing to /profile, rendering profile.hbs");
-    res.render('profile', { layout: 'layout' });
+    const userId = req.session.userId;          // Get logged-in user's ID from the current session
+    const user_got = await User.findById(userId); 
+    res.render('profile', { layout: 'layout' , user: user_got});
 });
 
 // USES
