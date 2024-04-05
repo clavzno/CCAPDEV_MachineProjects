@@ -80,34 +80,44 @@ const feedController = {
 
   },
 
-  async postComment(req,res){
-    run()
-    async function run() {
-        try{
-            const id = req.params.id;
-            const post = await Post.findById({_id:id});
-            const commentContent = req.body.commentContent;
-            const comment = new Comment({user_img:'https://th.bing.com/th/id/OIP.Ic46Rb_vT5RxaqfDbZNhVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7', user_name:'Tom Johnson', username:'@TJ123', commentContent:commentContent, post:post._id});
-            post.postComments.push(comment);
-            await post.save();
-            await comment.save();
-            console.log(comment);
-        }catch(e){
-            console.log(e.message);
-        }
+  // LEGIT COPY PASTE FROM feedPost() method MWAHAHAHAHA
+  async postComment(req, res) { // Changed, now the comment user is not hard coded
+    try {
+      const userId = req.session.userId; // Get logged-in user's ID from the current session
+      const user = await User.findById(userId); // Find user in the database
+      if (!user) {
+        console.log('User not found:', userId);
+        return res.redirect('login'); // Redirect to login page if user is not logged in
+      }
+  
+      const id = req.params.id;
+      const post = await Post.findById({_id: id});
+      const commentContent = req.body.commentContent;
+  
+      // Create a new comment with the user's information and the comment data
+      const comment = new Comment({
+        user_img: user.user_img, // use user's image from User model
+        user_name: `${user.firstName} ${user.lastName}`, // combine firstName and lastName from User model
+        username: user.username, // use username from User model
+        commentContent: commentContent,
+        post: post._id
+      });
+  
+      post.postComments.push(comment);
+      await post.save();
+      await comment.save();
+      console.log(comment);
+    } catch (e) {
+      console.log(e.message);
     }
-
-    reload()
-    async function reload(){
-      try{
-        const id = req.params.id;
-        const post = await Post.findById({_id:id}).populate('postComments');
-        //res.send(post);
-        console.log(post);
-        res.redirect('back');
-    }catch(e){
-        console.log(e.message);
-    }
+  
+    try {
+      const id = req.params.id;
+      const post = await Post.findById({_id: id}).populate('postComments');
+      console.log(post);
+      res.redirect('back');
+    } catch (e) {
+      console.log(e.message);
     }
   },
 

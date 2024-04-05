@@ -20,9 +20,9 @@
     <div class="post_content">
         <div class="postContent_text point">
             <a href="/feed/{{_id}}">
-                <p class="work-sans-regular">
+                <h3 class="work-sans-regular">
                     {{postTitle}}
-                </p>
+                </h3>
                 <p class="work-sans-regular">
                     {{postContent}}
                 </p>
@@ -43,10 +43,12 @@
             <img class="actionImg point" src="../../sprites/icons/Dark/icons8-dislike-96-darkmode.png" alt="dislike" />
             <p>{{postDislikes}}</p>
         </div>
-        <div class="postActions_comment">
-            <img class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
-            <p>{{postComments.length}}</p>
-        </div>
+        <form action="/feed/{{_id}}" class="form-class" method="get">
+            <div class="postActions_comment">
+                <input type="image" id="imgButton" class="actionImg point" src="../../sprites/icons/Dark/icons8-comments-96-darkmode.png" alt="comment" />
+                </p>{{postComments.length}}</p>
+            </div>
+        </form>
         <img class="actionImg point" src="../../sprites/icons/Dark/icons8-share-96-darkmode.png" alt="share" />
     </div>
 </div>
