@@ -1,4 +1,4 @@
-# CCAPDEV-Phase-3 ( TO BE UPDATED )
+# CCAPDEV-Phase-3
 
 ## How to use? ( Through running the server in Visual Studio Code )
 - We shall assume you have cloned this specific folder
@@ -18,7 +18,7 @@
   - DB_NAME: ccapdev-s19-g12
   - PORT: 3000
 
-## We had issues with sample data, so we created 5 users to prove that it connects to the database, though you've already seen it during consultation lmao but here you go
+## We created 5 users to prove that it connects to the database:
 ### username : password
 
 - TheKing420 : qwerty
@@ -26,3 +26,8 @@
 - gerome : gerome
 - fazbear : no
 - Neil_Best_Prof_Please_Have_Mercy : Iwillgivethisa4
+
+## Multiple Posts Present
+## Multiple Comments Present
+## Password Hashing Present for Security
+# You may connect and refer to the database in MongoDB Compass
