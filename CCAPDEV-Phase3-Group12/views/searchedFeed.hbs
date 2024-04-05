@@ -1,0 +1,28 @@
+<body class="bodyContent">
+    {{>header}}
+    <div class="content">
+        {{>sidebar_left}}
+        <div class="mainContent">
+            <!-- selector -->
+            <div class="selector ruda-regular point">
+                    <a href="/feed" class="selector_selected">Feed</a>
+                    <p style="margin-left:20%;">Search Results</p>
+            </div>
+            <!-- end selector -->
+
+            {{#if post}}
+                {{#each post}}
+                {{>post}}
+                {{/each}}
+            {{else}}
+                <p>No posts found with the tag '{{query}}'</p>
+            {{/if}}   
+        </div>
+        {{>sidebar_right}}
+        <div class="logoutButton">
+            <a href="/logout">
+                <img class="" src="../../sprites/icons/Dark/icons8-login-rounded-96-darkmode.png" alt="logout" />
+            </a>
+        </div>
+    </div>
+</body>

@@ -51,9 +51,9 @@
             <div class="profile_posts">
                 <!-- load posts using partial for single posts here -->
                 {{#if user.posts}}
-                    {{#each user.posts}}
-                    {{>post}}
-                    {{/each}}
+                {{#each user.posts}}
+                {{>post}}
+                {{/each}}
                 {{else}}
                 <p style="color: white;" class="work-sans-regular">end of feed</p>
                 {{/if}}
@@ -64,7 +64,7 @@
         {{>sidebar_right}}
 
         {{!-- {{>logoutButton}} --}}
-        {{! Yep ^^ does not work, but having the one at the bottom does instead :) }} 
+        {{! Yep ^^ does not work, but having the one at the bottom does instead :) }}
         <div class="logoutButton">
             <a href="/logout">
                 <img class="" src="../../sprites/icons/Dark/icons8-login-rounded-96-darkmode.png" alt="logout" />
@@ -107,6 +107,7 @@
         function closePopup() {
             console.log("function closePopup() called.");
             document.getElementById("editProfile").style.display = "none";
+            getFormData(event);
         }
 
         function openPopup() {
@@ -169,6 +170,50 @@
                 // viewRepliesButton doesn't have selector_selected class, so apply margin: auto
                 viewRepliesButton.style.margin = "auto";
             }
+        }
+
+        function getFormData(event) {
+            event.preventDefault();
+            const form = document.getElementById('editProfileInfo');
+            const formData = new FormData(form);
+            const username = formData.get('user_name');
+            const displayName = formData.get('displayName');
+            const bio = formData.get('bio');
+
+            console.log(username, displayName, bio);
+
+            // Construct the data object to be sent
+            const data = {
+                username: username,
+                displayName: displayName,
+                bio: bio
+            };
+
+            //fetch request here?
+            fetch('/updateProfile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to update profile');
+                    }
+                    // Optionally handle the response here
+                    return response.json(); // if expecting JSON response
+                })
+                .then(data => {
+                    // Handle successful response
+                    console.log('Profile updated successfully:', data);
+                    // Optionally, perform any UI updates or redirection
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error updating profile:', error);
+                    // Optionally, display an error message to the user
+                });
         }
     </script>
 </body>

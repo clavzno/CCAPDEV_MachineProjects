@@ -9,7 +9,7 @@ const router = express.Router(); // IMPORTANT! KEEP
 const mainController = require('../controllers/mainController'); // Import mainController
 const authController = require('../controllers/authController'); // Import authController
 const feedController = require('../controllers/feedController'); // Import feedController
-// const profileController = require('../controllers/profileController'); // Import profileController
+const profileController = require('../controllers/profileController'); // Import profileController
 const User = require('../models/userModel.js');
 const Post = require('../models/postModel.js');
 
@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
 router.get('/login', authController.getLogin);
 router.get('/signup', authController.getSignup);
 router.get('/logout', authController.logout);
+router.get('/search', mainController.searchPosts);
 
 router.post('/login', authController.login); 
 router.post('/signup', authController.signup);
@@ -39,13 +40,19 @@ router.post('/feed/:id/edit', feedController.postEditPost);
 router.post('/feed/:id/delete', feedController.deletePost);
 router.get('/feed/:id/:comment_id', feedController.loadComment);
 
-//TESTING :3
+//render profile
 router.get('/profile', async (req, res) => {
     console.log("app.js: routing to /profile, rendering profile.hbs");
     const userId = req.session.userId;          // Get logged-in user's ID from the current session
     const user_got = await User.findById(userId); 
     res.render('profile', { layout: 'layout' , user: user_got});
 });
+// update profile
+router.post('/profile/:username/:displayName/:bio', async (req, res) => {
+    console.log("app.js: routing to /profile, updating profile.hbs");
+    profileController.updateProfile(req, res);
+});
+
 
 // USES
 router.use(mainController.errorPage);
