@@ -40,15 +40,37 @@ router.get('/feed/:id/:comment_id', feedController.loadComment);
 
 //render profile
 router.get('/profile', async (req, res) => {
-    console.log("app.js: routing to /profile, rendering profile.hbs");
+    console.log("routes.js: routing to /profile, rendering profile.hbs");
     const userId = req.session.userId;          // Get logged-in user's ID from the current session
     const user_got = await User.findById(userId); 
     res.render('profile', { layout: 'layout' , user: user_got});
 });
 // update profile
-router.post('/profile/:username/:displayName/:bio', async (req, res) => {
+/* router.post('/profile/:user_name/:displayName/:bio', async (req, res) => {
     console.log("app.js: routing to /profile, updating profile.hbs");
     profileController.updateProfile(req, res);
+}); */
+router.post('/profile', async (req, res) => {
+    console.log("routes.js: router.post(/profile): routing to POST /profile, updating profile.hbs");
+    try {
+        const userId = req.session.userId;
+        if (!userId) {
+            return res.status(401).send('Router');
+        }
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).send('routes.js: router.post(/profile) error: user not found');
+        }
+        // Update user's profile based on data in req.body
+        user.user_name = req.body.user_name;
+        user.displayName = req.body.displayName;
+        user.bio = req.body.bio;
+        await user.save();
+        res.redirect('/profile');
+    } catch (error) {
+        console.error('error updating profile:', error);
+        res.status(500).send('routes.js: router.post(/profile) error');
+    }
 });
 
 

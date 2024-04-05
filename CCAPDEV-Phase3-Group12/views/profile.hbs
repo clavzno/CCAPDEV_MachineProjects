@@ -100,6 +100,12 @@
                 console.log("id viewPostsButton event listener added.");
                 viewPosts();
             });
+
+            //adds event listener to the form submit
+            /* document.addEventListener('submit', function (event) {
+                event.preventDefault();
+                getFormData();
+            }); */
         });
 
         /******** EDIT PROFILE BUTTON *********/
@@ -107,7 +113,10 @@
         function closePopup() {
             console.log("function closePopup() called.");
             document.getElementById("editProfile").style.display = "none";
-            getFormData(event);
+            //handle form data here
+            getFormData();
+            //clear fields
+            //form.reset();
         }
 
         function openPopup() {
@@ -172,25 +181,40 @@
             }
         }
 
-        function getFormData(event) {
-            event.preventDefault();
+        //on the client side, handle the form data
+        function getFormData() {
+            //event.preventDefault();
             const form = document.getElementById('editProfileInfo');
+            //use formData object to get the values of the form
             const formData = new FormData(form);
-            const username = formData.get('user_name');
-            const displayName = formData.get('displayName');
-            const bio = formData.get('bio');
+            //use let incase they're empty
+            let username = formData.get('user_name');
+            let displayName = formData.get('displayName');
+            let bio = formData.get('bio');
 
             console.log(username, displayName, bio);
 
-            // Construct the data object to be sent
+            if (bio === "") {
+                bio = "This user has not set a bio yet.";
+            }
+
+            if (displayName === "") {
+                displayName = user.displayName;
+            }
+
+            if (username === "") {
+                username = user.user_name; 
+            }
+
+            // data
             const data = {
                 username: username,
                 displayName: displayName,
                 bio: bio
             };
 
-            //fetch request here?
-            fetch('/updateProfile', {
+            //fetch request here
+            fetch('/profile', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -199,20 +223,16 @@
             })
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Failed to update profile');
+                        throw new Error('profile.hbs: getFormData: Network response was not ok');
                     }
-                    // Optionally handle the response here
-                    return response.json(); // if expecting JSON response
+                    return response.json();
                 })
                 .then(data => {
-                    // Handle successful response
-                    console.log('Profile updated successfully:', data);
-                    // Optionally, perform any UI updates or redirection
+                    //handle response data
+                    console.log('Response:', data);
                 })
                 .catch(error => {
-                    // Handle error
-                    console.error('Error updating profile:', error);
-                    // Optionally, display an error message to the user
+                    console.error('There was a problem with the fetch operation:', error);
                 });
         }
     </script>
