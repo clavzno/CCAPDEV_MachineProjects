@@ -7,34 +7,35 @@ const profileController = {
 
     getProfile: (req, res) => {
         res.render('profile');
+        console.log(req.session.username + " is viewing their profile page.");
     },
 
     async getCurrentUser(req, res) {
         try {
-        // from feedController: async feedPost(req, res)
-        const userId = req.session.userId; 
-        const foundUser = await User.findById(userId);
-        if (!foundUser) {
-            console.log("async getCurrentUser error, user not logged in. Redirecting to login")
-            console.log('User not found:', userId);
-            return res.redirect('login');
-        }
-        // end referenced code from feedController
-
-        // store it in a user thing || Yazan Comment: It works even if u comment this part out of the code lol
-        const user = new User(
-            {
-                user_header: foundUser.user_header, 
-                user_img: foundUser.user_img,
-                username: foundUser.username,
-                // user_name: `${foundUser.firstName} ${foundUser.lastName}`,
-                displayName: foundUser.displayName,
-                bio: foundUser.bio
+            // from feedController: async feedPost(req, res)
+            const userId = req.session.userId;
+            const foundUser = await User.findById(userId);
+            if (!foundUser) {
+                console.log("async getCurrentUser error, user not logged in. Redirecting to login")
+                console.log('User not found:', userId);
+                return res.redirect('login');
             }
-        );
-                // Pass the found user to the template
-                // res.render('profile', { User });
-                // ^^ Keep that if u want, they both work, the 'User' acts as the template we are accessing when rendering profile.
+            // end referenced code from feedController
+
+            // store it in a user thing || Yazan Comment: It works even if u comment this part out of the code lol
+            const user = new User(
+                {
+                    user_header: foundUser.user_header,
+                    user_img: foundUser.user_img,
+                    username: foundUser.username,
+                    // user_name: `${foundUser.firstName} ${foundUser.lastName}`,
+                    displayName: foundUser.displayName,
+                    bio: foundUser.bio
+                }
+            );
+            // Pass the found user to the template
+            // res.render('profile', { User });
+            // ^^ Keep that if u want, they both work, the 'User' acts as the template we are accessing when rendering profile.
 
         } catch (error) {
             console.log("profileController: getCurrentUser error.");
@@ -67,6 +68,31 @@ const profileController = {
         } catch (error) {
             console.error("profileController: viewCurrentUserReplies: Error fetching user replies:", error);
             res.status(500).json({ error: "Internal Server Error" });
+        }
+    },
+
+    //uses editProfileDialog.hbs
+    async updateProfile(req, res) {
+        try {
+            const userId = req.session.userId;
+            const { user_name, displayName, bio } = req.body;
+
+            const updatedUser = await User.findByIdAndUpdate(userId, {
+                user_name,
+                displayName,
+                bio,
+            }, { new: true });
+
+            if (!updatedUser) {
+                console.error("profileController: updateProfile error: User not found or update failed.");
+                return res.status(400).json({ message: "Failed to update profile." });
+            }
+
+            console.log("User profile updated successfully:", updatedUser);
+            res.redirect('profile');
+        } catch (error) {
+            console.error("profileController: updateProfile error:", error);
+            return res.status(500).json({ message: "Internal server error." });
         }
     }
 };

@@ -1,28 +1,27 @@
-    <div class="fullscreen-overlay editProfile" id="editProfile" style="display: none">
-        <div class="editProfileDialog">
-            <h1 class="ruda-regular">Edit Profile</h1>
-            <div class="editImages">
-                <div class="headerPreview imagePreviews">
-                    <img src="{{user.user_img}}" class="profile_images" />
-                </div>
-                <div class="profilePicPreview imagePreviews">
-                    <img src="{{user.user_img}}" class="profile_images" />
-                </div>
+<div class="fullscreen-overlay editProfile" id="editProfile" style="display: none">
+    <div class="editProfileDialog">
+        <h1 class="ruda-regular">Edit Profile</h1>
+        <div class="editImages">
+            <div class="headerPreview imagePreviews">
+                <img src="{{user.user_img}}" class="profile_images" />
             </div>
-            <div class="editInfo">
-                <form id="editProfileInfo" method="post">
-                    <label for="Username" class="orienta-regular">Username</label> <br>
-                    <input name="user_name" type="text" class="textInput" placeholder="   {{user.username}}">
-                    <br><br>
-                    <label for="displayName" class="orienta-regular">Display Name</label> <br>
-                    <input name="displayName" type="text" class="textInput" placeholder="   {{user.displayName}}">
-                    <br><br>
-                    <label for="bio" class="orienta-regular">Bio</label> <br>
-                    <textarea name="bio" class="textInput" type="description"
-                        placeholder="   Enter bio here."></textarea>
-                    <br><br>
-                    <button type="submit" class="importantButton">Save changes</button>
-                </form>
-            </div> 
+            <div class="profilePicPreview imagePreviews">
+                <img src="{{user.user_img}}" class="profile_images" />
+            </div>
+        </div>
+        <div class="editInfo">
+            <form id="editProfileInfo" method="post">
+                <label for="Username" class="orienta-regular">Username</label> <br>
+                <input name="user_name" type="text" class="textInput" placeholder="   {{user.username}}">
+                <br><br>
+                <label for="displayName" class="orienta-regular">Display Name</label> <br>
+                <input name="displayName" type="text" class="textInput" placeholder="   {{user.displayName}}">
+                <br><br>
+                <label for="bio" class="orienta-regular">Bio</label> <br>
+                <textarea name="bio" class="textInput" type="description" placeholder="   Enter bio here."></textarea>
+                <br><br>
+                <button type="submit" class="importantButton">Save changes</button>
+            </form>
         </div>
     </div>
+</div>
