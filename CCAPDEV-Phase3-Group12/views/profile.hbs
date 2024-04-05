@@ -63,7 +63,13 @@
 
         {{>sidebar_right}}
 
-        {{>logoutButton}}
+        {{!-- {{>logoutButton}} --}}
+        {{! Yep ^^ does not work, but having the one at the bottom does instead :) }} 
+        <div class="logoutButton">
+            <a href="/logout">
+                <img class="" src="../../sprites/icons/Dark/icons8-login-rounded-96-darkmode.png" alt="logout" />
+            </a>
+        </div>
 
     </div> <!-- end content -->
 

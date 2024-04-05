@@ -86,7 +86,7 @@ const userSchema = new mongoose.Schema({
     displayName: {
         type: String,
         default: function() {
-          var name = firstName + " " + lastName;
+        var name = this.firstName + " " + this.lastName; // Needs 'this' keyword because we need to access the instances of firstName and lastName :) 
           return name;
         }
     },
