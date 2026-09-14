@@ -14,7 +14,7 @@
     "hbs": "^4.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.4.0",
-    "mongoose": "^8.2.1",
+    "mongoose": "^8.24.1",
     "validator": "^13.11.0"
   },
   "name": "npm",
